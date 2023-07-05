@@ -42,6 +42,12 @@ body {
         }
     }
 
+    .active{
+        background-color: $backgroundColor !important;
+        color: $secondaryColor;
+        border: $backgroundColor !important;
+    }
+
     #menu {
         overflow: hidden;
         margin: 0;

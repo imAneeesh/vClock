@@ -29,6 +29,11 @@ body a:hover {
   color: #0090dd;
   transform: scale(1.01);
 }
+.main .active {
+  background-color: #f0f0f0 !important;
+  color: #3a3939;
+  border: #f0f0f0 !important;
+}
 .main #menu {
   overflow: hidden;
   margin: 0;
