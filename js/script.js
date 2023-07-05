@@ -5,7 +5,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 let alarmsArray = [];
-let alarmSound = new Audio("./mixkit-alarm-tone-996.wav");
+let alarmSound = new Audio('./js/audio.wav');
 let initialHour = 0,
   initialMinute = 0,
   alarmIndex = 0;
@@ -37,13 +37,20 @@ function displayTimer() {
     appendZero(date.getMinutes()),
     appendZero(date.getSeconds()),
   ];
-  // Display time
-  timerRef.innerHTML = `${hours}:${minutes}:${seconds}`;
+  const hour = hours % 12;
+  const hour12 = hour ? hour : 12;
+  const minute = minutes < 10 ? '0' + minutes : minutes;
+  const second = seconds < 10 ? '0' + seconds : seconds;
 
-  // Alarm
+  // Display time
+  timerRef.innerHTML = `${hour12}:${minute}:${second}`;
+
+  // Check for alarms
   alarmsArray.forEach((alarm, index) => {
+    console.log(hour12, minute)
     if (alarm.isActive) {
-      if (`${alarm.alarmHour}:${alarm.alarmMinute}` === `${hours}:${minutes}`) {
+      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
+        console.log("Alarm");
         alarmSound.play();
         alarmSound.loop = true;
       }

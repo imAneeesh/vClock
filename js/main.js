@@ -23,14 +23,12 @@ function clock(){
     const dayIndex = timer.getDay();
     const dayOfWeek = daysOfWeek[dayIndex];
     day.innerHTML = dayOfWeek;
-    console.log(dayOfWeek);
 
     const year = timer.getFullYear();
     const month = timer.getMonth() + 1; // Months are zero-based, so adding 1
     const days = timer.getDate();
     const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${days< 10 ? '0' + days : days}`;
     formateddate.innerHTML = formattedDate;
-    console.log(formattedDate);
     
 
 
