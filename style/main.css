@@ -256,7 +256,7 @@ body a:hover {
   gap: 1em;
   margin-top: 0.5em;
   align-items: center;
-  padding-bottom: 0.6em;
+  padding: 1rem;
 }
 .main #set-alarm .activeAlarms .alarm input[type=checkbox] {
   -webkit-appearance: none;
