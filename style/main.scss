@@ -260,29 +260,41 @@ body {
     }
 
     #set-alarm {
-        width: 50vw;
-
+        width: 100%;
         input {
             width: 10vw;
+            height: 5vh;
+            padding-left: 1rem;
             outline: none;
             border: none;
+            background-color: $backgroundColor;
             border-radius: .3rem;
-
         }
-
         .activeAlarms {
-
+            .alarm{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $backgroundColor;
+                border-radius: .5rem;
+                margin:.5rem 0;
+                padding: 1.5rem;
+            }
+            span{
+                color: inherit;
+            }
             button {
                 background-color: red;
                 color: white;
                 border: none;
                 margin-left: 1.2rem;
-
+                border-radius: .3rem;
             }
 
             input[type="checkbox"] {
-                width: 15px;
-                height: 15px;
+                width: 20px;
+                height: 20px;
                 margin-left: 1.2rem;
             }
         }
