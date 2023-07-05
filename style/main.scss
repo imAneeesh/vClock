@@ -275,6 +275,8 @@ body {
             border-radius: .3rem;
         }
         .activeAlarms {
+            max-height: 45vh;
+            overflow-y: auto;
             .alarm{
                 width: 100%;
                 display: flex;

@@ -73,12 +73,31 @@ span {
     color: white;
 }
 
-.laps {
-    color: grey;
-    list-style: none;
+.displayLap{
+    max-height: 50vh;
+    overflow-y:auto ;
     display: flex;
     align-items: center;
     justify-content: center;
+   
+}
+ul{
+    list-style-type: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.style-btn{
+    width: 10vw;
+    height: 1vh;
+}
+
+.laps { 
+
+    color: grey;
+    /* list-style: none; */
+    text-decoration: none;
+    list-style-type: none;
     padding: 1rem;
     background-color: #f0f0f0;
     border-radius: .5rem;
