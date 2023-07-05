@@ -64,7 +64,42 @@ function getCurrentTime(country) {
     };
     return new Date().toLocaleTimeString([], options);
 }
+
 const clockContainer = document.querySelector(".clock-container");
+const search = document.getElementById("search");
+const clocksearchcontainer = document.querySelector(".clock-searchcontainer");
+
+
+function getCountryTime (country) {
+    const clockCard = document.createElement("div");
+    clockCard.classList.add("clock-card");
+
+    const countryName = document.createElement("div");
+    countryName.classList.add("country-name")
+    countryName.textContent = country;
+
+    const currentTime = document.createElement("div");
+    currentTime.classList.add("current-time");
+    currentTime.textContent = getCurrentTime(country);
+    clockCard.appendChild(countryName);
+    clockCard.appendChild(currentTime);
+    clocksearchcontainer.appendChild(clockCard);
+}
+
+search.addEventListener("change",()=>{
+    const searchTerm = search.value
+    console.log(searchTerm)
+
+    countries.forEach((country)=>{
+        if(country.name==searchTerm){
+            getCountryTime(country.name);
+        }else{
+            console.log("No data")
+        }
+    })
+})
+
+
 
 countries.forEach((country) => {
     const clockCard = document.createElement("div");
