@@ -1,11 +1,16 @@
 @font-face {
     font-family: 'digital-clock-font';
-    src: url('./font/digital-7\ \(mono\).ttf');
+    src: url('.././font/digital-7\ \(mono\).ttf');
+}
+
+#body{
+    background-color: #f0f0f0;
 }
 
 #hero {
+    
     background-color: #f0f0f0;
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: 0;
 }
@@ -38,7 +43,7 @@ span {
 }
 
 .digit {
-    font-size: 150px;
+    font-size: 3em;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
