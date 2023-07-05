@@ -130,7 +130,7 @@ body a:hover {
   flex-direction: column;
 }
 .main .container .timer {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   height: 10%;
   display: flex;
@@ -146,5 +146,18 @@ body a:hover {
   font-size: 1.2rem;
 }
 .main .container .add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2rem 0;
+}
+.main .container .add-btn .btn-add-alarm {
+  background-color: #0090dd;
+  color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .timer .time {
+    font-size: 1.5rem !important;
+  }
 }/*# sourceMappingURL=main.css.map */
