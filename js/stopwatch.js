@@ -12,6 +12,19 @@ if (localStorage.getItem("lapArray") === null) {
   localStorage.setItem("lapArray", JSON.stringify([]));
 }
 // localStorage.setItem("lapArray",JSON.stringify([]));
+const hero = document.getElementById("hero");
+
+function toggleDarkMode() {
+    const toggle = document.getElementById("toggle-mode");
+    console.log(toggle.textContent);
+    if (toggle.textContent === "Light Mode") {
+        document.getElementById("toggle-mode").textContent = "Dark Mode";
+    } else {
+        document.getElementById("toggle-mode").textContent = "Light Mode";
+    }
+
+    hero.classList.toggle("dark-mode");
+}
 
 const displayElement = document.getElementById("display");
 function start(){

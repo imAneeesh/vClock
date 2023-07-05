@@ -5,6 +5,8 @@ const formateddate = document.getElementById("formateddate");
 const addAlarm = document.getElementById("addAlarm");
 const addForm = document.getElementById("addForm");
 const element = document.body;
+const timer=document.getElementById("timer");
+
 
 function toggleDarkMode() {
     const toggle = document.getElementById("toggle-mode");
@@ -56,3 +58,5 @@ menuIcon.addEventListener("click", () => {
 addAlarm.addEventListener("click", () => {
     addForm.classList.toggle("d-none");
 })
+
+timer.innerHTML = "00:00:00";

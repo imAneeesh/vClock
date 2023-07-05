@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Online Alarm Clock | Timer</title>
+  <title>Online Alarm Clock | Home</title>
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="./style/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,61 +19,68 @@
     <div class="body-container">
       <div class="top-bar">
         <div id="menuIcon" class="menu-icon">
-          <span class="menu " >
+          <span class="menu">
             <i class="fa-solid ps-3 fa-xl text-white flip fa-bars"></i>
           </span>
         </div>
         <div class="logo">
-           <a href="index.html"><img  src="./assets/logo.png" alt="logo" /></a> 
+          <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
         </div>
         <div class="setting">
-          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl" ></i>
+          <span><button onclick="toggleDarkMode()" class="btn" id="toggle-mode">
+              Dark Mode
+            </button></span>
+          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl"></i>
         </div>
       </div>
     </div>
     <div class="d-flex">
-    <div id="menu" class="navbar">
-      <div class="navbar-container">
-        <div class="nav-links">
-          <ul>
-            <a href="index.html">
-              <li class="menu">
-                <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="stopwatch.html">
-              <li class="menu">
-                <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="timer.html">
-              <li class=" active">
-                <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="time.html">
-              <li class="menu ">
-                <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-          </ul>
+      <div id="menu" class="navbar">
+        <div class="navbar-container">
+          <div class="nav-links">
+            <ul>
+              <a href="#">
+                <li class="active">
+                  <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="stopwatch.html">
+                <li class="menu">
+                  <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="timer.html">
+                <li class="menu">
+                  <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="time.html">
+                <li class="menu">
+                  <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container p-3" id="hero">
+        <div class="timer">
+          <span id="timer"></span>
         </div>
       </div>
     </div>
-    <div class="container p-5" id="hero">
-        Timer page component
-    </div>
-    </div>
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

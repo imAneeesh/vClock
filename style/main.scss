@@ -8,6 +8,8 @@ $backgroundColor: #f0f0f0;
 //     border: 1px solid red;
 // }
 
+
+
 body {
     background-color: $backgroundColor ;
     transition: all .3s ease-in-out;
@@ -34,11 +36,16 @@ body {
 }
 
 .main {
-    background-color: $backgroundColor;
+    background-color: transparent;
     height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
+    
+    .d-flex {
+            width: 100%;
+    
+        }
 
     .flip {
         transition: all .5s ease-in-out;
