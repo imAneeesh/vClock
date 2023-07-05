@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 body {
-  background-color: #f0f0f0 !important;
+  background-color: #f0f0f0;
   transition: all 0.3s ease-in-out;
 }
 body a {
@@ -11,7 +11,14 @@ body a:hover {
   color: #0090dd;
 }
 
-.time, .date, .formateddate {
+.dark-mode {
+  background: black !important;
+  color: white !important;
+}
+
+.time,
+.date,
+.formateddate {
   font-family: "Orbitron", sans-serif !important;
 }
 
@@ -151,10 +158,6 @@ body a:hover {
 .main .my-container .current-time {
   font-size: 24px;
 }
-.main .my-container .dark-mode {
-  background-color: black;
-  color: white;
-}
 .main .my-container .header {
   display: flex;
   flex: 1;
@@ -187,7 +190,8 @@ body a:hover {
   font-size: 2.3rem;
   font-weight: 800;
 }
-.main .timer .date, .main .timer .formateddate {
+.main .timer .date,
+.main .timer .formateddate {
   font-size: 1.2rem;
 }
 .main .btn-add-alarm {

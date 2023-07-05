@@ -4,7 +4,19 @@ const day=document.getElementById("day");
 const formateddate = document.getElementById("formateddate");
 const addAlarm = document.getElementById("addAlarm");
 const addForm = document.getElementById("addForm");
+const element = document.body;
 
+function toggleDarkMode() {
+    const toggle = document.getElementById("toggle-mode");
+    console.log(toggle.textContent);
+    if (toggle.textContent === "Light Mode") {
+        document.getElementById("toggle-mode").textContent = "Dark Mode";
+    } else {
+        document.getElementById("toggle-mode").textContent = "Light Mode";
+    }
+
+    element.classList.toggle("dark-mode");
+}
 
 function clock(){
     const timer = new Date();

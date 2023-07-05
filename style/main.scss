@@ -9,7 +9,7 @@ $backgroundColor: #f0f0f0;
 // }
 
 body {
-    background-color: $backgroundColor !important;
+    background-color: $backgroundColor ;
     transition: all .3s ease-in-out;
 
     a {
@@ -22,7 +22,14 @@ body {
     }
 }
 
-.time,.date,.formateddate{
+.dark-mode {
+    background: black !important; 
+    color: white !important;
+}
+
+.time,
+.date,
+.formateddate {
     font-family: 'Orbitron', sans-serif !important;
 }
 
@@ -33,9 +40,10 @@ body {
     margin: 0;
     padding: 0;
 
-    .flip{
+    .flip {
         transition: all .5s ease-in-out;
-        &:hover{
+
+        &:hover {
             transform: rotateX(180deg) !important;
         }
     }
@@ -56,7 +64,7 @@ body {
         }
     }
 
-    .active{
+    .active {
         background-color: $backgroundColor !important;
         color: $secondaryColor;
         border: $backgroundColor !important;
@@ -147,11 +155,12 @@ body {
                 }
             }
 
-            .logo{
+            .logo {
                 img {
                     width: 80px;
                 }
             }
+
             .setting {
                 img {
                     width: 20px;
@@ -161,104 +170,110 @@ body {
         }
     }
 
-    .my-container{
+    .my-container {
         display: flex;
         flex-direction: column;
+
         h1 {
-                text-align: center;
-            }
-        
-            .clock-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                grid-gap: 20px;
-                margin-top: 20px;
-            }
-        
-            .clock-card {
-                border: 1px solid #ccc;
-                padding: 20px;
-                text-align: center;
-            }
-        
-            .country-name {
-                font-size: 18px;
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-        
-            .current-time {
-                font-size: 24px;
-            }
-        
-            .dark-mode {
-                background-color: black;
-                color: white;
-            }
-        
-            .header {
-                display: flex;
-                flex: 1;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        
-            .btn {
-                padding: 10px;
-                border-radius: 10px;
-                cursor: pointer;
-            }
-        
-            .btn:hover {
-                background-color: skyblue;
-            }
-        
-       
+            text-align: center;
+        }
+
+        .clock-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .clock-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .country-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .current-time {
+            font-size: 24px;
+        }
+
+        .header {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: skyblue;
+        }
+
+
     }
-    .clock{
-    max-height: 90vh;
-    overflow-y: auto;
-    width: 100vw;
+
+    .clock {
+        max-height: 90vh;
+        overflow-y: auto;
+        width: 100vw;
     }
-    .timer{
+
+    .timer {
         width: 100%;
         height: 10%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .time{
+
+        .time {
             font-size: 2.3rem;
             font-weight: 800;
         }
-        .date,.formateddate{
+
+        .date,
+        .formateddate {
             font-size: 1.2rem;
         }
     }
-    .btn-add-alarm{
+
+    .btn-add-alarm {
         background-color: $primaryColor;
         color: $backgroundColor;
     }
-    #set-alarm{
+
+    #set-alarm {
         width: 50vw;
-        input{
+
+        input {
             width: 10vw;
             outline: none;
-                border: none;
-                border-radius: .3rem;
+            border: none;
+            border-radius: .3rem;
 
         }
-        .activeAlarms{
 
-            button{
-            background-color: red;
-            color: white;
-            border: none;
-            margin-left: 1.2rem;
+        .activeAlarms {
+
+            button {
+                background-color: red;
+                color: white;
+                border: none;
+                margin-left: 1.2rem;
 
             }
-            input[type="checkbox"]{
+
+            input[type="checkbox"] {
                 width: 15px;
                 height: 15px;
                 margin-left: 1.2rem;
@@ -268,9 +283,9 @@ body {
 
 }
 
-@media (max-width:490px){
-    .timer{
-        .time{
+@media (max-width:490px) {
+    .timer {
+        .time {
             font-size: 1.2rem !important;
         }
     }
