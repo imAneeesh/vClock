@@ -154,7 +154,10 @@ body a:hover {
 }
 .main .my-container .clock-card {
   border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 3px;
   padding: 20px;
+  border-radius: 10px;
   text-align: center;
 }
 .main .my-container .country-name {
@@ -201,6 +204,17 @@ body a:hover {
 .main .timer .formateddate {
   font-size: 1.5rem;
 }
+.main .wrapper-container {
+  margin: 0;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.main .wrapper-container .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .main .btn-add-alarm {
   background-color: #0090dd;
   color: #f0f0f0;
@@ -220,9 +234,14 @@ body a:hover {
 .main #set-alarm .activeAlarms {
   max-height: 45vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .main #set-alarm .activeAlarms .alarm {
-  width: 100%;
+  box-shadow: 0 2px 3px;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,9 +254,8 @@ body a:hover {
   display: grid;
   grid-template-columns: 8fr 2fr 2fr;
   gap: 1em;
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   align-items: center;
-  border-bottom: 1px solid #898f9b;
   padding-bottom: 0.6em;
 }
 .main #set-alarm .activeAlarms .alarm input[type=checkbox] {
@@ -272,7 +290,7 @@ body a:hover {
 .main #set-alarm .activeAlarms .deleteButton {
   background-color: transparent;
   font-size: 1.5em;
-  color: #377dff;
+  color: #ff5c5c;
   border: none;
   cursor: pointer;
 }
