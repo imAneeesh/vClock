@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 body {
   background-color: #f0f0f0 !important;
   transition: all 0.3s ease-in-out;
@@ -8,6 +9,10 @@ body a {
 }
 body a:hover {
   color: #0090dd;
+}
+
+.time, .date, .formateddate {
+  font-family: "Orbitron", sans-serif !important;
 }
 
 .main {
@@ -124,25 +129,18 @@ body a:hover {
   justify-content: center;
 }
 .main .container .timer {
-  background-color: white;
-  width: 100%;
-  max-width: 250px;
-  height: 100px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-  text-align: center;
+  width: 100vw;
+  max-width: 100vw;
+  height: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.main .container .timer span {
-  font-size: 32px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+.main .container .timer .time {
+  font-size: 3rem;
+  font-weight: 800;
 }
-.main .container .timer .date {
-  font-size: 16px;
-}
-.main .container .timer .formateddate {
-  font-size: 12px;
+.main .container .timer .date, .main .container .timer .formateddate {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=main.css.map */
