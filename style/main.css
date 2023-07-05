@@ -217,6 +217,10 @@ body a:hover {
   background-color: #f0f0f0;
   border-radius: 0.3rem;
 }
+.main #set-alarm .activeAlarms {
+  max-height: 45vh;
+  overflow-y: auto;
+}
 .main #set-alarm .activeAlarms .alarm {
   width: 100%;
   display: flex;
