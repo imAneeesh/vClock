@@ -19,58 +19,57 @@
     <div class="body-container">
       <div class="top-bar">
         <div id="menuIcon" class="menu-icon">
-          <span class="menu " >
+          <span class="menu ">
             <i class="fa-solid ps-3 fa-xl text-white flip fa-bars"></i>
           </span>
         </div>
         <div class="logo">
-           <a href="index.html"><img  src="./assets/logo.png" alt="logo" /></a> 
+          <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
         </div>
         <div class="setting">
-          <span><button onclick="toggleDarkMode()" class="btn" id="toggle-mode">
-              Dark Mode
-            </button></span>
-          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl" ></i>
+          <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
+              class="fa-solid fa-xl fa-sun"></i></span>
+          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl"></i>
         </div>
       </div>
     </div>
     <div class="d-flex">
-    <div id="menu" class="navbar">
-      <div class="navbar-container">
-        <div class="nav-links">
-          <ul>
-            <a href="index.html">
-              <li class="menu">
-                <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="stopwatch.html" class="disabled">
-              <li class="menu  ">
-                <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="timer.html">
-              <li class="menu ">
-                <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="time.html" >
-              <li class=" active">
-                <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-          </ul>
+      <div id="menu" class="navbar">
+        <div class="navbar-container">
+          <div class="nav-links">
+            <ul>
+              <a href="index.html">
+                <li class="menu">
+                  <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="stopwatch.html" class="disabled">
+                <li class="menu  ">
+                  <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="timer.html">
+                <li class="menu ">
+                  <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="time.html">
+                <li class=" active">
+                  <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="my-container p-5 clock" id="hero">
+      <div class="my-container p-5 clock" id="hero">
         <h1>World Clock</h1>
         <div class="clock-container"></div>
-    </div>
+      </div>
     </div>
   </div>
 

@@ -6,7 +6,7 @@
 
 
 .dark-mode {
-    background: black !important;
+    background: rgb(36, 36, 36) !important;
     color: white !important;
 }
 
@@ -74,7 +74,7 @@ span {
 }
 
 .displayLap{
-    max-height: 50vh;
+    max-height: 600px;
     overflow-y:auto ;
     display: flex;
     align-items: center;

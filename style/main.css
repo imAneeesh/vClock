@@ -16,7 +16,7 @@ body a:hover {
 }
 
 .dark-mode {
-  background: black !important;
+  background: rgb(36, 36, 36) !important;
   color: white !important;
 }
 

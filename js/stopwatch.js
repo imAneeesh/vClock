@@ -8,6 +8,9 @@ const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const lapsBtn = document.getElementById("laps");
 const btn = document.getElementsByClassName('btn');
+const modeIcon = document.getElementById("modeIcon");
+
+
 if (localStorage.getItem("lapArray") === null) {
   localStorage.setItem("lapArray", JSON.stringify([]));
 }
@@ -16,14 +19,8 @@ const hero = document.getElementById("hero");
 const body = document.getElementById("body");
 
 function toggleDarkMode() {
-    const toggle = document.getElementById("toggle-mode");
-    console.log(toggle.textContent);
-    if (toggle.textContent === "Light Mode") {
-        document.getElementById("toggle-mode").textContent = "Dark Mode";
-    } else {
-        document.getElementById("toggle-mode").textContent = "Light Mode";
-    }
-    body.classList.toggle("dark-mode")
+    modeIcon.classList.toggle("fa-moon");
+
     hero.classList.toggle("dark-mode");
 }
 
