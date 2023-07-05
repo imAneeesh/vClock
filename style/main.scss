@@ -6,6 +6,7 @@ $backgroundColor: #f0f0f0;
 //     border: 1px solid red;
 // }
 body {
+    background-color: $backgroundColor !important;
     transition: all .3s ease-in-out;
 
     a {
@@ -25,6 +26,12 @@ body {
     margin: 0;
     padding: 0;
 
+    .flip{
+        transition: all .5s ease-in-out;
+        &:hover{
+            transform: rotateX(180deg) !important;
+        }
+    }
 
     .icon {
         width: 30px;
