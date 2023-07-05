@@ -200,7 +200,10 @@ body {
 
         .clock-card {
             border: 1px solid #ccc;
+            background-color: $backgroundColor;
+            box-shadow: 0 2px 3px;
             padding: 20px;
+            border-radius: 10px;
             text-align: center;
         }
 

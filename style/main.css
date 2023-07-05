@@ -154,7 +154,10 @@ body a:hover {
 }
 .main .my-container .clock-card {
   border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 3px;
   padding: 20px;
+  border-radius: 10px;
   text-align: center;
 }
 .main .my-container .country-name {
