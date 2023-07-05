@@ -71,9 +71,22 @@
           <span class="formateddate" id="formateddate"></span>
         </div>
         <div class="add-btn">
-          <button class="btn">
+          <button id="addAlarm" class="btn">
             Add Alarm
           </button>
+        </div>
+        <div id="addForm" class="alarm-form">
+          <div class="wrapper">
+            <div class="timer-display">00:00:00</div>
+            <div class="container">
+              <div class="inputs">
+                <input type="number" id="hourInput" placeholder="00" min="0" max="23" />
+                <input type="number" id="minuteInput" placeholder="00" min="0" max="59" />
+              </div>
+              <button id="set">Add Alarm</button>
+              <div class="activeAlarms"></div>
+            </div>
+          </div>
         </div>
     </div>
     </div>
@@ -83,6 +96,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
