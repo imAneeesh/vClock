@@ -42,8 +42,6 @@ function displayTimer() {
   const minute = minutes < 10 ? '0' + minutes : minutes;
   const second = seconds < 10 ? '0' + seconds : seconds;
 
-  // Display time
-  // timerRef.innerHTML = `${hour12}:${minute}:${second}`;
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
@@ -52,7 +50,6 @@ function displayTimer() {
       if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
         console.log("Alarm");
         alarmSound.play();
-        alarmSound.loop = true;
       }
     }
   });

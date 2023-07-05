@@ -375,7 +375,129 @@ body {
         margin-left: 1.2rem;
       }
     }
+<<<<<<< HEAD
   }
+=======
+
+    .wrapper-container {
+        margin: 0;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+
+        .inputs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .btn-add-alarm {
+        background-color: $primaryColor;
+        color: $backgroundColor;
+    }
+
+    #set-alarm {
+        width: 100%;
+
+        input {
+            width: 10vw;
+            height: 5vh;
+            padding-left: .5rem;
+            outline: none;
+            border: none;
+            background-color: rgba($backgroundColor,.3);
+            border-radius: .3rem;
+        }
+
+        .activeAlarms {
+            max-height: 45vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .alarm {
+                width: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba($backgroundColor,.3);
+                border-radius: .5rem;
+                margin: .5rem 0;
+                padding: 1.5rem;
+            }
+
+            .alarm {
+                display: grid;
+                grid-template-columns: 8fr 2fr 2fr;
+                gap: 1em;
+                margin-top: .5em;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .alarm input[type="checkbox"] {
+                appearance: none;
+                height: 2em;
+                width: 3.75em;
+                background-color: #e2e2ec;
+                border-radius: 1.25em;
+                position: relative;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .alarm input[type="checkbox"]:before {
+                position: absolute;
+                content: "";
+                background-color: #757683;
+                height: 1.43em;
+                width: 1.43em;
+                border-radius: 50%;
+                top: 0.25em;
+                left: 0.25em;
+            }
+
+            .alarm input[type="checkbox"]:checked {
+                background-color: #d2e2ff;
+            }
+
+            .alarm input[type="checkbox"]:checked:before {
+                background-color: #377dff;
+                left: 2em;
+            }
+
+            .deleteButton {
+                background-color: transparent;
+                font-size: 1.5em;
+                color: #ff5c5c;
+                border: none;
+                cursor: pointer;
+            }
+
+            span {
+                color: inherit;
+            }
+
+            button {
+                background-color: red;
+                color: white;
+                border: none;
+                margin-left: 1.2rem;
+                border-radius: .3rem;
+            }
+
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                margin-left: 1.2rem;
+            }
+        }
+    }
+
+>>>>>>> b15b0c522ecf5f3803d1d971cb251749b02ebcce
 }
 
 @media (max-width: 490px) {
