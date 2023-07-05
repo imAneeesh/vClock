@@ -290,7 +290,7 @@ body {
             padding-left: .5rem;
             outline: none;
             border: none;
-            background-color: $backgroundColor;
+            background-color: rgba($backgroundColor,.3);
             border-radius: .3rem;
         }
 
