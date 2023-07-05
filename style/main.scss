@@ -164,9 +164,61 @@ body {
     .container{
         display: flex;
         flex-direction: column;
+        h1 {
+                text-align: center;
+            }
         
+            .clock-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-gap: 20px;
+                margin-top: 20px;
+            }
+        
+            .clock-card {
+                border: 1px solid #ccc;
+                padding: 20px;
+                text-align: center;
+            }
+        
+            .country-name {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        
+            .current-time {
+                font-size: 24px;
+            }
+        
+            .dark-mode {
+                background-color: black;
+                color: white;
+            }
+        
+            .header {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        
+            .btn {
+                padding: 10px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        
+            .btn:hover {
+                background-color: skyblue;
+            }
         
        
+    }
+    .clock{
+    max-height: 90vh;
+    overflow-y: auto;
     }
     .timer{
         width: 100%;
