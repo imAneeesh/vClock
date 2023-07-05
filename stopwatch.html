@@ -19,14 +19,12 @@
   <div class="main">
     <div class="body-container">
       <div class="top-bar">
-        <div id="menuIcon" class="menu-icon">
-          <span class="menu">
+          <span class="menu d-lg-none">
             <i class="fa-solid ps-2 fa-xl d-lg-none text-white flip fa-bars"></i>
           </span>
           <span class="logo d-none d-lg-block">
             <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
           </span>
-        </div>
         <div class="logo d-lg-none">
           <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
         </div>
@@ -69,9 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="container p-1" id="hero">
-        <button class="btn mt-2" onclick="clearLap()">Clear All Laps</button>
-
+      <div class="container d-flex flex-column align-items-center gap-3 p-1" id="hero">
         <div id="timeElement">
           <span class="digit" id="hr">00</span>
           <span class="text">hr</span>
@@ -81,12 +77,12 @@
           <span class="text">sec</span>
           <span class="digit" id="count">00</span>
         </div>
-        <div class=" m-2 gap-2">
+        
+        <div class="">
 
           <button class="btn btn-sm btn-primary mx-2" id="start" onclick="start()">
             Start
           </button>
-
 
           <button class="btn btn-sm btn-danger mx-2 d-none" id="stop" onclick="stop()">
             Stop
@@ -102,7 +98,7 @@
             Laps
           </button>
         </div>
-
+        <button class="btn mt-2" onclick="clearLap()">Clear All Laps</button>
         <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
       </div>
     </div>
@@ -111,8 +107,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="./js/main.js"></script>
   <script src="./js/stopwatch.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
