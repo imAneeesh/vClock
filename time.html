@@ -27,6 +27,9 @@
            <a href="index.html"><img  src="./assets/logo.png" alt="logo" /></a> 
         </div>
         <div class="setting">
+          <span><button onclick="toggleDarkMode()" class="btn" id="toggle-mode">
+              Dark Mode
+            </button></span>
           <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl" ></i>
         </div>
       </div>
@@ -64,12 +67,9 @@
         </div>
       </div>
     </div>
-    <div class="container p-5" id="hero">
-      <div class="timer">
-        <span id="time" class="time"></span>
-        <span class="date" id="day"></span>
-        <span class="formateddate" id="formateddate"></span>
-      </div>    
+    <div class="my-container p-5 clock" id="hero">
+        <h1>World Clock</h1>
+        <div class="clock-container"></div>
     </div>
     </div>
   </div>
@@ -78,6 +78,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/worldtime.js"></script>
 </body>
 
 </html>

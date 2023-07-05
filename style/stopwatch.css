@@ -1,15 +1,24 @@
 @font-face {
     font-family: 'digital-clock-font';
-    src: url('./font/digital-7\ \(mono\).ttf');
+    src: url('.././font/digital-7\ \(mono\).ttf');
+}
+
+#body{
+    background-color: #f0f0f0;
 }
 
 #hero {
-    background-color: #000;
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto; */
+    
+    background-color: #f0f0f0;
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
+.dark-mode {
+    background: black !important;
+    color: white !important;
+}
+
 
 .container {
     color: green;
@@ -34,7 +43,7 @@ span {
 }
 
 .digit {
-    font-size: 150px;
+    font-size: 3em;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
@@ -53,9 +62,20 @@ span {
 }
 
 .btn {
-    background-color: transparent;
+    background-color: #0090dd;
     padding: 7px 25px;
     transform: scale(1.1);
+}
+
+.clear{
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    color: #f0f0f0;
+}
+.clear:hover{
+    background: #0460da;
+    color: #f0f0f0
 }
 
 #laps {
@@ -71,7 +91,7 @@ span {
     justify-content: center;
     width: 500px;
     height: 50px;
-    background-color: #1a1a1a;
+    background-color: transparent;
     border-radius: 3px;
     font-size: 23px;
     font-weight: 500;

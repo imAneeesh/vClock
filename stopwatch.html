@@ -12,64 +12,67 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./stopwatch.css">
+  <link rel="stylesheet" href="./style/stopwatch.css">
 </head>
 
 
-<body>
+<body id="body">
   <div class="main">
     <div class="body-container">
       <div class="top-bar">
         <div id="menuIcon" class="menu-icon">
-          <span class="menu " >
+          <span class="menu ">
             <i class="fa-solid ps-3 fa-xl text-white flip fa-bars"></i>
           </span>
         </div>
         <div class="logo">
-           <a href="index.html"><img  src="./assets/logo.png" alt="logo" /></a> 
+          <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
         </div>
         <div class="setting">
-          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl" ></i>
+          <span><button onclick="toggleDarkMode()" class="btn" id="toggle-mode">
+              Dark Mode
+            </button></span>
+          <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl"></i>
         </div>
       </div>
     </div>
     <div class="d-flex">
-    <div id="menu" class="navbar">
-      <div class="navbar-container">
-        <div class="nav-links">
-          <ul>
-            <a href="index.html">
-              <li class="menu">
-                <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="stopwatch.html">
-              <li class=" active">
-                <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="timer.html">
-              <li class="menu">
-                <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-            <a href="time.html">
-              <li class="menu">
-                <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
-                  class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
-              </li>
-            </a>
-          </ul>
+      <div id="menu" class="navbar">
+        <div class="navbar-container">
+          <div class="nav-links">
+            <ul>
+              <a href="index.html">
+                <li class="menu">
+                  <img src="./assets/clock.png" class="icon" alt="logo" />Alarm Clock<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="stopwatch.html">
+                <li class=" active">
+                  <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="timer.html">
+                <li class="menu">
+                  <img src="./assets/stopwatch.png" class="icon" alt="logo" />Timer<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="time.html">
+                <li class="menu">
+                  <img src="./assets/chronometer.png" class="icon" alt="logo" />Time<i
+                    class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container p-5" id="hero">
-        <div class="container">
-          <button class="btn btn-primary clear" onclick="clearLap()">Clear All Laps</button>
-        
+      <div class="container p-5" id="hero">
+        <div  class="container">
+          <button class="btn clear" onclick="clearLap()">Clear All Laps</button>
+      
           <div id="timeElement">
             <span class="digit" id="hr">00</span>
             <span class="text">hr</span>
@@ -78,28 +81,29 @@
             <span class="digit" id="sec">00</span>
             <span class="text">sec</span>
             <span class="digit" id="count">00</span>
-        
+      
           </div>
           <div id="btn-container">
             <button class="btn btn-primary mx-2" id="start" onclick="start()">Start</button>
-            <button class="btn btn-danger mx-2 d-none" id="stop"  onclick="stop()">Stop</button>
+            <button class="btn btn-danger mx-2 d-none" id="stop" onclick="stop()">Stop</button>
             <button class="btn btn-secondary mx-2 d-none" id="reset" onclick="reset()">Reset</button>
             <button class="btn btn-info mx-2 d-none" id="laps" disabled="true" onclick="laps()">Laps</button>
           </div>
           <div class="displayLap" id="display">
-        
+      
           </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-    <script src="./stopwatch.js"></script>
+  <script src="./js/stopwatch.js"></script>
   <script src="./js/main.js"></script>
-  
+
+
 </body>
 
 </html>
