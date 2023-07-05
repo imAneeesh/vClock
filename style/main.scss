@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
 @font-face {
-    font-family: 'digital-clock-font';
-    src: url('.././font/digital-7\ \(mono\).ttf');
+  font-family: "digital-clock-font";
+  src: url(".././font/digital-7\ \(mono\).ttf");
 }
 
 $secondaryColor: #3a3939;
@@ -13,380 +13,375 @@ $backgroundColor: #f0f0f0;
 //     border: 1px solid red;
 // }
 
-
-
 body {
-    background-color: $backgroundColor ;
-    transition: all .3s ease-in-out;
+  background-color: $backgroundColor;
+  transition: all 0.3s ease-in-out;
 
-    a {
-        text-decoration: none;
-        color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
 
-        &:hover {
-            color: $primaryColor;
-        }
+    &:hover {
+      color: $primaryColor;
     }
+  }
 }
 
 .dark-mode {
-    background: rgb(36, 36, 36) !important;
-    color: white !important;
+  background: rgb(36, 36, 36) !important;
+  color: white !important;
 }
 
 .time,
 .date,
 .formateddate {
-    font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
 }
 
 .main {
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
-    background-color: transparent;
-    height: 100vh;
+  .d-flex {
     width: 100%;
+  }
+
+  .flip {
+    transition: all 0.5s ease-in-out;
+
+    // &:hover {
+    //     transform: rotateX(180deg) !important;
+    // }
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .menu {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $primaryColor;
+      transform: scale(1.01);
+    }
+  }
+
+  .active {
+    background-color: $backgroundColor !important;
+    color: $secondaryColor;
+    border: $backgroundColor !important;
+  }
+
+  #menu {
+    overflow: hidden;
     margin: 0;
-    padding: 0;
+    background-color: $primaryColor;
+    background-color: $secondaryColor;
+    color: white;
+    height: 100vh;
+    width: calc(100vw - 50vw);
+    height: calc(100vh - 6vh);
+    min-width: 150px;
 
-    .d-flex {
+    .navbar-container {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+
+      .nav-links {
         width: 100%;
 
-    }
+        ul {
+          width: 100%;
+          padding: 0;
 
-    .flip {
-        transition: all .5s ease-in-out;
-
-        // &:hover {
-        //     transform: rotateX(180deg) !important;
-        // }
-    }
-
-    .icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .menu {
-        transition: all .3s ease-in-out;
-        cursor: pointer;
-
-        &:hover {
-            color: $primaryColor;
-            transform: scale(1.01);
-        }
-    }
-
-    .active {
-        background-color: $backgroundColor !important;
-        color: $secondaryColor;
-        border: $backgroundColor !important;
-    }
-
-    #menu {
-        overflow: hidden;
-        margin: 0;
-        background-color: $primaryColor;
-        background-color: $secondaryColor;
-        color: white;
-        height: 100vh;
-        width: calc(100vw - 50vw);
-        height: calc(100vh - 6vh);
-        min-width: 150px;
-
-        .navbar-container {
+          li {
             width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-
-
-            .nav-links {
-                width: 100%;
-
-                ul {
-                    width: 100%;
-                    padding: 0;
-
-                    li {
-                        width: 100%;
-                        padding: 0 1rem;
-                        font-size: 12px;
-                        height: 50px;
-                        text-align: center;
-                        align-items: center;
-                        display: flex;
-                        justify-content: start;
-                        list-style-type: none;
-                        border-bottom: 1px solid rgb(82, 82, 82);
-                        border-top: 1px solid rgb(82, 82, 82);
-
-                        a {
-                            text-decoration: none;
-                            color: white;
-                        }
-
-                        img {
-                            width: 20px;
-                            height: 20px;
-                        }
-
-                        i {
-                            font-size: 12px;
-                        }
-
-                    }
-                }
-            }
-        }
-
-        @media screen and (min-width:768px) {
-            width: 20%;
-        }
-
-    }
-
-    .body-container {
-        background: $primaryColor;
-        position: relative;
-
-        .top-bar {
-            height: 6vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .menu-icon {
-                img {
-                    width: 20px;
-                    margin: .5rem;
-                }
-            }
-
-            .logo {
-                img {
-                    width: 80px;
-                }
-            }
-
-            .setting {
-                img {
-                    width: 20px;
-                    margin: .5rem;
-                }
-            }
-        }
-    }
-
-    .my-container {
-        display: flex;
-        flex-direction: column;
-
-        h1 {
+            padding: 0 1rem;
+            font-size: 12px;
+            height: 50px;
             text-align: center;
-        }
-
-        .clock-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-gap: 20px;
-            margin-top: 20px;
-        }
-
-        .clock-card {
-            border: 1px solid #ccc;
-            background-color: $backgroundColor;
-            box-shadow: 0 2px 3px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .country-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .current-time {
-            font-size: 24px;
-        }
-
-        .header {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
+            display: flex;
+            justify-content: start;
+            list-style-type: none;
+            border-bottom: 1px solid rgb(82, 82, 82);
+            border-top: 1px solid rgb(82, 82, 82);
+
+            a {
+              text-decoration: none;
+              color: white;
+            }
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            i {
+              font-size: 12px;
+            }
+          }
         }
-
-        .btn {
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: skyblue;
-        }
-
-
+      }
     }
 
-    .clock {
-        max-height: 90vh;
-        overflow-y: auto;
-        width: 100vw;
+    @media screen and (min-width: 768px) {
+      width: 20%;
+    }
+  }
+
+  .body-container {
+    background: $primaryColor;
+    position: relative;
+
+    .top-bar {
+      height: 6vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .menu-icon {
+        img {
+          width: 20px;
+          margin: 0.5rem;
+        }
+      }
+
+      .logo {
+        img {
+          width: 80px;
+        }
+      }
+
+      .setting {
+        img {
+          width: 20px;
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .my-container {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
     }
 
-    .timer {
-        width: 100%;
-        height: 10%;
+    .clock-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+      margin-top: 20px;
+    }
+
+    .clock-card {
+      border: 1px solid #ccc;
+      background-color: rgba($backgroundColor, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+        border: 1px solid $primaryColor;
+      }
+    }
+
+    .country-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .current-time {
+      font-size: 24px;
+    }
+
+    .header {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: skyblue;
+    }
+  }
+
+  .clock {
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 100vw;
+  }
+
+  .timer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .time {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+
+    .date,
+    .formateddate {
+      font-size: 1.5rem;
+    }
+  }
+
+  .wrapper-container {
+    margin: 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    .inputs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .btn-add-alarm {
+    background-color: $primaryColor;
+    color: $backgroundColor;
+  }
+
+  #set-alarm {
+    width: 100%;
+
+    input {
+      width: 10vw;
+      height: 5vh;
+      padding-left: 0.5rem;
+      outline: none;
+      border: none;
+      background-color: $backgroundColor;
+      border-radius: 0.3rem;
+    }
+
+    .activeAlarms {
+      max-height: 45vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .alarm {
+        width: 80%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: rgba($backgroundColor, 0.3);
+        border-radius: 0.5rem;
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+      }
 
-        .time {
-            font-size: 3.2rem;
-            font-weight: 700;
-        }
+      .alarm {
+        display: grid;
+        grid-template-columns: 8fr 2fr 2fr;
+        gap: 1em;
+        margin-top: 0.5em;
+        align-items: center;
+        padding: 1rem;
+      }
 
-        .date,
-        .formateddate {
-            font-size: 1.5rem;
-        }
+      .alarm input[type="checkbox"] {
+        appearance: none;
+        height: 2em;
+        width: 3.75em;
+        background-color: #e2e2ec;
+        border-radius: 1.25em;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .alarm input[type="checkbox"]:before {
+        position: absolute;
+        content: "";
+        background-color: #757683;
+        height: 1.43em;
+        width: 1.43em;
+        border-radius: 50%;
+        top: 0.25em;
+        left: 0.25em;
+      }
+
+      .alarm input[type="checkbox"]:checked {
+        background-color: #d2e2ff;
+      }
+
+      .alarm input[type="checkbox"]:checked:before {
+        background-color: #377dff;
+        left: 2em;
+      }
+
+      .deleteButton {
+        background-color: transparent;
+        font-size: 1.5em;
+        color: #ff5c5c;
+        border: none;
+        cursor: pointer;
+      }
+
+      span {
+        color: inherit;
+      }
+
+      button {
+        background-color: red;
+        color: white;
+        border: none;
+        margin-left: 1.2rem;
+        border-radius: 0.3rem;
+      }
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-left: 1.2rem;
+      }
     }
-
-    .wrapper-container {
-        margin: 0;
-        display: flex;
-        align-self: center;
-        justify-content: center;
-
-        .inputs {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .btn-add-alarm {
-        background-color: $primaryColor;
-        color: $backgroundColor;
-    }
-
-    #set-alarm {
-        width: 100%;
-
-        input {
-            width: 10vw;
-            height: 5vh;
-            padding-left: .5rem;
-            outline: none;
-            border: none;
-            background-color: $backgroundColor;
-            border-radius: .3rem;
-        }
-
-        .activeAlarms {
-            max-height: 45vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .alarm {
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: rgba($backgroundColor,.3);
-                border-radius: .5rem;
-                margin: .5rem 0;
-                padding: 1.5rem;
-            }
-
-            .alarm {
-                display: grid;
-                grid-template-columns: 8fr 2fr 2fr;
-                gap: 1em;
-                margin-top: .5em;
-                align-items: center;
-                padding: 1rem;
-            }
-
-            .alarm input[type="checkbox"] {
-                appearance: none;
-                height: 2em;
-                width: 3.75em;
-                background-color: #e2e2ec;
-                border-radius: 1.25em;
-                position: relative;
-                cursor: pointer;
-                outline: none;
-            }
-
-            .alarm input[type="checkbox"]:before {
-                position: absolute;
-                content: "";
-                background-color: #757683;
-                height: 1.43em;
-                width: 1.43em;
-                border-radius: 50%;
-                top: 0.25em;
-                left: 0.25em;
-            }
-
-            .alarm input[type="checkbox"]:checked {
-                background-color: #d2e2ff;
-            }
-
-            .alarm input[type="checkbox"]:checked:before {
-                background-color: #377dff;
-                left: 2em;
-            }
-
-            .deleteButton {
-                background-color: transparent;
-                font-size: 1.5em;
-                color: #ff5c5c;
-                border: none;
-                cursor: pointer;
-            }
-
-            span {
-                color: inherit;
-            }
-
-            button {
-                background-color: red;
-                color: white;
-                border: none;
-                margin-left: 1.2rem;
-                border-radius: .3rem;
-            }
-
-            input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
-                margin-left: 1.2rem;
-            }
-        }
-    }
-
+  }
 }
 
-@media (max-width:490px) {
-    .timer {
-        .time {
-            font-size: 2.7rem !important;
-        }
+@media (max-width: 490px) {
+  .timer {
+    .time {
+      font-size: 2.7rem !important;
     }
+  }
 }
