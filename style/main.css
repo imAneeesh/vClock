@@ -1,4 +1,5 @@
 body {
+  background-color: #f0f0f0 !important;
   transition: all 0.3s ease-in-out;
 }
 body a {
@@ -15,6 +16,12 @@ body a:hover {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.main .flip {
+  transition: all 0.5s ease-in-out;
+}
+.main .flip:hover {
+  transform: rotateX(180deg) !important;
 }
 .main .icon {
   width: 30px;
