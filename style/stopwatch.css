@@ -3,17 +3,8 @@
     src: url('.././font/digital-7\ \(mono\).ttf');
 }
 
-#body{
-    background-color: #f0f0f0;
-}
 
-#hero {
-    
-    background-color: #f0f0f0;
-    width: 100%;
-    height: auto;
-    margin: 0;
-}
+
 .dark-mode {
     background: black !important;
     color: white !important;
@@ -43,7 +34,7 @@ span {
 }
 
 .digit {
-    font-size: 3em;
+    font-size: 2rem;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
@@ -83,19 +74,14 @@ span {
 }
 
 .laps {
-    color: white;
+    color: grey;
     list-style: none;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 3px;
-    font-size: 23px;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: .5rem;
     font-weight: 500;
     margin: 10px 0;
-    color: green;
-    box-shadow: 1px 1px 2px 2px grey;
 }
