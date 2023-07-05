@@ -13,6 +13,7 @@ if (localStorage.getItem("lapArray") === null) {
 }
 // localStorage.setItem("lapArray",JSON.stringify([]));
 const hero = document.getElementById("hero");
+const body = document.getElementById("body");
 
 function toggleDarkMode() {
     const toggle = document.getElementById("toggle-mode");
@@ -22,7 +23,7 @@ function toggleDarkMode() {
     } else {
         document.getElementById("toggle-mode").textContent = "Light Mode";
     }
-
+    body.classList.toggle("dark-mode")
     hero.classList.toggle("dark-mode");
 }
 
