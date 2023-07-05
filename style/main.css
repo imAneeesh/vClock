@@ -39,9 +39,6 @@ body a:hover {
 .main .flip {
   transition: all 0.5s ease-in-out;
 }
-.main .flip:hover {
-  transform: rotateX(180deg) !important;
-}
 .main .icon {
   width: 30px;
   height: 30px;
