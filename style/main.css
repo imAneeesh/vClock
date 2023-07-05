@@ -55,7 +55,7 @@ body a:hover {
   background-color: #3a3939;
   color: white;
   height: 100vh;
-  width: calc(100vw - 100px);
+  width: 50vw;
   height: 94vh;
   min-width: 150px;
 }
@@ -172,4 +172,10 @@ body a:hover {
 }
 .main .container .current-time {
   font-size: 24px;
+}
+
+@media (max-width: 490px) {
+  .timer .time {
+    font-size: 1.2rem !important;
+  }
 }/*# sourceMappingURL=main.css.map */
