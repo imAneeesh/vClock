@@ -2,6 +2,10 @@ const menuIcon = document.getElementById("menuIcon");
 const time=document.getElementById("time");
 const day=document.getElementById("day");
 const formateddate = document.getElementById("formateddate");
+const addAlarm = document.getElementById("addAlarm");
+const addForm = document.getElementById("addForm");
+
+
 function clock(){
     const timer = new Date();
     const hours = timer.getHours();
@@ -37,4 +41,8 @@ setInterval(clock, 1000);
 menuIcon.addEventListener("click", () => {
     const menu = document.getElementById("menu");
     menu.classList.toggle("d-none");
-    });
+});
+
+addAlarm.addEventListener("click", () => {
+    addForm.classList.toggle("d-none");
+})

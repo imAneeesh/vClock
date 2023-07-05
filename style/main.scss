@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
@@ -17,6 +19,10 @@ body {
             color: $primaryColor;
         }
     }
+}
+
+.time,.date,.formateddate{
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .main {
@@ -64,6 +70,7 @@ body {
         height: 100vh;
         width: calc(100vw - 100px);
         height: calc(100vh - 6vh);
+        min-width: 150px;
 
         .navbar-container {
             width: 100%;
@@ -155,31 +162,28 @@ body {
 
     .container{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         
         .timer{
-            background-color: white;
-            width: 100%;
-            max-width: 250px;
-            height: 100px;
-            // border-radius: 10px;
-            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-            text-align: center;
+            width: 100vw;
+            max-width: 100%;
+            height: 10%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
-            span{
-                font-size: 32px;
-                font-weight: bold;
-                font-family: 'Roboto', sans-serif;
+            .time{
+                font-size: 3rem;
+                font-weight: 800;
             }
-            .date{
-                font-size: 16px;
+            .date,.formateddate{
+                font-size: 1.2rem;
             }
-            .formateddate{
-                font-size: 12px;
+        }
+        .add-btn{
+            margin: 2rem 0;
+            .btn{
+                
             }
         }
     }
