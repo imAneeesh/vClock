@@ -56,9 +56,9 @@ body {
     .flip {
         transition: all .5s ease-in-out;
 
-        &:hover {
-            transform: rotateX(180deg) !important;
-        }
+        // &:hover {
+        //     transform: rotateX(180deg) !important;
+        // }
     }
 
     .icon {
