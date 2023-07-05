@@ -43,7 +43,7 @@ function displayTimer() {
   const second = seconds < 10 ? '0' + seconds : seconds;
 
   // Display time
-  timerRef.innerHTML = `${hour12}:${minute}:${second}`;
+  // timerRef.innerHTML = `${hour12}:${minute}:${second}`;
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
