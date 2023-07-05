@@ -40,6 +40,7 @@ function reset() {
     // display.innerHTML='';
     lapsBtn.disabled=true;
     startBtn.disabled=false;
+    stopBtn.disabled=true;
     
   timer = false;
   hr = 0;
@@ -142,4 +143,10 @@ if(timer == true){
     setTimeout("stopwatch()", 10);
 }
 }
+
+
+
+
+
+
 display();
