@@ -231,6 +231,51 @@ body a:hover {
   margin: 0.5rem 0;
   padding: 1.5rem;
 }
+.main #set-alarm .activeAlarms .alarm {
+  display: grid;
+  grid-template-columns: 8fr 2fr 2fr;
+  gap: 1em;
+  margin-top: 1.5em;
+  align-items: center;
+  border-bottom: 1px solid #898f9b;
+  padding-bottom: 0.6em;
+}
+.main #set-alarm .activeAlarms .alarm input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2em;
+  width: 3.75em;
+  background-color: #e2e2ec;
+  border-radius: 1.25em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.main #set-alarm .activeAlarms .alarm input[type=checkbox]:before {
+  position: absolute;
+  content: "";
+  background-color: #757683;
+  height: 1.43em;
+  width: 1.43em;
+  border-radius: 50%;
+  top: 0.25em;
+  left: 0.25em;
+}
+.main #set-alarm .activeAlarms .alarm input[type=checkbox]:checked {
+  background-color: #d2e2ff;
+}
+.main #set-alarm .activeAlarms .alarm input[type=checkbox]:checked:before {
+  background-color: #377dff;
+  left: 2em;
+}
+.main #set-alarm .activeAlarms .deleteButton {
+  background-color: transparent;
+  font-size: 1.5em;
+  color: #377dff;
+  border: none;
+  cursor: pointer;
+}
 .main #set-alarm .activeAlarms span {
   color: inherit;
 }
