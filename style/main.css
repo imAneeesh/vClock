@@ -125,54 +125,55 @@ body a:hover {
   width: 20px;
   margin: 0.5rem;
 }
-.main .container {
+.main .my-container {
   display: flex;
   flex-direction: column;
 }
-.main .container h1 {
+.main .my-container h1 {
   text-align: center;
 }
-.main .container .clock-container {
+.main .my-container .clock-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
   margin-top: 20px;
 }
-.main .container .clock-card {
+.main .my-container .clock-card {
   border: 1px solid #ccc;
   padding: 20px;
   text-align: center;
 }
-.main .container .country-name {
+.main .my-container .country-name {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.main .container .current-time {
+.main .my-container .current-time {
   font-size: 24px;
 }
-.main .container .dark-mode {
+.main .my-container .dark-mode {
   background-color: black;
   color: white;
 }
-.main .container .header {
+.main .my-container .header {
   display: flex;
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.main .container .btn {
+.main .my-container .btn {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
-.main .container .btn:hover {
+.main .my-container .btn:hover {
   background-color: skyblue;
 }
 .main .clock {
   max-height: 90vh;
   overflow-y: auto;
+  width: 100vw;
 }
 .main .timer {
   width: 100%;

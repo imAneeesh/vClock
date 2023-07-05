@@ -161,7 +161,7 @@ body {
         }
     }
 
-    .container{
+    .my-container{
         display: flex;
         flex-direction: column;
         h1 {
@@ -219,6 +219,7 @@ body {
     .clock{
     max-height: 90vh;
     overflow-y: auto;
+    width: 100vw;
     }
     .timer{
         width: 100%;
