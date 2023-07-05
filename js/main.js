@@ -1,6 +1,7 @@
 const menuIcon = document.getElementById("menuIcon");
 const time=document.getElementById("time");
-
+const day=document.getElementById("day");
+const formateddate = document.getElementById("formateddate");
 function clock(){
     const timer = new Date();
     const hours = timer.getHours();
@@ -13,7 +14,22 @@ function clock(){
     const second = seconds < 10 ? '0' + seconds : seconds;
     const time12 = hour12 + ':' + minute + ':' + second + ' ' + ampm;
     time.innerHTML = time12;
-    console.log(second)
+
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const dayIndex = timer.getDay();
+    const dayOfWeek = daysOfWeek[dayIndex];
+    day.innerHTML = dayOfWeek;
+    console.log(dayOfWeek);
+
+    const year = timer.getFullYear();
+    const month = timer.getMonth() + 1; // Months are zero-based, so adding 1
+    const days = timer.getDate();
+    const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${days< 10 ? '0' + days : days}`;
+    formateddate.innerHTML = formattedDate;
+    console.log(formattedDate);
+    
+
+
 }
 
 setInterval(clock, 1000);

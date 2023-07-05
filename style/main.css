@@ -29,6 +29,11 @@ body a:hover {
   color: #0090dd;
   transform: scale(1.01);
 }
+.main .active {
+  background-color: #f0f0f0 !important;
+  color: #3a3939;
+  border: #f0f0f0 !important;
+}
 .main #menu {
   overflow: hidden;
   margin: 0;
@@ -119,6 +124,7 @@ body a:hover {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -126,4 +132,10 @@ body a:hover {
   font-size: 32px;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+}
+.main .container .timer .date {
+  font-size: 16px;
+}
+.main .container .timer .formateddate {
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */
