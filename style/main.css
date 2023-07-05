@@ -144,4 +144,7 @@ body a:hover {
 }
 .main .container .timer .date, .main .container .timer .formateddate {
   font-size: 1.2rem;
+}
+.main .container .add-btn {
+  margin: 2rem 0;
 }/*# sourceMappingURL=main.css.map */
