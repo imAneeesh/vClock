@@ -7,6 +7,7 @@ $backgroundColor: #f0f0f0;
 // *{
 //     border: 1px solid red;
 // }
+
 body {
     background-color: $backgroundColor !important;
     transition: all .3s ease-in-out;
@@ -68,7 +69,7 @@ body {
         background-color: $secondaryColor;
         color: white;
         height: 100vh;
-        width: calc(100vw - 100px);
+        width: calc(100vw - 50vw);
         height: calc(100vh - 6vh);
         min-width: 150px;
 
@@ -164,41 +165,60 @@ body {
         display: flex;
         flex-direction: column;
         
-        .timer{
-            width: 100%;
-            max-width: 100%;
-            height: 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .time{
-                font-size: 3rem;
-                font-weight: 800;
-            }
-            .date,.formateddate{
-                font-size: 1.2rem;
-            }
+        
+       
+    }
+    .timer{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .time{
+            font-size: 2.3rem;
+            font-weight: 800;
         }
-        .add-btn{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 2rem 0;
-            .btn-add-alarm{
-                background-color: $primaryColor;
-                color: $backgroundColor;
+        .date,.formateddate{
+            font-size: 1.2rem;
+        }
+    }
+    .btn-add-alarm{
+        background-color: $primaryColor;
+        color: $backgroundColor;
+    }
+    #set-alarm{
+        width: 50vw;
+        input{
+            width: 10vw;
+            outline: none;
+                border: none;
+                border-radius: .3rem;
+
+        }
+        .activeAlarms{
+
+            button{
+            background-color: red;
+            color: white;
+            border: none;
+            margin-left: 1.2rem;
+
+            }
+            input[type="checkbox"]{
+                width: 15px;
+                height: 15px;
+                margin-left: 1.2rem;
             }
         }
     }
 
 }
 
-@media  (max-width:600px) {
-   .timer{
-    .time{
-        font-size: 1.5rem !important;
+@media (max-width:490px){
+    .timer{
+        .time{
+            font-size: 1.2rem !important;
+        }
     }
-   }
 }
-    
