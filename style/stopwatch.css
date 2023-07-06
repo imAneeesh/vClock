@@ -82,11 +82,19 @@ ul{
     height: 1vh;
 }
 
+.deleteButton {
+    background-color: transparent;
+    font-size: 1.5em;
+    color: #ff5c5c;
+    border: none;
+    cursor: pointer;
+  }
+
 .laps { 
     color: black;
     text-decoration: none;
     list-style-type: none;
-    padding: .4rem;
+    padding: 1rem;
     border-radius: .5rem;
     font-weight: 500;
     margin: 10px 0;

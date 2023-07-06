@@ -12,13 +12,7 @@
 }
 
 
-.inputs{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    
-}
+
 
 .base-timer {
     position: relative;
@@ -50,17 +44,7 @@
     stroke: currentColor;
 }
 
-.base-timer__path-remaining.green {
-    color: #3b74c9;
-}
 
-.base-timer__path-remaining.orange {
-    color: orange;
-}
-
-.base-timer__path-remaining.red {
-    color: red;
-}
 
 .base-timer__label {
     position: absolute;

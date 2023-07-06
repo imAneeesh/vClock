@@ -82,7 +82,10 @@ function onTimesUp() {
     timerInterval = undefined;
     startNewTimer()
 }
-
+function onTimeUp() {
+    clearInterval(timerInterval);
+    timerInterval = undefined;
+}
 
 
 function startTimer() {
@@ -161,7 +164,7 @@ function pauseTimer() {
 
     resume.classList.remove("d-none");
     pause.classList.add("d-none");
-    onTimesUp();
+    onTimeUp();
 }
 function resumeTimer() {
 
@@ -172,12 +175,7 @@ function resumeTimer() {
 }
 
 function startNewTimer(){
-    pause.classList.add("d-none");
-    reset.classList.add("d-none");
-    resume.classList.add("d-none");
-    newtimer.classList.add("d-none");
-    inputs.classList.remove("d-none");
-    count.classList.remove("d-none");
+    window.location.reload();
 }
 function resetTimer() {
     newtimer.classList.remove("d-none");
