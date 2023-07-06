@@ -39,6 +39,10 @@ body {
   }
 }
 
+.laps{
+  background-color: #deebff !important;
+}
+
 .dark-mode {
   background: rgb(36, 36, 36) !important;
   color: white !important;
@@ -113,6 +117,14 @@ body {
     padding: .5rem;
     background-color: rgba($secondaryColor,.2);
     color: $backgroundColor !important;
+  }
+
+  .time-cell,.type-cell,.type-cells{
+    background-color: rgba($secondaryColor,.4) !important;
+    color: $backgroundColor !important;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
   }
 
   #menu {

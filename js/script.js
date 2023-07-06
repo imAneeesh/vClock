@@ -54,7 +54,7 @@ function displayTimer() {
         // new Notification("hello thwere");
         console.log("Alarm");
         alarmSound.play();
-        while (notificationCount < 3) {
+        while (notificationCount < 1) {
           const notification = new Notification("Alarm", {
             body: "Alarm is ringing",
             icon: "./images/logo.png",
@@ -97,6 +97,15 @@ const createAlarm = (alarmObj) => {
   // Checkbox
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
+
+  if(alarmObj.isActive==true){
+    checkbox.setAttribute("checked", "checked");
+  }else{
+    checkbox.removeAttribute("checked");
+  }
+  
+
+
   checkbox.addEventListener("click", (e) => {
     if (e.target.checked) {
       notificationCount = 0;
@@ -142,6 +151,7 @@ const startAlarm = (e) => {
     alarmsArray[index].isActive = true;
     // Save to local storage
     localStorage.setItem("alarms", JSON.stringify(alarmsArray));
+    console.log(alarmsArray);
   }
 };
 
@@ -154,6 +164,7 @@ const stopAlarm = (e) => {
     alarmSound.pause();
     // Save to local storage
     localStorage.setItem("alarms", JSON.stringify(alarmsArray));
+    console.log(alarmsArray);
   }
 };
 
