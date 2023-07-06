@@ -81,8 +81,14 @@
   align-items: center;
   justify-content: center;
   font-size: 42px;
+  @media screen and (min-width: 270px) {
+    height: 70%;
+  }
+  @media screen and (min-width: 370px) {
+    height: 90%;
+  }
   @media screen and (min-width: 410px) {
-    height: 60%;
+    height: 90%;
   }
   @media screen and (min-width: 444px) {
     height: 30vh;
