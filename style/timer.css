@@ -82,18 +82,21 @@
   justify-content: center;
   font-size: 42px;
   @media screen and (min-width: 270px) {
-    height: 70%;
-  }
-  @media screen and (min-width: 370px) {
     height: 90%;
+  }
+  @media screen and (min-width: 390px) {
+    height: 50%;
   }
   @media screen and (min-width: 410px) {
-    height: 90%;
+    height: 50%;
   }
   @media screen and (min-width: 444px) {
     height: 30vh;
   }
 }
+/* .phone{
+height: 50%;
+} */
 
 .pause-btn {
   background-color: #FF9800 !important;

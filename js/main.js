@@ -11,6 +11,8 @@ function toggleDarkMode() {
 menuIcon.addEventListener("click", () => {
     const menu = document.getElementById("menu");
     menu.classList.toggle("d-none");
+    const element = document.querySelector(".base-timer__label")
+    element.classList.toggle("phone");
 });
 
 
