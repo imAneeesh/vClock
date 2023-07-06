@@ -27,29 +27,30 @@
         <div class="top-bar">
           <div id="menuIcon" class="menu-icon">
             <span class="menu">
-              <i class="fa-solid ps-3 fa-xl text-white flip fa-bars"></i>
+              <i class="fa-solid  ps-3 fa-xl d-lg-none text-white flip fa-bars"></i>
             </span>
+            <div class="logo d-none d-lg-block">
+              <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
+            </div>
           </div>
-          <div class="logo">
+          <div class="logo d-lg-none">
             <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
           </div>
           <div class="setting">
-                <span><button onclick="toggleDarkMode()" class="btn" id="toggle-mode">
-                    Dark Mode
-                  </button></span>
-            <i class="menu fa-solid pe-3 text-white fa-gear flip fa-xl"></i>
+            <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
+                class="fa-solid fa-xl pe-3 fa-sun"></i></span>
           </div>
         </div>
       </div>
       <div class="d-flex">
-        <div id="menu" class="navbar">
+        <div id="menu" class="navbar d-none d-lg-block">
           <div class="navbar-container">
             <div class="nav-links">
               <ul>
                 <a href="#">
                   <li class="active">
                     <img
-                      src="./assets/clock.png"
+                      src="./assets/stopwatch.png"
                       class="icon"
                       alt="logo"
                     />Alarm Clock<i
@@ -71,7 +72,7 @@
                 <a href="timer.html">
                   <li class="menu">
                     <img
-                      src="./assets/stopwatch.png"
+                      src="./assets/chronometer.png"
                       class="icon"
                       alt="logo"
                     />Timer<i class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
@@ -80,7 +81,7 @@
                 <a href="time.html">
                   <li class="menu">
                     <img
-                      src="./assets/chronometer.png"
+                      src="./assets/clock.png"
                       class="icon"
                       alt="logo"
                     />Time<i class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
@@ -98,17 +99,15 @@
           </div>
           <div class="d-flex flex-column justify-center align-items-center">
             <div class="add-btn">
-              <button id="addAlarm" class="btn btn-add-alarm">Add Alarm</button>
+              <button id="addAlarm" class="btn mt-3 btn-add-alarm">Add Alarm</button>
             </div>
             <div id="addForm" class="alarm-form d-none">
               <div class="wrapper">
-                <div
-                  class="container mt-2 d-flex gap-2 flex-column justify-center align-items-center"
+                <div class="wrapper-container mt-2 d-flex gap-2 flex-column justify-center align-items-center"
                 
                 id="set-alarm"  >
-                  <div class="timer-display">00:00:00</div>
 
-                  <div class="inputs">
+                  <div class="inputs d-flex gap-3 mt-4">
                     <input
                       type="number"
                       id="hourInput"
@@ -124,7 +123,9 @@
                       min="0"
                       max="59"
                     />
-                    <button id="set" class="btn btn-sm btn-success">+</button>
+                    <button id="set" class="btn btn-md btn-success">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
                   </div>
                   <div class="activeAlarms"></div>
                 </div>
@@ -144,6 +145,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/alarm.js"></script>
   <script src="./js/script.js"></script>
   </body>
 </html>

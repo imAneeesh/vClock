@@ -42,17 +42,15 @@ function displayTimer() {
   const minute = minutes < 10 ? '0' + minutes : minutes;
   const second = seconds < 10 ? '0' + seconds : seconds;
 
-  // Display time
-  // timerRef.innerHTML = `${hour12}:${minute}:${second}`;
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     console.log(hour12, minute)
     if (alarm.isActive) {
       if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
+        // new Notification("hello thwere");
         console.log("Alarm");
         alarmSound.play();
-        alarmSound.loop = true;
       }
     }
   });
