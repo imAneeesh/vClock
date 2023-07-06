@@ -13,9 +13,15 @@ const resume = document.getElementById("resume");
 const reset = document.getElementById("reset");
 const inputs = document.getElementById("inputs");
 const newtimer=document.getElementById("newtimer");
+ const errMsg = document.getElementById("blur");
+
+function toggleBlur(){
+    
+    errMsg.classList.add("d-none")
+}
 
 function set(){
-    const errMsg = document.getElementById("error-msg");
+   
      TIME_LIMIT = document.getElementById("time").value;
      
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
@@ -23,7 +29,7 @@ function set(){
       document.getElementById("time").value = "";
        return;
      }
-     errMsg.classList.add("d-none")
+    //  errMsg.classList.add("d-none")
     inputs.classList.add("d-none");
     count.classList.add("d-none");
     pause.classList.remove("d-none");

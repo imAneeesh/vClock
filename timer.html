@@ -131,7 +131,14 @@
           </select>
           
         </div>
-        <span id="error-msg" class="d-none">Negative or Empty value not allowed</span>
+        <!-- <span id="error-msg" class="d-none">Negative or Empty value not allowed</span> -->
+        <div class="d-none" id="blur">
+          <div class="err-content">
+            <h1 class="heading">Error</h1>
+            <h2>Negative and Empty Value not allowed</h2>
+            <a href="" onclick="toggleBlur()">Close</a>
+          </div>
+        </div>
         <div class="btns d-flex gap-2">
           
           <input id="count"  type="button" class="btn background-primary text-white" onclick="set()" value="Start" />

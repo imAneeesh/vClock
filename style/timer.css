@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-#error-msg
+/* #error-msg
 {
  display: flex;
  align-items: center;
@@ -12,6 +12,47 @@
  margin-bottom: 10px;
  color: red;
  
+} */
+#blur{
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%,-50%);
+  
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px ;
+  z-index: 999;
+  box-shadow: 2px 2px 8px rgb(180, 174, 174);
+  
+}
+.heading{
+  text-align: center;
+  color: red;
+}
+
+#blur .err-content{
+  position: relative;
+  max-width: 800px;
+}
+#blur .err-content h2{
+  margin-bottom: 10px;
+  color: red ;
+  font-size: 20px;
+}
+.err-content a{
+  position: relative;
+  padding: 7px 20px;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: red;
 }
 .btns {
   display: flex;
