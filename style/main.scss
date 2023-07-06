@@ -84,9 +84,10 @@ body {
         background-color: $primaryColor;
         background-color: $secondaryColor;
         color: white;
-        height: 100vh;
+        // height: 100vh;
         width: calc(100vw - 50vw);
-        height: calc(100vh - 6vh);
+        min-height: calc(100vh - 6vh);
+        height: auto !important;
         min-width: 150px;
 
         .navbar-container {

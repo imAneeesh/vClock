@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Notification feature</h1>
+    <script>
+        if("Notification" in window){
+           if(Notification.permission === "granted"){
+            console.log("notification granted");
+           }
+           else{
+            Notification.requestPermission().then((res)=>{
+                if(res === "granted"){
+                   notify();
+                }
+                else if(res ==="denied"){
+                    console.log("permission dniedd");
+                }
+                else{
+                    console.log("permisssion has to granted");
+                }
+            })
+           }
+           function notify() {
+                
+                new Notification("");
+            }
+        }
+        
+    </script>
+</body>
+</html>
