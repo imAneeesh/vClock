@@ -36,6 +36,11 @@ body a:hover {
   color: rgb(255, 255, 255) !important;
 }
 
+.lighty-mode {
+  background-color: #f0f0f0 !important;
+  color: #3a3939 !important;
+}
+
 .time,
 .date,
 .formateddate {
@@ -73,9 +78,8 @@ body a:hover {
   transform: scale(1.01);
 }
 .main .active {
-  background-color: #f0f0f0 !important;
-  color: #3a3939;
-  border: #f0f0f0 !important;
+  background: rgb(36, 36, 36);
+  color: rgb(255, 255, 255);
 }
 .main #hero {
   max-height: 100vh;

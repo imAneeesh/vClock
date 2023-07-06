@@ -3,10 +3,12 @@ const element = document.body;
 const modeIcon = document.getElementById("modeIcon");
 const topbar=document.getElementById("top-bar");
 const menubar=document.getElementById("menu");
+const activeMenu=document.querySelectorAll(".active"); 
 function toggleDarkMode() {
     modeIcon.classList.toggle("fa-moon");
-    topbar.classList.toggle("dark-mode");
-    menubar.classList.toggle("dark-mode");
+    // topbar.classList.toggle("dark-mode");
+    // menubar.classList.toggle("dark-mode");
+    activeMenu[0].classList.toggle("lighty-mode");
     element.classList.toggle("dark-mode");
 }
 

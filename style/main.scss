@@ -48,6 +48,10 @@ body {
   color: rgb(255, 255, 255) !important;
 
 }
+.lighty-mode{
+  background-color: $backgroundColor !important;
+    color: $secondaryColor !important;
+}
 
 .time,
 .date,
@@ -96,9 +100,8 @@ body {
   }
 
   .active {
-    background-color: $backgroundColor !important;
-    color: $secondaryColor;
-    border: $backgroundColor !important;
+    background: rgb(36, 36, 36);
+    color: rgb(255, 255, 255) ;  
   }
 
   #hero {
