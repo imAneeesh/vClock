@@ -67,7 +67,8 @@
           </div>
         </div>
       </div>
-      <div class="container d-flex flex-column align-items-center gap-3 p-1" id="hero">
+      <div class="container " id="hero">
+       <div class="custom-card my-3 d-flex flex-column align-items-center gap-3 p-1">
         <div id="timeElement">
           <span class="digit" id="hr">00</span>
           <span class="text">hr</span>
@@ -98,10 +99,17 @@
             Laps
           </button>
         </div>
-        <button id="clearall" class="btn background-primary mt-2 text-white" onclick="clearLap()">Clear Laps
-        &nbsp; <i class="fa-solid fa-trash color-red"></i>
-        </button>
         <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
+        <button id="clearall" class="btn btn-danger mt-2 text-white" onclick="clearLap()">Clear All</button>
+
+      </div>
+      <div class="custom-card  my-2 p-3">
+        <div class="h2">How to use the online stopwatch</div>
+        <hr />
+        <div class="display-7 ">Set the hour and minute for the online alarm clock. The alarm message will appear, and the preselected sound will be played at the set time.
+          The online stopwatch counts the time to the millisecond that passes after you click the "Start" button. It allows you to add laps. If you close the stopwatch, the value and laps will be automatically saved. If the period is sufficiently large, the number of days passed will be displayed, too.          
+          Click the "Start" or "Stop" buttons to start or stop the stopwatch. Click the "Lap" button to add one lap and the current stopwatch value to the lap list. To reset laps and the stopwatch value, click the "Reset" button (the button appears when the stopwatch is stopped).          
+      </div>
       </div>
     </div>
   </div>

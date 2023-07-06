@@ -39,6 +39,11 @@ span {
     font-family: 'digital-clock-font';
 }
 
+.list-group{
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+
 .text {
     font-size: 2rem;
     font-weight: bold;

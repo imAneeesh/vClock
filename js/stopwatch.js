@@ -95,15 +95,29 @@ function display() {
     }
 
     const ulElement = document.createElement("ul");
-
+    ulElement.classList.add("list-group");
     // Clear existing content of displayElement
     displayElement.innerHTML = "";
-
-    displayParseItem.forEach((element) => {
+    displayParseItem.forEach((element,i) => {  
         const listItem = document.createElement("li");
-        listItem.classList.add("laps");
-        listItem.textContent = element;
+        const spanItem=document.createElement("span"); 
+        const spanItem2=document.createElement("span");
+        const buttonItem=document.createElement("button");    
+        const iconItem=document.createElement("i");
+        iconItem.classList.add("fa","fa-trash");
+        spanItem.textContent=i+1;
+        spanItem2.textContent = element;
+        listItem.classList.add("laps","d-flex","justify-center","align-center","gap-3")
+        buttonItem.classList.add("btn","btn-sm","btn-danger","ml-auto","delete");
+        buttonItem.appendChild(iconItem);
+        listItem.appendChild(spanItem);
+        listItem.appendChild(spanItem2);
+        listItem.appendChild(buttonItem);
         ulElement.appendChild(listItem);
+        buttonItem.addEventListener("click", () => {
+            clearLapItem(i);
+          })
+    
     });
 
     displayElement.appendChild(ulElement);
@@ -111,11 +125,24 @@ function display() {
 
 function clearLap() {
     empty = localStorage.getItem("lapArray");
+    
     emptyArray = JSON.parse(empty);
     emptyArray = [];
     localStorage.setItem("lapArray", JSON.stringify(emptyArray));
+    document.getElementById("clearall").classList.add('d-none')
     display();
 }
+function clearLapItem(index) {
+    const storedLaps = localStorage.getItem("lapArray");
+    let lapArray = JSON.parse(storedLaps);
+  
+    if (lapArray && lapArray.length > index) {
+      lapArray.splice(index, 1); // Remove the lap item at the specified index
+      localStorage.setItem("lapArray", JSON.stringify(lapArray));
+      display();
+    }
+  }
+  
 
 function stopwatch() {
     if (timer == true) {
