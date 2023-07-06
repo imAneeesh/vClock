@@ -2,15 +2,11 @@ const menuIcon = document.getElementById("menuIcon");
 const element = document.body;
 const modeIcon = document.getElementById("modeIcon");
 const topbar=document.getElementById("top-bar");
-<<<<<<< HEAD
-const menubar=document.getElementById("menu");
 const repeatDiv = document.getElementById("repeatDiv");
 const repeatCheckbox = document.getElementById("repeatCheckbox");
 const cancel = document.getElementById("cancel");
-=======
 const menubar=document.getElementById("menu-bar");
 const activeMenu=document.querySelectorAll(".active"); 
->>>>>>> e41a1411366a5a0cbf0306b094835bc1b9cbe373
 
 function toggleDarkMode() {
     modeIcon.classList.toggle("fa-moon");
