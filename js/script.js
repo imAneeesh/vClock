@@ -48,10 +48,8 @@ function displayTimer() {
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
-    console.log(hour12, minute)
     if (alarm.isActive) {
       if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
-        console.log("Alarm");
         alarmSound.play();
         while (notificationCount < 1) {
           const notification = new Notification("Alarm", {
@@ -102,7 +100,7 @@ const createAlarm = (alarmObj) => {
   }else{
     checkbox.removeAttribute("checked");
   }
-  
+
 
 
   checkbox.addEventListener("click", (e) => {
@@ -132,7 +130,6 @@ setAlarm.addEventListener("click", () => {
   alarmObj.alarmHour = hourInput.value;
   alarmObj.alarmMinute = minuteInput.value;
   alarmObj.isActive = false;
-  console.log(alarmObj);
   alarmsArray.push(alarmObj);
   createAlarm(alarmObj);
   hourInput.value = appendZero(initialHour);
@@ -150,7 +147,6 @@ const startAlarm = (e) => {
     alarmsArray[index].isActive = true;
     // Save to local storage
     localStorage.setItem("alarms", JSON.stringify(alarmsArray));
-    console.log(alarmsArray);
   }
 };
 
@@ -163,7 +159,6 @@ const stopAlarm = (e) => {
     alarmSound.pause();
     // Save to local storage
     localStorage.setItem("alarms", JSON.stringify(alarmsArray));
-    console.log(alarmsArray);
   }
 };
 

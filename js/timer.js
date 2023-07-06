@@ -28,7 +28,6 @@ function set(){
     else if(interval=="hours"){
         TIME_LIMIT=TIME_LIMIT*60*60;
     }
-    console.log(TIME_LIMIT);1
 
     timeLeft = TIME_LIMIT;
     document.getElementById("time").value = "";
@@ -168,7 +167,6 @@ function resumeTimer() {
 
     pause.classList.remove("d-none");
     resume.classList.add("d-none");
-    console.log(timerInterval);
     if (!timerInterval)
         startTimer();
 }
