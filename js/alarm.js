@@ -35,6 +35,6 @@ function clock() {
 
 setInterval(clock, 1000);
 
-addAlarm.addEventListener("click", () => {
-    addForm.classList.toggle("d-none");
-})
+// addAlarm.addEventListener("click", () => {
+//     addForm.classList.toggle("d-none");
+// })

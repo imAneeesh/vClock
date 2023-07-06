@@ -8,7 +8,7 @@
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
-
+$placeholderColor:#757575;
 .background-primary {
   background-color: $primaryColor !important;
 }
@@ -17,8 +17,8 @@ $backgroundColor: #f0f0f0;
   color: $primaryColor !important;
 }
 
-.color-red{
-    color: rgba(rgb(216, 26, 26),.7) !important;
+.color-red {
+  color: rgba(rgb(216, 26, 26), .7) !important;
 }
 
 // *{
@@ -39,9 +39,19 @@ body {
   }
 }
 
+.laps {
+  background-color: rgba($secondaryColor, .2) !important;
+  color: $placeholderColor !important;
+}
+
 .dark-mode {
   background: rgb(36, 36, 36) !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
+
+}
+.lighty-mode{
+  background-color: $backgroundColor !important;
+    color: $secondaryColor !important;
 }
 
 .time,
@@ -57,8 +67,8 @@ body {
   margin: 0;
   padding: 0;
 
-  .custom-card{
-    border: .1rem solid rgba($secondaryColor,.4);
+  .custom-card {
+    border: .1rem solid rgba($secondaryColor, .4);
     border-radius: .5rem;
   }
 
@@ -91,32 +101,119 @@ body {
   }
 
   .active {
-    background-color: $backgroundColor !important;
-    color: $secondaryColor;
-    border: $backgroundColor !important;
+    background: rgb(36, 36, 36);
+    color: rgb(255, 255, 255) ;  
   }
 
-  #hero{
+  #hero {
     max-height: 100vh;
     overflow-y: auto;
   }
 
-  .time-input{
-    background-color: rgba($secondaryColor,.4) !important;
+  .time-input {
+    background-color: rgba($secondaryColor, .4) !important;
     color: $backgroundColor !important;
   }
 
-  #search{
+  #search {
     border: none;
     outline: none;
     border-radius: .5rem;
     padding: .5rem;
-    background-color: rgba($secondaryColor,.2);
+    background-color: rgba($secondaryColor, .2);
     color: $backgroundColor !important;
+  }
+  .base-timer__path-remaining.green {
+    color: rgba($primaryColor,1);
+}
+
+.base-timer__path-remaining.orange {
+    color: rgba(#FF9800,.4);
+}
+
+.base-timer__path-remaining.red {
+    color: rgba(red,.4)
+}
+
+  select {
+    color: $placeholderColor !important;
+    option {
+      background-color: rgba($secondaryColor, .2) !important;      
+    }
+  }
+  
+  
+
+  .time-cell,
+  .type-cell{
+    background-color: rgba($secondaryColor, .2) !important;      
+    color: $backgroundColor;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+    option{
+      background-color: rgba($secondaryColor, .2) !important;      
+      color: $secondaryColor;
+    }
+  }
+  #menu-bar {
+    position: fixed;
+    z-index: 999;
+    margin: 0;
+    color: white;
+    width: 70vw;
+    height: 100%;
+    background-color: transparent;
+
+    .navbar-container {
+      box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
+      background-color: #3a3838;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .nav-links {
+        width: 100%;
+
+        ul {
+          width: 100%;
+          padding: 0;
+
+          li {
+            width: 100%;
+            padding: 0 1rem;
+            font-size: 20px;
+            height: 10vh;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: start;
+            list-style-type: none;
+
+            a {
+              text-decoration: none;
+              color: white;
+            }
+
+            img {
+              width: 30px;
+              height: 30px;
+            }
+
+         
+          }
+        }
+      }
+    }
+
   }
 
   #menu {
- 
+
     margin: 0;
     background-color: $primaryColor;
     background-color: $secondaryColor;
@@ -153,8 +250,6 @@ body {
             display: flex;
             justify-content: start;
             list-style-type: none;
-            border-bottom: 1px solid rgb(82, 82, 82);
-            border-top: 1px solid rgb(82, 82, 82);
 
             a {
               text-decoration: none;
@@ -227,16 +322,15 @@ body {
     }
 
     .clock-card {
-      border: 1px solid #ccc;
-      background-color: rgba($backgroundColor, 0.1);
+      background-color: rgba($secondaryColor, 0.2);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
       transition: all 0.3s ease-in-out;
+      border: 1px solid $primaryColor;
       &:hover {
         cursor: pointer;
-        transform: scale(1.03);
-        border: 1px solid $primaryColor;
+        box-shadow: 0px 0px 15px $primaryColor;
       }
     }
 
@@ -266,13 +360,8 @@ body {
       cursor: pointer;
     }
 
-        .clock-card {
-            border: 1px solid #ccc;
-            background-color: rgba($backgroundColor, .3);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
+   
+
     .btn:hover {
       background-color: skyblue;
     }
@@ -309,11 +398,36 @@ body {
     align-self: center;
     justify-content: center;
 
-    .inputs {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+   
+  }
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      background-color: rgba($secondaryColor, .2) !important;      
+      font-weight: 600;
+      &::placeholder{
+        color:$placeholderColor;
+        padding-left: .4rem;
+      }
     }
+  }
+
+  .btn-add-alarm {
+    background-color: $primaryColor;
+    color: $backgroundColor;
+  }
+
+
+  .wrapper-container {
+    margin: 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+   
   }
 
   .btn-add-alarm {
@@ -327,15 +441,20 @@ body {
     input {
       width: 10vw;
       height: 5vh;
-      padding-left: 0.5rem;
+      padding-left: .5rem;
       outline: none;
       border: none;
-      background-color: $backgroundColor;
-      border-radius: 0.3rem;
+      background-color: rgba($secondaryColor, .2);
+      color:$placeholderColor !important;
+      border-radius: .3rem;
+      &::placeholder{
+        color:$placeholderColor;
+        padding-left: .4rem;
+      }
     }
 
     .activeAlarms {
-      max-height: 10vh;
+      max-height: 28vh;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -347,17 +466,17 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba($secondaryColor, 0.4) !important;
-        border-radius: 0.5rem;
-        margin: 0.5rem 0;
-        padding: 1.5rem;
+        background-color: rgba($secondaryColor, .2);
+        border-radius: .5rem;
+        margin: .5rem 0;
+        padding: 1rem;
       }
 
       .alarm {
         display: grid;
         grid-template-columns: 8fr 2fr 2fr;
         gap: 1em;
-        margin-top: 0.5em;
+        margin-top: .5em;
         align-items: center;
         padding: 1rem;
       }
@@ -401,138 +520,32 @@ body {
         cursor: pointer;
       }
 
-      
+      span {
+        color: inherit;
+      }
 
       button {
         background-color: red;
         color: white;
         border: none;
         margin-left: 1.2rem;
-        border-radius: 0.3rem;
+        border-radius: .3rem;
       }
 
-    
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-left: 1.2rem;
+      }
     }
   }
-
-    .wrapper-container {
-        margin: 0;
-        display: flex;
-        align-self: center;
-        justify-content: center;
-
-        .inputs {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .btn-add-alarm {
-        background-color: $primaryColor;
-        color: $backgroundColor;
-    }
-
-    #set-alarm {
-        width: 100%;
-
-        input {
-            width: 10vw;
-            height: 5vh;
-            padding-left: .5rem;
-            outline: none;
-            border: none;
-            background-color: rgba($backgroundColor,.3);
-            border-radius: .3rem;
-        }
-
-        .activeAlarms {
-            max-height: 28vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .alarm {
-                width: 80%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: rgba($backgroundColor,.3);
-                border-radius: .5rem;
-                margin: .5rem 0;
-                padding: 1.5rem;
-            }
-
-            .alarm {
-                display: grid;
-                grid-template-columns: 8fr 2fr 2fr;
-                gap: 1em;
-                margin-top: .5em;
-                align-items: center;
-                padding: 1rem;
-            }
-
-            .alarm input[type="checkbox"] {
-                appearance: none;
-                height: 2em;
-                width: 3.75em;
-                background-color: #e2e2ec;
-                border-radius: 1.25em;
-                position: relative;
-                cursor: pointer;
-                outline: none;
-            }
-
-            .alarm input[type="checkbox"]:before {
-                position: absolute;
-                content: "";
-                background-color: #757683;
-                height: 1.43em;
-                width: 1.43em;
-                border-radius: 50%;
-                top: 0.25em;
-                left: 0.25em;
-            }
-
-            .alarm input[type="checkbox"]:checked {
-                background-color: #d2e2ff;
-            }
-
-            .alarm input[type="checkbox"]:checked:before {
-                background-color: #377dff;
-                left: 2em;
-            }
-
-            .deleteButton {
-                background-color: transparent;
-                font-size: 1.5em;
-                color: #ff5c5c;
-                border: none;
-                cursor: pointer;
-            }
-
-            span {
-                color: inherit;
-            }
-
-            button {
-                background-color: red;
-                color: white;
-                border: none;
-                margin-left: 1.2rem;
-                border-radius: .3rem;
-            }
-
-            input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
-                margin-left: 1.2rem;
-            }
-        }
-    }
-
+  .repeat-div{
+    background-color: red;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (max-width: 490px) {

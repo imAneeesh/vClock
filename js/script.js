@@ -10,6 +10,7 @@ let initialHour = 0,
   initialMinute = 0,
   alarmIndex = 0;
 
+let daysOfWeek = [];
 
 // Append zeroes for single digit
 const appendZero = (value) => (value < 10 ? "0" + value : value);
@@ -48,12 +49,10 @@ function displayTimer() {
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
-    console.log(hour12, minute)
     if (alarm.isActive) {
-      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
-        console.log("Alarm");
+      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(date.getDay())) {
         alarmSound.play();
-        while (notificationCount < 3) {
+        while (notificationCount < 1) {
           const notification = new Notification("Alarm", {
             body: "Alarm is ringing",
             icon: "./images/logo.png",
@@ -96,6 +95,15 @@ const createAlarm = (alarmObj) => {
   // Checkbox
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
+
+  if(alarmObj.isActive==true){
+    checkbox.setAttribute("checked", "checked");
+  }else{
+    checkbox.removeAttribute("checked");
+  }
+
+
+
   checkbox.addEventListener("click", (e) => {
     if (e.target.checked) {
       notificationCount = 0;
@@ -123,9 +131,10 @@ setAlarm.addEventListener("click", () => {
   alarmObj.alarmHour = hourInput.value;
   alarmObj.alarmMinute = minuteInput.value;
   alarmObj.isActive = false;
-  console.log(alarmObj);
+  alarmObj.daysOfWeek = daysOfWeek;
   alarmsArray.push(alarmObj);
   createAlarm(alarmObj);
+  console.log(alarmsArray);
   hourInput.value = appendZero(initialHour);
   minuteInput.value = appendZero(initialMinute);
 
@@ -200,10 +209,52 @@ if ("Notification" in window) {
   console.error("Browser does not support notifications");
 }
 
-// function notify() {
-//   const notification = new Notification('vClock:', {
-//     body: 'Ongoing Alarm',
-//     icon: 'https://vclock.com/img/favicons/apple-touch-icon-114x114.png',
-//     vibration: [300, 200, 300]
-//   });
-// }
+
+const setBtn = document.getElementById("setBtn");
+
+setBtn.addEventListener("click", () => {
+
+  var monday = document.getElementById("monday");
+  if (monday.checked) {
+    daysOfWeek.push("Monday");
+  }
+
+  var tuesday = document.getElementById("tuesday");
+  if (tuesday.checked) {
+    daysOfWeek.push("Tuesday");
+  }
+
+  var wednesday = document.getElementById("wednesday");
+  if (wednesday.checked) {
+    daysOfWeek.push("Wednesday");
+  }
+
+  var thursday = document.getElementById("thursday");
+  if (thursday.checked) {
+    daysOfWeek.push("Thursday");
+  }
+
+  var friday = document.getElementById("friday");
+  if (friday.checked) {
+    daysOfWeek.push("Friday");
+  }
+
+  var saturday = document.getElementById("saturday");
+  if (saturday.checked) {
+    daysOfWeek.push("Saturday");
+  }
+
+  var sunday = document.getElementById("sunday");
+  if (sunday.checked) {
+    daysOfWeek.push("Sunday");
+  }
+
+  if (daysOfWeek.length === 0) {
+    alert("Please select at least one day of the week.");
+    return;
+  }
+
+  // Display selected days in the console
+  console.log("Selected Days: " + daysOfWeek.join(", "));
+  repeatDiv.classList.add("d-none");
+});

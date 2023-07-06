@@ -1,0 +1,73 @@
+
+
+.timerCircle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.base-timer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+
+
+.base-timer__label {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.pause-btn{
+background-color: #FF9800 !important;
+color: #FFFFFF !important;
+}
+.resume-btn{
+    background-color: #4CAF50 !important;
+    color: #FFFFFF !important;
+
+}
+.reset-btn{
+    background-color: #F44336 !important;
+    color: #FFFFFF !important;
+
+}

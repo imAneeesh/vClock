@@ -36,7 +36,6 @@ function start() {
 function stop() {
     lapsBtn.classList.add("d-none");
     document.getElementById("start").classList.remove("d-none");
-    // console.log(lapArray);
 
     startBtn.disabled = false;
     stopBtn.disabled = true;
@@ -78,7 +77,6 @@ function laps() {
     }
     else {
         localArray = JSON.parse(local);
-        console.log(localArray);
     }
     localArray.push(newLap);
     localStorage.setItem("lapArray", JSON.stringify(localArray));
@@ -102,19 +100,17 @@ function display() {
         const listItem = document.createElement("li");
         const spanItem=document.createElement("span"); 
         const spanItem2=document.createElement("span");
-        const buttonItem=document.createElement("button");    
-        const iconItem=document.createElement("i");
-        iconItem.classList.add("fa","fa-trash");
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+        deleteButton.classList.add("deleteButton");    
         spanItem.textContent=i+1;
         spanItem2.textContent = element;
-        listItem.classList.add("laps","d-flex","justify-center","align-center","gap-3")
-        buttonItem.classList.add("btn","btn-sm","btn-danger","ml-auto","delete");
-        buttonItem.appendChild(iconItem);
+        listItem.classList.add("laps","d-flex","justify-between","align-items-center","gap-3")
         listItem.appendChild(spanItem);
         listItem.appendChild(spanItem2);
-        listItem.appendChild(buttonItem);
+        listItem.appendChild(deleteButton);
         ulElement.appendChild(listItem);
-        buttonItem.addEventListener("click", () => {
+        deleteButton.addEventListener("click", () => {
             clearLapItem(i);
           })
     

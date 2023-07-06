@@ -7,9 +7,18 @@ let TIME_LIMIT = 60;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 const count = document.getElementById("count");
-
+const start = document.getElementById("start");
+const pause = document.getElementById("pause");
+const resume = document.getElementById("resume");
+const reset = document.getElementById("reset");
+const inputs = document.getElementById("inputs");
+const newtimer=document.getElementById("newtimer");
 
 function set(){
+    inputs.classList.add("d-none");
+    count.classList.add("d-none");
+    pause.classList.remove("d-none");
+    reset.classList.remove("d-none");
     TIME_LIMIT = document.getElementById("time").value;
     interval=document.getElementById("interval").value;
 
@@ -19,7 +28,6 @@ function set(){
     else if(interval=="hours"){
         TIME_LIMIT=TIME_LIMIT*60*60;
     }
-    console.log(TIME_LIMIT);1
 
     timeLeft = TIME_LIMIT;
     document.getElementById("time").value = "";
@@ -72,9 +80,13 @@ document.getElementById("app").innerHTML = `
 function onTimesUp() {
     clearInterval(timerInterval);
     timerInterval = undefined;
-    count.classList.remove("d-none");
-
+    startNewTimer()
 }
+function onTimeUp() {
+    clearInterval(timerInterval);
+    timerInterval = undefined;
+}
+
 
 function startTimer() {
     count.classList.add("d-none");
@@ -149,14 +161,26 @@ function starTimer() {
 }
 
 function pauseTimer() {
-    onTimesUp();
+
+    resume.classList.remove("d-none");
+    pause.classList.add("d-none");
+    onTimeUp();
 }
 function resumeTimer() {
-    console.log(timerInterval);
+
+    pause.classList.remove("d-none");
+    resume.classList.add("d-none");
     if (!timerInterval)
         startTimer();
 }
+
+function startNewTimer(){
+    window.location.reload();
+}
 function resetTimer() {
+    newtimer.classList.remove("d-none");
+    pause.classList.add("d-none");
+    resume.classList.remove("d-none");
     if (timerInterval) {
         onTimesUp()
     }

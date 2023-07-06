@@ -14,10 +14,10 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="dark-mode">
   <div class="main">
     <div class="body-container">
-      <div class="top-bar">
+      <div class="top-bar " id="top-bar">
         <div id="menuIcon" class="menu-icon">
           <span class="menu">
             <i class="fa-solid ps-3 fa-xl d-lg-none text-white flip fa-bars"></i>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="d-flex">
-      <div id="menu" class="navbar d-none d-lg-block">
+      <div id="menu" class="navbar  d-none d-lg-block">
         <div class="navbar-container">
           <div class="nav-links">
             <ul>
@@ -62,6 +62,55 @@
                 <li class=" active">
                   <img src="./assets/clock.png" class="icon" alt="logo" />Time<i
                     class="fa-solid ms-auto fa-xl fa-arrow-right"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu-bar" class="navbar d-none">
+        <div class="navbar-container">
+          <div class="nav-links">
+            <ul>
+              <a href="index.html">
+                <li class="menu">
+                  <img
+                    src="./assets/stopwatch.png"
+                    class="icon"
+                    alt="logo"
+                  />Alarm Clock<i
+                    class="fa-solid ms-auto  fa-arrow-right"
+                  ></i>
+                </li>
+              </a>
+              <a href="stopwatch.html">
+                <li class="menu">
+                  <img
+                    src="./assets/time-tracking.png"
+                    class="icon"
+                    alt="logo"
+                  />Stopwatch<i
+                    class="fa-solid ms-auto  fa-arrow-right"
+                  ></i>
+                </li>
+              </a>
+              <a href="timer.html">
+                <li class="menu">
+                  <img
+                    src="./assets/chronometer.png"
+                    class="icon"
+                    alt="logo"
+                  />Timer<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="time.html">
+                <li class="menu active">
+                  <img
+                    src="./assets/clock.png"
+                    class="icon"
+                    alt="logo"
+                  />Time<i class="fa-solid ms-auto  fa-arrow-right"></i>
                 </li>
               </a>
             </ul>

@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Alarm Clock | Home</title>
-    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./style/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Alarm Clock | Home</title>
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./style/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+
+<body class="dark-mode">
     <div class="main">
       <div class="body-container">
-        <div class="top-bar">
+        <div class="top-bar" id="top-bar">
           <div id="menuIcon" class="menu-icon">
             <span class="menu">
               <i class="fa-solid  ps-3 fa-xl d-lg-none text-white flip fa-bars"></i>
@@ -33,17 +26,19 @@
               <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
             </div>
           </div>
-          <div class="logo d-lg-none">
-            <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
-          </div>
-          <div class="setting">
-            <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
-                class="fa-solid fa-xl pe-3 fa-sun"></i></span>
-          </div>
+        
+        <div class="logo d-lg-none">
+          <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
+        </div>
+        <div class="setting">
+          <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
+              class="fa-solid fa-xl pe-3 fa-sun"></i></span>
         </div>
       </div>
+      </div>
+
       <div class="d-flex">
-        <div id="menu" class="navbar d-none d-lg-block">
+        <div id="menu" class="navbar  d-none d-lg-block">
           <div class="navbar-container">
             <div class="nav-links">
               <ul>
@@ -91,7 +86,55 @@
             </div>
           </div>
         </div>
-        <div class="container p-3" id="hero">
+        <div id="menu-bar" class="navbar d-none">
+          <div class="navbar-container">
+            <div class="nav-links">
+              <ul>
+                <a href="#">
+                  <li class="active">
+                    <img
+                      src="./assets/stopwatch.png"
+                      class="icon"
+                      alt="logo"
+                    />Alarm Clock<i
+                      class="fa-solid ms-auto  fa-arrow-right"
+                    ></i>
+                  </li>
+                </a>
+                <a href="stopwatch.html">
+                  <li class="menu">
+                    <img
+                      src="./assets/time-tracking.png"
+                      class="icon"
+                      alt="logo"
+                    />Stopwatch<i
+                      class="fa-solid ms-auto  fa-arrow-right"
+                    ></i>
+                  </li>
+                </a>
+                <a href="timer.html">
+                  <li class="menu">
+                    <img
+                      src="./assets/chronometer.png"
+                      class="icon"
+                      alt="logo"
+                    />Timer<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                  </li>
+                </a>
+                <a href="time.html">
+                  <li class="menu">
+                    <img
+                      src="./assets/clock.png"
+                      class="icon"
+                      alt="logo"
+                    />Time<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container p-3 " id="hero">
           <div class="custom-card">
           <div class="timer my-2">
             <span id="time" class="time"></span>
@@ -99,38 +142,22 @@
             <span class="formateddate" id="formateddate"></span>
           </div>
           <div class="d-flex flex-column justify-center align-items-center">
-            <div class="add-btn">
+            <!-- <div class="add-btn">
               <button id="addAlarm" class="btn my-3 btn-add-alarm">Set Alarm</button>
-            </div>
-            <div id="addForm" class="alarm-form d-none">
+            </div> -->
+            <div id="addForm" class="alarm-form ">
               <div class="wrapper">
                 <div class="wrapper-container mt-2 d-flex gap-2 flex-column justify-center align-items-center"
-                
-                id="set-alarm"  >
+                  id="set-alarm">
 
                   <div class="inputs d-flex gap-3 mt-4">
                     <label for="hour">Hour:</label>
-                    <input
-                    name="hour"
-                      type="number"
-                      id="hourInput"
-                      width="20vw"
-                      placeholder="hours"
-                      min="0"
-                      max="12"
-                      class="time-input"
-                    />
+                    <input name="hour" type="number" id="hourInput" width="20vw" placeholder="hours" min="0" max="12"
+                      class="time-input" />
                     <label for="minute">Minutes:</label>
-                    <input
-                    name="minute"
-                      type="number"
-                      id="minuteInput"
-                      placeholder="minutes"
-                      min="0"
-                      max="59"
-                      class="time-input"
-
-                    />
+                    <input name="minute" type="number" id="minuteInput" placeholder="minutes" min="0" max="59"
+                      class="time-input" />
+                    <input type="checkbox" id="repeatCheckbox">
                     <button id="set" class="btn btn-md btn-success">
                       <i class="fa-solid fa-plus"></i>
                     </button>
@@ -140,20 +167,65 @@
               </div>
             </div>
           </div>
-         </div>
-         <div class="custom-card  my-2 p-3">
+        </div>
+        <div class="custom-card  my-2 p-3">
           <div class="h2">How to use the online alarm clock</div>
           <hr />
-          <div class="display-7 ">Set the hour and minute for the online alarm clock. The alarm message will appear, and the preselected sound will be played at the set time.
-            The online alarm clock will not work if you close your browser or shut down your computer, but it can work without an internet connection.       
-         </div>
+          <div class="display-7 ">Set the hour and minute for the online alarm clock. The alarm message will appear, and
+            the preselected sound will be played at the set time.
+            The online alarm clock will not work if you close your browser or shut down your computer, but it can work
+            without an internet connection.
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer">
+  </div>
+  
+<div style="position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: aliceblue;
+  color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  " id="repeatDiv" class="repeat-div d-none">
+
+  <h2>Repeating Alarm</h2>
+
+  <label for="daysOfWeek">Days of the Week:</label>
+  <br>
+  <input type="checkbox" id="monday" name="daysOfWeek" value="monday">
+  <label for="monday">Monday</label>
+  <br>
+  <input type="checkbox" id="tuesday" name="daysOfWeek" value="tuesday">
+  <label for="tuesday">Tuesday</label>
+  <br>
+  <input type="checkbox" id="wednesday" name="daysOfWeek" value="wednesday">
+  <label for="wednesday">Wednesday</label>
+  <br>
+  <input type="checkbox" id="thursday" name="daysOfWeek" value="thursday">
+  <label for="thursday">Thursday</label>
+  <br>
+  <input type="checkbox" id="friday" name="daysOfWeek" value="friday">
+  <label for="friday">Friday</label>
+  <br>
+  <input type="checkbox" id="saturday" name="daysOfWeek" value="saturday">
+  <label for="saturday">Saturday</label>
+  <br>
+  <input type="checkbox" id="sunday" name="daysOfWeek" value="sunday">
+  <label for="sunday">Sunday</label>
+
+  <button id="setBtn">Set Alarm</button>
+  <button id="cancel">Cancel</button>
+</div>
 
 
-    </div>
+
+  <div class="footer">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -162,5 +234,7 @@
   <script src="./js/main.js"></script>
   <script src="./js/alarm.js"></script>
   <script src="./js/script.js"></script>
-  </body>
+  <script src="./js/repeatAlarm.js"></script>
+</body>
+
 </html>
