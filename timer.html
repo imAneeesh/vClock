@@ -72,17 +72,16 @@
       <div class="container p-3" id="hero">
         <div class="custom-card p-3">
         <div id="app" class="timerCircle my-3"></div>
-        <div class="inputs container d-flex gap-2" id="inputs">
-          <input class="p-1 time-cell w-50" placeholder="Enter time"  type="text" name="time" id="time">
+        <div class="inputs container d-flex gap-2 w-50" id="inputs">
+          <input class="p-1 time-cell" oninput="showbtn()" placeholder="Enter time"  type="number" name="time" id="time">
           <select class="p-1 type-cell" id="interval" name="interval" >
             <option class="type-cells" value="seconds">seconds</option>
             <option class="type-cells" value="minutes">minutes</option>
             <option class="type-cells" value="hours">hours</option>
           </select>
-          <button id="count" class="btn  background-primary text-white" onclick="set()">Start</button>
         </div>
         <div class="btns d-flex gap-2">
-          <input id="start"  type="button" class="d-none" onclick="starTimer()" value="Start" />
+          <input id="count"  type="button" class="btn background-primary text-white" onclick="set()" value="Start" />
           <input id="pause" type="button" class="pause-btn btn d-none" onclick="pauseTimer()" value="Pause" />
           <input id="resume" type="button" class="resume-btn btn d-none" onclick="resumeTimer()" value="Resume" />
           <input id="reset" type="button" class="reset-btn btn d-none" onclick="resetTimer()" value="Reset" />
