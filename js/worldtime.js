@@ -1,3 +1,4 @@
+
 const countries = [
     { name: "United States", code: "US", timeZone: "America/New_York" },
     { name: "United Kingdom", code: "GB", timeZone: "Europe/London" },
@@ -81,14 +82,36 @@ function getCountryTime (country) {
     const currentTime = document.createElement("div");
     currentTime.classList.add("current-time");
     currentTime.textContent = getCurrentTime(country);
+    console.log(currentTime)
+    console.log(countryName)
     clockCard.appendChild(countryName);
     clockCard.appendChild(currentTime);
     clocksearchcontainer.appendChild(clockCard);
 }
 
-search.addEventListener("change",()=>{
-    const searchTerm = search.value
+function searchCountry()
+{
+    const inputElement = document.getElementById("search");
+    const inputValue = inputElement.value;
+    
+    const pattern = /^[A-Z][a-zA-Z]*$/;
+    const isValid = pattern.test(inputValue);
+    
+    if (!isValid) {
+      alert("Please enter a valid input with the first letter capitalized and only alphabets.");
+      // You can optionally reset the input value here if desired
+      // inputElement.value = "";
+    }
+    const searchTerm = document.getElementById("search").value
     console.log(searchTerm)
+
+    if (searchTerm == "")
+    {
+        clockContainer.classList.remove("d-none");
+    }else{
+        clockContainer.classList.add("d-none");
+    }
+
 
     countries.forEach((country)=>{
         if(country.name==searchTerm){
@@ -97,8 +120,7 @@ search.addEventListener("change",()=>{
             console.log("No data")
         }
     })
-})
-
+}
 
 
 countries.forEach((country) => {
@@ -125,3 +147,28 @@ setInterval(() => {
         element.textContent = getCurrentTime(countries[index]);
     });
 }, 1000);
+
+
+
+// Function to get the time of a county using an API
+async function getTimeOfCounty(county) {
+    const apiUrl = `https://timeapi.io/api/Time/current/zone?timeZone=${encodeURIComponent(county)}`;
+
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+// Example usage
+const counties = ['Asia/Kolkata', 'America/New_York', 'Europe/London'];
+
+counties.forEach((county) => {
+    getTimeOfCounty(county);
+});
+
+

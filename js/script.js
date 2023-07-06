@@ -10,6 +10,7 @@ let initialHour = 0,
   initialMinute = 0,
   alarmIndex = 0;
 
+
 // Append zeroes for single digit
 const appendZero = (value) => (value < 10 ? "0" + value : value);
 
@@ -28,6 +29,8 @@ const searchObject = (parameter, value) => {
   });
   return [exists, alarmObject, objIndex];
 };
+
+let notificationCount = 0;
 
 // Display Time
 function displayTimer() {
@@ -51,6 +54,16 @@ function displayTimer() {
         // new Notification("hello thwere");
         console.log("Alarm");
         alarmSound.play();
+        while (notificationCount < 3) {
+          const notification = new Notification("Alarm", {
+            body: "Alarm is ringing",
+            icon: "./images/logo.png",
+          });
+          notificationCount++;
+          notification.onclick = (e) => {
+            window.location.href = "https://www.127.0.0.1:5500/vClock";
+          };
+        }
       }
     }
   });
@@ -86,6 +99,7 @@ const createAlarm = (alarmObj) => {
   checkbox.setAttribute("type", "checkbox");
   checkbox.addEventListener("click", (e) => {
     if (e.target.checked) {
+      notificationCount = 0;
       startAlarm(e);
     } else {
       stopAlarm(e);
@@ -170,3 +184,27 @@ window.onload = () => {
   hourInput.value = appendZero(initialHour);
   minuteInput.value = appendZero(initialMinute);
 };
+
+if ("Notification" in window) {
+  if (Notification.permission === "granted") {
+    console.log("Permission granted");
+  } else {
+    Notification.requestPermission().then(res => {
+      if (res === "granted") {
+        console.log("Permission granted");
+      } else {
+        console.error("Did not receive permission for notifications");
+      }
+    });
+  }
+} else {
+  console.error("Browser does not support notifications");
+}
+
+// function notify() {
+//   const notification = new Notification('vClock:', {
+//     body: 'Ongoing Alarm',
+//     icon: 'https://vclock.com/img/favicons/apple-touch-icon-114x114.png',
+//     vibration: [300, 200, 300]
+//   });
+// }

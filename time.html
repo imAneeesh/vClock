@@ -68,9 +68,9 @@
           </div>
         </div>
       </div>
-      <div class="my-container p-5 clock" id="hero">
+      <div class="my-container p-3 clock" id="hero">
         <h1>World Clock</h1>
-        <input type="search" name="search" id="search" placeholder="Kolkata">
+        <input pattern="[A-Z][a-zA-Z]*" type="search" oninput="searchCountry()" name="search" id="search" placeholder="Quick Search">
         <div class="clock-searchcontainer"></div>
         <div class="clock-container"></div>
       </div>

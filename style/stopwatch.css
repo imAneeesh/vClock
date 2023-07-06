@@ -39,6 +39,11 @@ span {
     font-family: 'digital-clock-font';
 }
 
+.list-group{
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+
 .text {
     font-size: 2rem;
     font-weight: bold;
@@ -52,11 +57,7 @@ span {
     transition: 0.9ms ease-in;
 }
 
-.btn {
-    background-color: #0090dd;
-    padding: 7px 25px;
-    transform: scale(1.1);
-}
+
 
 .clear{
     position: fixed;
