@@ -7,9 +7,17 @@ let TIME_LIMIT = 60;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 const count = document.getElementById("count");
-
+const start = document.getElementById("start");
+const pause = document.getElementById("pause");
+const resume = document.getElementById("resume");
+const reset = document.getElementById("reset");
+const inputs = document.getElementById("inputs");
+const newtimer=document.getElementById("newtimer");
 
 function set(){
+    inputs.classList.add("d-none");
+    pause.classList.remove("d-none");
+    reset.classList.remove("d-none");
     TIME_LIMIT = document.getElementById("time").value;
     interval=document.getElementById("interval").value;
 
@@ -149,14 +157,29 @@ function starTimer() {
 }
 
 function pauseTimer() {
+    resume.classList.remove("d-none");
+    pause.classList.add("d-none");
     onTimesUp();
 }
 function resumeTimer() {
+
+    pause.classList.remove("d-none");
+    resume.classList.add("d-none");
     console.log(timerInterval);
     if (!timerInterval)
         startTimer();
 }
+
+function startNewTimer(){
+    reset.classList.add("d-none");
+    resume.classList.add("d-none");
+    newtimer.classList.add("d-none");
+    inputs.classList.remove("d-none");
+}
 function resetTimer() {
+    newtimer.classList.remove("d-none");
+    pause.classList.add("d-none");
+    resume.classList.remove("d-none");
     if (timerInterval) {
         onTimesUp()
     }

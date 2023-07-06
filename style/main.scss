@@ -115,6 +115,14 @@ body {
     color: $backgroundColor !important;
   }
 
+  .time-cell,.type-cell,.type-cells{
+    background-color: rgba($secondaryColor,.4) !important;
+    color: $backgroundColor !important;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+  }
+
   #menu {
  
     margin: 0;

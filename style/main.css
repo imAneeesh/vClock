@@ -89,6 +89,13 @@ body a:hover {
   background-color: rgba(58, 57, 57, 0.2);
   color: #f0f0f0 !important;
 }
+.main .time-cell, .main .type-cell, .main .type-cells {
+  background-color: rgba(58, 57, 57, 0.4) !important;
+  color: #f0f0f0 !important;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+}
 .main #menu {
   margin: 0;
   background-color: #0090dd;

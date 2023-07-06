@@ -70,22 +70,33 @@
         </div>
       </div>
       <div class="container p-3" id="hero">
-        <div id="app" class="timerCircle"></div>
-        <div class="inputs">
-          <input  placeholder="Enter time" type="text" name="time" id="time">
-          <select id="interval" name="interval">
-            <option value="seconds">seconds</option>
-            <option value="minutes">minutes</option>
-            <option value="hours">hours</option>
+        <div class="custom-card p-3">
+        <div id="app" class="timerCircle my-3"></div>
+        <div class="inputs d-flex gap-3" id="inputs">
+          <input class="p-1 time-cell" placeholder="Enter time"  type="text" name="time" id="time">
+          <select class="p-1 type-cell" id="interval" name="interval" >
+            <option class="type-cells" value="seconds">seconds</option>
+            <option class="type-cells" value="minutes">minutes</option>
+            <option class="type-cells" value="hours">hours</option>
           </select>
-          <button id="count" onclick="set()">Count</button>
+          <button id="count" class="btn  background-primary text-white" onclick="set()">Start</button>
         </div>
-        <div class="btns">
-          <input type="button" onclick="starTimer()" value="Start" />
-          <input type="button" onclick="pauseTimer()" value="Pause" />
-          <input type="button" onclick="resumeTimer()" value="Resume" />
-          <input type="button" onclick="resetTimer()" value="Reset" />
+        <div class="btns d-flex gap-2">
+          <input id="start"  type="button" class="d-none" onclick="starTimer()" value="Start" />
+          <input id="pause" type="button" class="pause-btn btn d-none" onclick="pauseTimer()" value="Pause" />
+          <input id="resume" type="button" class="resume-btn btn d-none" onclick="resumeTimer()" value="Resume" />
+          <input id="reset" type="button" class="reset-btn btn d-none" onclick="resetTimer()" value="Reset" />
+          <input id="newtimer"  type="button" class="d-none btn btn-primary" onclick="startNewTimer()" value="Start new timer" />
+      
         </div>
+      </div>
+      <div class="custom-card  my-2 p-3">
+        <div class="h2">How to use the online timer</div>
+        <hr />
+        <div class="display-7 ">Set the hour, minute, and second for the online countdown timer, and start it.
+          Click the "Reset" button to start the timer from the initial value. Click the "Pause" button to pause, "Resume" button to resume and "Set new timer" button to strat fresh timer.
+                    
+      </div>
       </div>
     </div>
   </div>
