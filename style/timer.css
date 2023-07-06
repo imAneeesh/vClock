@@ -4,6 +4,19 @@
   justify-content: center;
 }
 
+.main .type-cell, .main .time-cell{
+  background-color: #deebff !important;
+  color: black !important;
+}
+.main .time-cell::placeholder{
+  color: black !important;
+}
+.type-cells{
+  background-color: #3b74c9;
+}
+
+
+
 .btns {
   display: flex;
   align-items: center;
