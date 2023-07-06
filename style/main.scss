@@ -9,6 +9,18 @@ $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
 
+.background-primary {
+  background-color: $primaryColor !important;
+}
+
+.color-primary {
+  color: $primaryColor !important;
+}
+
+.color-red{
+    color: rgba(rgb(216, 26, 26),.7) !important;
+}
+
 // *{
 //     border: 1px solid red;
 // }
@@ -44,6 +56,11 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+
+  .custom-card{
+    border: .1rem solid rgba($secondaryColor,.4);
+    border-radius: .5rem;
+  }
 
   .d-flex {
     width: 100%;
@@ -85,7 +102,6 @@ body {
     background-color: $primaryColor;
     background-color: $secondaryColor;
     color: white;
-    height: 100vh;
     width: calc(100vw - 50vw);
     height: calc(100vh - 6vh);
     min-width: 150px;
@@ -231,7 +247,6 @@ body {
       cursor: pointer;
     }
 
-<<<<<<< HEAD
         .clock-card {
             border: 1px solid #ccc;
             background-color: rgba($backgroundColor, .3);
@@ -239,12 +254,10 @@ body {
             border-radius: 10px;
             text-align: center;
         }
-=======
     .btn:hover {
       background-color: skyblue;
     }
   }
->>>>>>> d596d8e1b7b17bbed078a0000539d7b97ad88b0f
 
   .clock {
     max-height: 90vh;
@@ -303,7 +316,7 @@ body {
     }
 
     .activeAlarms {
-      max-height: 45vh;
+      max-height: 10vh;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -421,7 +434,7 @@ body {
         }
 
         .activeAlarms {
-            max-height: 45vh;
+            max-height: 28vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;

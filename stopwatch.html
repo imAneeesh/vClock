@@ -19,7 +19,7 @@
   <div class="main">
     <div class="body-container">
       <div class="top-bar">
-          <span class="menu d-lg-none">
+          <span class="menu d-lg-none menu-icon" id="menuIcon">
             <i class="fa-solid ps-2 fa-xl d-lg-none text-white flip fa-bars"></i>
           </span>
           <span class="logo d-none d-lg-block">
@@ -80,7 +80,7 @@
         
         <div class="">
 
-          <button class="btn btn-sm btn-primary mx-2" id="start" onclick="start()">
+          <button class="btn background-primary btn-sm btn-primary mx-2" id="start" onclick="start()">
             Start
           </button>
 
@@ -94,11 +94,13 @@
             Reset
           </button>
 
-          <button class="btn btn-sm btn-info mx-2 d-none" id="laps" disabled="true" onclick="laps()">
+          <button class="btn btn-sm btn-success mx-2 d-none" id="laps" disabled="true" onclick="laps()">
             Laps
           </button>
         </div>
-        <button class="btn mt-2" onclick="clearLap()">Clear All Laps</button>
+        <button id="clearall" class="btn background-primary mt-2 text-white" onclick="clearLap()">Clear Laps
+        &nbsp; <i class="fa-solid fa-trash color-red"></i>
+        </button>
         <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
       </div>
     </div>

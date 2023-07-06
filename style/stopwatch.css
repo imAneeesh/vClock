@@ -52,11 +52,7 @@ span {
     transition: 0.9ms ease-in;
 }
 
-.btn {
-    background-color: #0090dd;
-    padding: 7px 25px;
-    transform: scale(1.1);
-}
+
 
 .clear{
     position: fixed;
