@@ -5,7 +5,8 @@ const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
 let TIME_LIMIT = 60;
 let timeLeft = TIME_LIMIT;
-
+let timerInterval = null;
+const count = document.getElementById("count");
 
 
 function set(){
@@ -22,6 +23,8 @@ function set(){
 
     timeLeft = TIME_LIMIT;
     document.getElementById("time").value = "";
+    timerInterval = null;
+    starTimer();
 }
 
 const COLOR_CODES = {
@@ -40,7 +43,6 @@ const COLOR_CODES = {
 
 
 let timePassed = 0;
-let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
 document.getElementById("app").innerHTML = `
@@ -70,9 +72,12 @@ document.getElementById("app").innerHTML = `
 function onTimesUp() {
     clearInterval(timerInterval);
     timerInterval = undefined;
+    count.classList.remove("d-none");
+
 }
 
 function startTimer() {
+    count.classList.add("d-none");
     timerInterval = setInterval(() => {
 
         if(TIME_LIMIT==0){
