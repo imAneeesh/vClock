@@ -81,14 +81,25 @@ function getCountryTime (country) {
     const currentTime = document.createElement("div");
     currentTime.classList.add("current-time");
     currentTime.textContent = getCurrentTime(country);
+    console.log(currentTime)
+    console.log(countryName)
     clockCard.appendChild(countryName);
     clockCard.appendChild(currentTime);
     clocksearchcontainer.appendChild(clockCard);
 }
 
-search.addEventListener("change",()=>{
-    const searchTerm = search.value
+function searchCountry()
+{
+    const searchTerm = document.getElementById("search").value
     console.log(searchTerm)
+
+    if (searchTerm == "")
+    {
+        clockContainer.classList.remove("d-none");
+    }else{
+        clockContainer.classList.add("d-none");
+    }
+
 
     countries.forEach((country)=>{
         if(country.name==searchTerm){
@@ -97,8 +108,7 @@ search.addEventListener("change",()=>{
             console.log("No data")
         }
     })
-})
-
+}
 
 
 countries.forEach((country) => {
