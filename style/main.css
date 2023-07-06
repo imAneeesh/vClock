@@ -33,7 +33,7 @@ body a:hover {
 
 .dark-mode {
   background: rgb(36, 36, 36) !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .time,
@@ -93,7 +93,9 @@ body a:hover {
   background-color: rgba(58, 57, 57, 0.2);
   color: #f0f0f0 !important;
 }
-.main .time-cell, .main .type-cell, .main .type-cells {
+.main .time-cell,
+.main .type-cell,
+.main .type-cells {
   background-color: rgba(58, 57, 57, 0.4) !important;
   color: #f0f0f0 !important;
   border: none;
@@ -267,6 +269,11 @@ body a:hover {
   align-items: center;
   justify-content: center;
 }
+.main .wrapper-container .inputs input {
+  background-color: #deebff !important;
+  color: #3a3939 !important;
+  font-weight: 600;
+}
 .main .btn-add-alarm {
   background-color: #0090dd;
   color: #f0f0f0;
@@ -292,11 +299,12 @@ body a:hover {
   justify-content: center;
 }
 .main #set-alarm .activeAlarms .alarm {
+  color: #3a3939;
   width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(58, 57, 57, 0.4) !important;
+  background-color: #deebff !important;
   border-radius: 0.5rem;
   margin: 0.5rem 0;
   padding: 1.5rem;
@@ -308,6 +316,7 @@ body a:hover {
   margin-top: 0.5em;
   align-items: center;
   padding: 1rem;
+  font-weight: 600;
 }
 .main #set-alarm .activeAlarms .alarm input[type=checkbox] {
   -webkit-appearance: none;

@@ -36,7 +36,6 @@ function start() {
 function stop() {
     lapsBtn.classList.add("d-none");
     document.getElementById("start").classList.remove("d-none");
-    // console.log(lapArray);
 
     startBtn.disabled = false;
     stopBtn.disabled = true;
@@ -78,7 +77,6 @@ function laps() {
     }
     else {
         localArray = JSON.parse(local);
-        console.log(localArray);
     }
     localArray.push(newLap);
     localStorage.setItem("lapArray", JSON.stringify(localArray));

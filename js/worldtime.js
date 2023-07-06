@@ -82,8 +82,6 @@ function getCountryTime (country) {
     const currentTime = document.createElement("div");
     currentTime.classList.add("current-time");
     currentTime.textContent = getCurrentTime(country);
-    console.log(currentTime)
-    console.log(countryName)
     clockCard.appendChild(countryName);
     clockCard.appendChild(currentTime);
     clocksearchcontainer.appendChild(clockCard);
@@ -103,7 +101,6 @@ function searchCountry()
       // inputElement.value = "";
     }
     const searchTerm = document.getElementById("search").value
-    console.log(searchTerm)
 
     if (searchTerm == "")
     {
@@ -158,7 +155,6 @@ async function getTimeOfCounty(county) {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(data);
     } catch (error) {
         console.log('Error:', error);
     }
