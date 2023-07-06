@@ -3,6 +3,18 @@
   font-family: "digital-clock-font";
   src: url(".././font/digital-7 (mono).ttf");
 }
+.background-primary {
+  background-color: #0090dd !important;
+}
+
+.color-primary {
+  color: #0090dd !important;
+}
+
+.color-red {
+  color: rgba(216, 26, 26, 0.7) !important;
+}
+
 body {
   background-color: #f0f0f0;
   transition: all 0.3s ease-in-out;
@@ -32,6 +44,10 @@ body a:hover {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.main .custom-card {
+  border: 0.1rem solid rgba(58, 57, 57, 0.4);
+  border-radius: 0.5rem;
 }
 .main .d-flex {
   width: 100%;
@@ -63,7 +79,6 @@ body a:hover {
   background-color: #0090dd;
   background-color: #3a3939;
   color: white;
-  height: 100vh;
   width: 50vw;
   height: 94vh;
   min-width: 150px;
@@ -151,11 +166,7 @@ body a:hover {
 }
 .main .my-container .clock-card {
   border: 1px solid #ccc;
-<<<<<<< HEAD
-  background-color: rgba(240, 240, 240, 0.3);
-=======
   background-color: rgba(240, 240, 240, 0.1);
->>>>>>> d596d8e1b7b17bbed078a0000539d7b97ad88b0f
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -187,6 +198,13 @@ body a:hover {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+.main .my-container .clock-card {
+  border: 1px solid #ccc;
+  background-color: rgba(240, 240, 240, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 .main .my-container .btn:hover {
   background-color: skyblue;
@@ -240,7 +258,7 @@ body a:hover {
   border-radius: 0.3rem;
 }
 .main #set-alarm .activeAlarms {
-  max-height: 45vh;
+  max-height: 10vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -344,7 +362,7 @@ body a:hover {
   border-radius: 0.3rem;
 }
 .main #set-alarm .activeAlarms {
-  max-height: 45vh;
+  max-height: 28vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
