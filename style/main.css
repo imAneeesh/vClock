@@ -28,12 +28,18 @@ body a:hover {
 }
 
 .laps {
-  background-color: #deebff !important;
+  background-color: rgba(58, 57, 57, 0.2) !important;
+  color: #757575 !important;
 }
 
 .dark-mode {
   background: rgb(36, 36, 36) !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.lighty-mode {
+  background-color: #f0f0f0 !important;
+  color: #3a3939 !important;
 }
 
 .time,
@@ -73,9 +79,8 @@ body a:hover {
   transform: scale(1.01);
 }
 .main .active {
-  background-color: #f0f0f0 !important;
-  color: #3a3939;
-  border: #f0f0f0 !important;
+  background: rgb(36, 36, 36);
+  color: rgb(255, 255, 255);
 }
 .main #hero {
   max-height: 100vh;
@@ -93,12 +98,80 @@ body a:hover {
   background-color: rgba(58, 57, 57, 0.2);
   color: #f0f0f0 !important;
 }
-.main .time-cell, .main .type-cell, .main .type-cells {
-  background-color: rgba(58, 57, 57, 0.4) !important;
-  color: #f0f0f0 !important;
+.main .base-timer__path-remaining.green {
+  color: #0090dd;
+}
+.main .base-timer__path-remaining.orange {
+  color: rgba(255, 152, 0, 0.4);
+}
+.main .base-timer__path-remaining.red {
+  color: rgba(255, 0, 0, 0.4);
+}
+.main select {
+  color: #757575 !important;
+}
+.main select option {
+  background-color: rgba(58, 57, 57, 0.2) !important;
+}
+.main .time-cell,
+.main .type-cell {
+  background-color: rgba(58, 57, 57, 0.2) !important;
+  color: #f0f0f0;
   border: none;
   outline: none;
   border-radius: 0.3rem;
+}
+.main .time-cell option,
+.main .type-cell option {
+  background-color: rgba(58, 57, 57, 0.2) !important;
+  color: #3a3939;
+}
+.main #menu-bar {
+  position: fixed;
+  z-index: 999;
+  margin: 0;
+  color: white;
+  width: 70vw;
+  height: 100%;
+  background-color: transparent;
+}
+.main #menu-bar .navbar-container {
+  box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #3a3838;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.main #menu-bar .navbar-container .nav-links {
+  width: 100%;
+}
+.main #menu-bar .navbar-container .nav-links ul {
+  width: 100%;
+  padding: 0;
+}
+.main #menu-bar .navbar-container .nav-links ul li {
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 20px;
+  height: 10vh;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: start;
+  list-style-type: none;
+}
+.main #menu-bar .navbar-container .nav-links ul li a {
+  text-decoration: none;
+  color: white;
+}
+.main #menu-bar .navbar-container .nav-links ul li img {
+  width: 30px;
+  height: 30px;
 }
 .main #menu {
   margin: 0;
@@ -138,8 +211,6 @@ body a:hover {
   display: flex;
   justify-content: start;
   list-style-type: none;
-  border-bottom: 1px solid rgb(82, 82, 82);
-  border-top: 1px solid rgb(82, 82, 82);
 }
 .main #menu .navbar-container .nav-links ul li a {
   text-decoration: none;
@@ -192,17 +263,16 @@ body a:hover {
   margin-top: 20px;
 }
 .main .my-container .clock-card {
-  border: 1px solid #ccc;
-  background-color: rgba(240, 240, 240, 0.1);
+  background-color: rgba(58, 57, 57, 0.2);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   transition: all 0.3s ease-in-out;
+  border: 1px solid #0090dd;
 }
 .main .my-container .clock-card:hover {
   cursor: pointer;
-  transform: scale(1.03);
-  border: 1px solid #0090dd;
+  box-shadow: 0px 0px 15px #0090dd;
 }
 .main .my-container .country-name {
   font-size: 18px;
@@ -225,13 +295,6 @@ body a:hover {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-}
-.main .my-container .clock-card {
-  border: 1px solid #ccc;
-  background-color: rgba(240, 240, 240, 0.3);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
 }
 .main .my-container .btn:hover {
   background-color: skyblue;
@@ -263,95 +326,26 @@ body a:hover {
   align-self: center;
   justify-content: center;
 }
-.main .wrapper-container .inputs {
+.main .inputs {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main .inputs input {
+  background-color: rgba(58, 57, 57, 0.2) !important;
+  font-weight: 600;
+}
+.main .inputs input::-moz-placeholder {
+  color: #757575;
+  padding-left: 0.4rem;
+}
+.main .inputs input::placeholder {
+  color: #757575;
+  padding-left: 0.4rem;
 }
 .main .btn-add-alarm {
   background-color: #0090dd;
   color: #f0f0f0;
-}
-.main #set-alarm {
-  width: 100%;
-}
-.main #set-alarm input {
-  width: 10vw;
-  height: 5vh;
-  padding-left: 0.5rem;
-  outline: none;
-  border: none;
-  background-color: #f0f0f0;
-  border-radius: 0.3rem;
-}
-.main #set-alarm .activeAlarms {
-  max-height: 10vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.main #set-alarm .activeAlarms .alarm {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(58, 57, 57, 0.4) !important;
-  border-radius: 0.5rem;
-  margin: 0.5rem 0;
-  padding: 1.5rem;
-}
-.main #set-alarm .activeAlarms .alarm {
-  display: grid;
-  grid-template-columns: 8fr 2fr 2fr;
-  gap: 1em;
-  margin-top: 0.5em;
-  align-items: center;
-  padding: 1rem;
-}
-.main #set-alarm .activeAlarms .alarm input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  height: 2em;
-  width: 3.75em;
-  background-color: #e2e2ec;
-  border-radius: 1.25em;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-}
-.main #set-alarm .activeAlarms .alarm input[type=checkbox]:before {
-  position: absolute;
-  content: "";
-  background-color: #757683;
-  height: 1.43em;
-  width: 1.43em;
-  border-radius: 50%;
-  top: 0.25em;
-  left: 0.25em;
-}
-.main #set-alarm .activeAlarms .alarm input[type=checkbox]:checked {
-  background-color: #d2e2ff;
-}
-.main #set-alarm .activeAlarms .alarm input[type=checkbox]:checked:before {
-  background-color: #377dff;
-  left: 2em;
-}
-.main #set-alarm .activeAlarms .deleteButton {
-  background-color: transparent;
-  font-size: 1.5em;
-  color: #ff5c5c;
-  border: none;
-  cursor: pointer;
-}
-.main #set-alarm .activeAlarms button {
-  background-color: red;
-  color: white;
-  border: none;
-  margin-left: 1.2rem;
-  border-radius: 0.3rem;
 }
 .main .wrapper-container {
   margin: 0;
@@ -359,11 +353,6 @@ body a:hover {
   align-self: center;
   justify-content: center;
 }
-.main .wrapper-container .inputs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .main .btn-add-alarm {
   background-color: #0090dd;
   color: #f0f0f0;
@@ -377,8 +366,17 @@ body a:hover {
   padding-left: 0.5rem;
   outline: none;
   border: none;
-  background-color: rgba(240, 240, 240, 0.3);
+  background-color: rgba(58, 57, 57, 0.2);
+  color: #757575 !important;
   border-radius: 0.3rem;
+}
+.main #set-alarm input::-moz-placeholder {
+  color: #757575;
+  padding-left: 0.4rem;
+}
+.main #set-alarm input::placeholder {
+  color: #757575;
+  padding-left: 0.4rem;
 }
 .main #set-alarm .activeAlarms {
   max-height: 28vh;
@@ -393,10 +391,10 @@ body a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(240, 240, 240, 0.3);
+  background-color: rgba(58, 57, 57, 0.2);
   border-radius: 0.5rem;
   margin: 0.5rem 0;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 .main #set-alarm .activeAlarms .alarm {
   display: grid;
