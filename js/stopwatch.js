@@ -69,7 +69,7 @@ function laps() {
     lapMin = document.getElementById("min").textContent;
     lapHr = document.getElementById("hr").textContent;
     lapCount = document.getElementById("count").textContent;
-    const newLap = lapHr + "hr " + lapMin + "min " + lapsec + "sec " + lapCount;
+    const newLap = lapHr + ": " + lapMin + ": " + lapsec + ": " + lapCount;
     const local = localStorage.getItem("lapArray")
     if (local == [] || local == undefined) {
         
@@ -100,19 +100,17 @@ function display() {
         const listItem = document.createElement("li");
         const spanItem=document.createElement("span"); 
         const spanItem2=document.createElement("span");
-        const buttonItem=document.createElement("button");    
-        const iconItem=document.createElement("i");
-        iconItem.classList.add("fa","fa-trash");
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+        deleteButton.classList.add("deleteButton");    
         spanItem.textContent=i+1;
         spanItem2.textContent = element;
-        listItem.classList.add("laps","d-flex","justify-center","align-center","gap-3")
-        buttonItem.classList.add("btn","btn-sm","btn-danger","ml-auto","delete");
-        buttonItem.appendChild(iconItem);
+        listItem.classList.add("laps","d-flex","justify-between","align-items-center","gap-3")
         listItem.appendChild(spanItem);
         listItem.appendChild(spanItem2);
-        listItem.appendChild(buttonItem);
+        listItem.appendChild(deleteButton);
         ulElement.appendChild(listItem);
-        buttonItem.addEventListener("click", () => {
+        deleteButton.addEventListener("click", () => {
             clearLapItem(i);
           })
     

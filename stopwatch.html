@@ -18,7 +18,7 @@
 <body class="dark-mode" id="body">
   <div class="main">
     <div class="body-container">
-      <div class="top-bar dark-mode" id="top-bar">
+      <div class="top-bar " id="top-bar">
           <span class="menu d-lg-none menu-icon" id="menuIcon">
             <i class="fa-solid ps-2 fa-xl d-lg-none text-white flip fa-bars"></i>
           </span>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="d-flex">
-      <div id="menu" class="navbar dark-mode d-none d-lg-block">
+      <div id="menu" class="navbar  d-none d-lg-block">
         <div class="navbar-container">
           <div class="nav-links">
             <ul>
@@ -67,40 +67,89 @@
           </div>
         </div>
       </div>
+
+      <div id="menu-bar" class="navbar d-none">
+        <div class="navbar-container">
+          <div class="nav-links">
+            <ul>
+              <a href="index.html">
+                <li class="menu">
+                  <img
+                    src="./assets/stopwatch.png"
+                    class="icon"
+                    alt="logo"
+                  />Alarm Clock<i
+                    class="fa-solid ms-auto  fa-arrow-right"
+                  ></i>
+                </li>
+              </a>
+              <a href="stopwatch.html">
+                <li class="menu active">
+                  <img
+                    src="./assets/time-tracking.png"
+                    class="icon"
+                    alt="logo"
+                  />Stopwatch<i
+                    class="fa-solid ms-auto  fa-arrow-right"
+                  ></i>
+                </li>
+              </a>
+              <a href="timer.html">
+                <li class="menu">
+                  <img
+                    src="./assets/chronometer.png"
+                    class="icon"
+                    alt="logo"
+                  />Timer<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                </li>
+              </a>
+              <a href="time.html">
+                <li class="menu">
+                  <img
+                    src="./assets/clock.png"
+                    class="icon"
+                    alt="logo"
+                  />Time<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="container " id="hero">
        <div class="custom-card my-3 d-flex flex-column align-items-center gap-3 p-1">
         <div id="timeElement">
           <span class="digit" id="hr">00</span>
-          <span class="text">hr</span>
+          <span class="text">:</span>
           <span class="digit" id="min">00</span>
-          <span class="text">min</span>
+          <span class="text">:</span>
           <span class="digit" id="sec">00</span>
-          <span class="text">sec</span>
+          <span class="text">:</span>
           <span class="digit" id="count">00</span>
         </div>
         
         <div class="">
 
-          <button class="btn btn-sm btn-add-alarm  mx-2" id="start" onclick="start()">
+          <button class="btn btn-add-alarm  mx-2" id="start" onclick="start()">
             Start
           </button>
 
-          <button class="btn btn-sm btn-danger mx-2 d-none" id="stop" onclick="stop()">
+          <button class="btn  btn-danger mx-2 d-none" id="stop" onclick="stop()">
             Stop
           </button>
 
 
 
-          <button class="btn btn-sm btn-secondary mx-2 d-none" id="reset" onclick="reset()">
+          <button class="btn  btn-secondary mx-2 d-none" id="reset" onclick="reset()">
             Reset
           </button>
 
-          <button class="btn btn-sm btn-success mx-2 d-none" id="laps" disabled="true" onclick="laps()">
+          <button class="btn  btn-success mx-2 d-none" id="laps" disabled="true" onclick="laps()">
             Laps
           </button>
         </div>
         <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
-        <button id="clearall" class="btn btn-danger mt-2 text-white" onclick="clearLap()">Clear All</button>
+        <button id="clearall" class="btn btn-danger my-2 text-white" onclick="clearLap()">Clear All</button>
 
       </div>
       <div class="custom-card  my-2 p-3">
