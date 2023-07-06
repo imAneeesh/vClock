@@ -1,3 +1,4 @@
+
 const countries = [
     { name: "United States", code: "US", timeZone: "America/New_York" },
     { name: "United Kingdom", code: "GB", timeZone: "Europe/London" },
@@ -135,3 +136,48 @@ setInterval(() => {
         element.textContent = getCurrentTime(countries[index]);
     });
 }, 1000);
+
+
+
+// Function to get the time of a county using an API
+async function getTimeOfCounty(county) {
+    const apiUrl = `https://timeapi.io/api/Time/current/zone?timeZone=${encodeURIComponent(county)}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        // Log the response object for debugging
+        console.log(response);
+
+        // Assuming the API response includes a "date_time" property
+        const countyTime = data.date_time;
+        console.log(`The current time in ${ county } is: ${ countyTime }`);
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+
+
+// // Function to get the time of a county using an API
+// async function getTimeOfCounty(county) {
+//     const apiUrl = `https://timeapi.io/api/Time/current/zone?timeZone=${encodeURIComponent(county)}`;
+
+
+//     try {
+//         const response = await fetch(apiUrl);
+//         const data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log('Error:', error);
+//     }
+// }
+
+// Example usage
+const counties = ['Asia/Kolkata', 'America/New_York', 'Europe/London'];
+
+counties.forEach((county) => {
+    getTimeOfCounty(county);
+});
+
+
