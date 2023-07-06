@@ -366,6 +366,7 @@ body a:hover {
   outline: none;
   border: none;
   background-color: rgba(58, 57, 57, 0.2);
+  color: #757575 !important;
   border-radius: 0.3rem;
 }
 .main #set-alarm input::-moz-placeholder {

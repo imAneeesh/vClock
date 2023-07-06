@@ -445,6 +445,7 @@ body {
       outline: none;
       border: none;
       background-color: rgba($secondaryColor, .2);
+      color:$placeholderColor !important;
       border-radius: .3rem;
       &::placeholder{
         color:$placeholderColor;
