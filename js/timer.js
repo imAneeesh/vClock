@@ -16,6 +16,7 @@ const newtimer=document.getElementById("newtimer");
 
 function set(){
     inputs.classList.add("d-none");
+    count.classList.add("d-none");
     pause.classList.remove("d-none");
     reset.classList.remove("d-none");
     TIME_LIMIT = document.getElementById("time").value;
@@ -79,9 +80,10 @@ document.getElementById("app").innerHTML = `
 function onTimesUp() {
     clearInterval(timerInterval);
     timerInterval = undefined;
-    count.classList.remove("d-none");
-
+    startNewTimer()
 }
+
+
 
 function startTimer() {
     count.classList.add("d-none");
@@ -156,6 +158,7 @@ function starTimer() {
 }
 
 function pauseTimer() {
+
     resume.classList.remove("d-none");
     pause.classList.add("d-none");
     onTimesUp();
@@ -169,10 +172,12 @@ function resumeTimer() {
 }
 
 function startNewTimer(){
+    pause.classList.add("d-none");
     reset.classList.add("d-none");
     resume.classList.add("d-none");
     newtimer.classList.add("d-none");
     inputs.classList.remove("d-none");
+    count.classList.remove("d-none");
 }
 function resetTimer() {
     newtimer.classList.remove("d-none");
