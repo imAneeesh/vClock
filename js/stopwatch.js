@@ -70,7 +70,7 @@ function laps() {
     lapMin = document.getElementById("min").textContent;
     lapHr = document.getElementById("hr").textContent;
     lapCount = document.getElementById("count").textContent;
-    const newLap = lapHr + "hr " + lapMin + "min " + lapsec + "sec " + lapCount;
+    const newLap = lapHr + ": " + lapMin + ": " + lapsec + ": " + lapCount;
     const local = localStorage.getItem("lapArray")
     if (local == [] || local == undefined) {
         
