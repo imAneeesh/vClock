@@ -91,6 +91,17 @@ function getCountryTime (country) {
 
 function searchCountry()
 {
+    const inputElement = document.getElementById("search");
+    const inputValue = inputElement.value;
+    
+    const pattern = /^[A-Z][a-zA-Z]*$/;
+    const isValid = pattern.test(inputValue);
+    
+    if (!isValid) {
+      alert("Please enter a valid input with the first letter capitalized and only alphabets.");
+      // You can optionally reset the input value here if desired
+      // inputElement.value = "";
+    }
     const searchTerm = document.getElementById("search").value
     console.log(searchTerm)
 

@@ -96,8 +96,27 @@ body {
     border: $backgroundColor !important;
   }
 
+  #hero{
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .time-input{
+    background-color: rgba($secondaryColor,.4) !important;
+    color: $backgroundColor !important;
+  }
+
+  #search{
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: rgba($secondaryColor,.2);
+    color: $backgroundColor !important;
+  }
+
   #menu {
-    overflow: hidden;
+ 
     margin: 0;
     background-color: $primaryColor;
     background-color: $secondaryColor;
@@ -328,7 +347,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba($backgroundColor, 0.3);
+        background-color: rgba($secondaryColor, 0.4) !important;
         border-radius: 0.5rem;
         margin: 0.5rem 0;
         padding: 1.5rem;
@@ -382,9 +401,7 @@ body {
         cursor: pointer;
       }
 
-      span {
-        color: inherit;
-      }
+      
 
       button {
         background-color: red;
@@ -394,11 +411,7 @@ body {
         border-radius: 0.3rem;
       }
 
-      input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        margin-left: 1.2rem;
-      }
+    
     }
   }
 
