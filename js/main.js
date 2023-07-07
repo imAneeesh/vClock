@@ -24,12 +24,9 @@ menuIcon.addEventListener("click", () => {
 });
 
 
-repeatCheckbox.addEventListener("change", function () {
-    if (repeatCheckbox.checked) {
-        repeatDiv.classList.remove("d-none");
-    } else {
-        repeatDiv.classList.add("d-none");
-    }
+repeatCheckbox.addEventListener("click", function () {
+    repeatDiv.classList.toggle("d-none");
+
 });
 
 cancel.addEventListener("click", () => {

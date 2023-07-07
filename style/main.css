@@ -179,8 +179,7 @@ body a:hover {
   background-color: #3a3939;
   color: white;
   width: 50vw;
-  min-height: 94vh;
-  height: auto !important;
+  height: 94vh;
   min-width: 150px;
 }
 .main #menu .navbar-container {
@@ -337,11 +336,9 @@ body a:hover {
 }
 .main .inputs input::-moz-placeholder {
   color: #757575;
-  padding-left: 0.4rem;
 }
 .main .inputs input::placeholder {
   color: #757575;
-  padding-left: 0.4rem;
 }
 .main .btn-add-alarm {
   background-color: #0090dd;
@@ -357,13 +354,16 @@ body a:hover {
   background-color: #0090dd;
   color: #f0f0f0;
 }
+.main #repeatCheckbox {
+  cursor: pointer;
+}
 .main #set-alarm {
   width: 100%;
 }
 .main #set-alarm input {
-  width: 10vw;
+  width: 18vw;
   height: 5vh;
-  padding-left: 0.5rem;
+  padding-left: 0.1rem;
   outline: none;
   border: none;
   background-color: rgba(58, 57, 57, 0.2);
@@ -372,11 +372,11 @@ body a:hover {
 }
 .main #set-alarm input::-moz-placeholder {
   color: #757575;
-  padding-left: 0.4rem;
+  padding-left: 0.1rem;
 }
 .main #set-alarm input::placeholder {
   color: #757575;
-  padding-left: 0.4rem;
+  padding-left: 0.1rem;
 }
 .main #set-alarm .activeAlarms {
   max-height: 28vh;
@@ -455,12 +455,56 @@ body a:hover {
   height: 20px;
   margin-left: 1.2rem;
 }
-.main .repeat-div {
-  background-color: red;
-  position: fixed;
+
+.repeat-div {
+  box-shadow: 1px 1px 10px rgb(102, 91, 91);
+  position: absolute;
   top: 50%;
   left: 50%;
+  width: 60vw;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+}
+.repeat-div .days {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.repeat-div .days label {
+  display: flex;
+  justify-content: space-between;
+}
+.repeat-div .alarm input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 1.3rem;
+  width: 2.5rem;
+  background-color: #e2e2ec;
+  border-radius: 1.25em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.repeat-div .alarm input[type=checkbox]:before {
+  position: absolute;
+  content: "";
+  background-color: #757683;
+  height: 1.03em;
+  width: 1.03em;
+  border-radius: 50%;
+  top: 0.15em;
+  left: 0.15em;
+}
+.repeat-div .alarm input[type=checkbox]:checked {
+  background-color: #d2e2ff;
+}
+.repeat-div .alarm input[type=checkbox]:checked:before {
+  background-color: #377dff;
+  left: 1.2em;
 }
 
 @media (max-width: 490px) {
