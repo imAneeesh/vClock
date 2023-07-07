@@ -14,12 +14,10 @@ const reset = document.getElementById("reset");
 const inputs = document.getElementById("inputs");
 const newtimer=document.getElementById("newtimer");
  const errMsg = document.getElementById("blur");
- const message = document.getElementById("message");
 
 function toggleBlur(){
     
     errMsg.classList.add("d-none")
-    count.classList.remove("d-none");
 }
 
 function set(){
@@ -27,43 +25,24 @@ function set(){
      TIME_LIMIT = document.getElementById("time").value;
      
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
-      errMsg.classList.remove("d-none");
-    count.classList.add("d-none");
+      errMsg.classList.remove("d-none")
       document.getElementById("time").value = "";
-     
        return;
      }
-     interval = document.getElementById("interval").value;
-     if (interval == "minutes") {
-       if (TIME_LIMIT < 59) {
-         TIME_LIMIT = TIME_LIMIT * 60;
-       } else {
-        message.textContent="invalid minute(1-59)";
-         errMsg.classList.remove("d-none");
-         count.classList.add("d-none");
-         return;
-       }
-      
-     } else if (interval == "hours") {
-        
-       TIME_LIMIT = TIME_LIMIT * 60 * 60;
-     }else if (interval == "seconds"){
-        if(TIME_LIMIT>59){
-            message.textContent = "invalid seconds(1-59)";
-            errMsg.classList.remove("d-none");
-            count.classList.add("d-none");
-            return;
-        }
-     }
-       //  errMsg.classList.add("d-none")
-       inputs.classList.add("d-none");
+    //  errMsg.classList.add("d-none")
+    inputs.classList.add("d-none");
     count.classList.add("d-none");
     pause.classList.remove("d-none");
     reset.classList.remove("d-none");
    
-    
+    interval=document.getElementById("interval").value;
    
-    
+    if(interval=="minutes"){
+        TIME_LIMIT=TIME_LIMIT*60;
+    }
+    else if(interval=="hours"){
+        TIME_LIMIT=TIME_LIMIT*60*60;
+    }
     
 
     timeLeft = TIME_LIMIT;
