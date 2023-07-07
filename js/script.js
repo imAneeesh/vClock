@@ -23,7 +23,7 @@ const searchObject = (parameter, value) => {
     exists = false;
   alarmsArray.forEach((alarm, index) => {
     if (alarm[parameter] == value) {
-      exists = true;
+      exists = true;appendZero
       alarmObject = alarm;
       objIndex = index;
       return false;

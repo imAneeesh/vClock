@@ -546,12 +546,58 @@ body {
 }
 
 .repeat-div{
-  border: 1px solid rgb(238, 236, 236);
-  background-color: red;
-  position: fixed;
+  // border: 1px solid rgb(238, 236, 236);
+  box-shadow: 1px 1px 10px rgb(102, 91, 91);
+  position: absolute;
   top: 50%;
-  left: 50%;
+  left:50%;
+  width: 60vw;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 1000;
   transform: translate(-50%, -50%);
+  .days{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    label{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .alarm input[type="checkbox"] {
+    appearance: none;
+    height: 1.3rem;
+    width: 2.5rem;
+    background-color: #e2e2ec;
+    border-radius: 1.25em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .alarm input[type="checkbox"]:before {
+    position: absolute;
+    content: "";
+    background-color: #757683;
+    height: 1.03em;
+    width: 1.03em;
+    border-radius: 50%;
+    top: 0.15em;
+    left: 0.15em;
+  }
+
+  .alarm input[type="checkbox"]:checked {
+    background-color: #d2e2ff;
+  }
+
+  .alarm input[type="checkbox"]:checked:before {
+    background-color: #377dff;
+    left: 1.2em;
+  }
+
+  
 }
 
 @media (max-width: 490px) {
