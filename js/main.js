@@ -24,7 +24,6 @@ function toggleDarkMode() {
 }
 
 menuIcon.addEventListener("click", () => {
-    
     barIcon.classList.toggle("d-none")
     xIcon.classList.toggle("d-none")
     const menu = document.getElementById("menu-bar");
