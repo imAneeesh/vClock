@@ -54,14 +54,34 @@ const countries = [
   { name: "Slovakia", code: "SK", timeZone: "Europe/Bratislava" },
 ];
 
+// function getCurrentTime(country) {
+//   const options = {
+//     timeZone: country.timeZone,
+//     hour12: false,
+//     hour: "numeric",
+//     minute: "numeric",
+//     second: "numeric",
+//   };
+//   let currentTime = new Date().toLocaleTimeString([], options);
+
+//   if (currentTime.startsWith("24")) {
+//     currentTime = currentTime.replace("24", "00");
+//   }
+//   return currentTime;
+// }
+
 function getCurrentTime(country) {
   const options = {
-    timeZone: country.timeZone,
     hour12: false,
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
   };
+
+  if (country && country.timeZone) {
+    options.timeZone = country.timeZone;
+  }
+
   let currentTime = new Date().toLocaleTimeString([], options);
 
   if (currentTime.startsWith("24")) {
@@ -69,6 +89,7 @@ function getCurrentTime(country) {
   }
   return currentTime;
 }
+
 
 const clockContainer = document.querySelector(".clock-container");
 const search = document.getElementById("search");
@@ -97,6 +118,7 @@ function searchCountry() {
   const pattern = /^[a-zA-Z]*$/;
   const isValid = pattern.test(inputValue);
 
+  
   if (!isValid) {
     alert(
       "Please enter a valid input with the first letter capitalized and only alphabets."
@@ -105,7 +127,6 @@ function searchCountry() {
     // inputElement.value = "";
   }
   const searchTerm = document.getElementById("search").value;
-
   if (searchTerm == "") {
     clockContainer.classList.remove("d-none");
   } else {
@@ -154,9 +175,14 @@ async function getTimeOfCounty(county) {
 
   try {
     const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error("Failed to retrieve data from the API");
+    }
     const data = await response.json();
+    // Process the retrieved data
   } catch (error) {
     console.log("Error:", error);
+    // Handle the error gracefully (e.g., display an error message to the user)
   }
 }
 
@@ -166,3 +192,7 @@ const counties = ["Asia/Kolkata", "America/New_York", "Europe/London"];
 counties.forEach((county) => {
   getTimeOfCounty(county);
 });
+
+
+
+
