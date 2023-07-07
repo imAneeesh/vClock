@@ -98,7 +98,7 @@ body a:hover {
   color: #f0f0f0 !important;
 }
 .main #search {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -124,7 +124,7 @@ body a:hover {
 .main .type-cell {
   background-color: rgba(58, 57, 57, 0.2) !important;
   color: #f0f0f0;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.3rem;
 }
@@ -374,7 +374,7 @@ body a:hover {
   height: 5vh;
   padding-left: 0.1rem;
   outline: none;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(58, 57, 57, 0.2);
   color: #757575 !important;
   border-radius: 0.3rem;
