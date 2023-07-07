@@ -4,15 +4,14 @@ const hourInput = document.getElementById("hourInput");
 const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
+const main = document.getElementById("main");
 let alarmsArray = [];
 let alarmSound = new Audio('./js/audio.wav');
 let initialHour = 0,
   initialMinute = 0,
   alarmIndex = 0;
-
 let daysOfWeek = [];
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 // Append zeroes for single digit
 const appendZero = (value) => (value < 10 ? "0" + value : value);
 
@@ -34,6 +33,20 @@ const searchObject = (parameter, value) => {
 
 let notificationCount = 0;
 
+
+repeatCheckbox.addEventListener("click", () => {
+  main.style.opacity=0.3;
+  main.style.pointerEvents="none";
+
+});
+
+cancel.addEventListener("click", () => {
+  main.style.opacity=1;
+  main.style.pointerEvents="auto";
+});
+
+
+
 // Display Time
 function displayTimer() {
   let date = new Date();
@@ -48,7 +61,6 @@ function displayTimer() {
   const hour12 = hour ? hour : 12;
   const minute = minutes < 10 ? '0' + minutes : minutes;
   const second = seconds < 10 ? '0' + seconds : seconds;
-
 
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
