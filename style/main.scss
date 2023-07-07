@@ -435,6 +435,10 @@ body {
     color: $backgroundColor;
   }
 
+  #repeatCheckbox{
+    cursor: pointer;
+  }
+
   #set-alarm {
     width: 100%;
 
@@ -539,13 +543,16 @@ body {
       }
     }
   }
-  .repeat-div{
-    background-color: red;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+ 
+}
+
+.repeat-div{
+  border: 1px solid rgb(238, 236, 236);
+  background-color: red;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 490px) {
