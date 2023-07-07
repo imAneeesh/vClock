@@ -248,6 +248,7 @@ if ("Notification" in window) {
 const setBtn = document.getElementById("setBtn");
 
 setBtn.addEventListener("click", () => {
+  daysOfWeek.length = 0;
   count = 1;
   var monday = document.getElementById("monday");
   if (monday.checked) {
@@ -292,4 +293,6 @@ setBtn.addEventListener("click", () => {
   // Display selected days in the console
   console.log("Selected Days: " + daysOfWeek.join(", "));
   repeatDiv.classList.add("d-none");
+  main.style.opacity = "1";
+  main.style.pointerEvents = "all";
 });
