@@ -139,11 +139,13 @@ body {
     background: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
   }
-
-  // #hero {
-  //   max-height: 100vh;
-  //   overflow-y: auto;
-  // }
+@media (min-width:700px) {
+  #hero {
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
+}
+ 
 
   .time-input {
     background-color: rgba($secondaryColor, .4) !important;
@@ -418,14 +420,23 @@ body {
     align-items: center;
 
     .time {
+<<<<<<< HEAD
+      color: #00d300;
+      font-size: 6.5rem;
+=======
       color: #252525;
-      font-size: 8rem;
+      font-size: 7rem;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-weight: 700;
     }
 
     .date,
     .formateddate {
+<<<<<<< HEAD
+      color: #00d300;
+=======
       color: #252525;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-size: 3rem;
     }
   }
@@ -482,7 +493,7 @@ body {
     width: 100%;
 
     input {
-      width: 18vw;
+      width: 9vw;
       height: 5vh;
       padding-left: .1rem;
       outline: none;
@@ -498,15 +509,16 @@ body {
     }
 
     .activeAlarms {
-      max-height: 28vh;
-      overflow-y: auto;
+      max-height: 40vh;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
 
       .alarm {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -515,12 +527,20 @@ body {
         margin: .5rem 0;
         padding: 1rem;
       }
+      .days{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        color: #757575;
+      }
 
       .alarm {
         display: grid;
-        grid-template-columns: 8fr 2fr 2fr;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
         gap: 1em;
         margin-top: .5em;
+        border: 1px solid rgba(white,.2);
         align-items: center;
         padding: 1rem;
       }
@@ -557,11 +577,16 @@ body {
       }
 
       .deleteButton {
+<<<<<<< HEAD
+        background-color: inherit ;
+=======
         background-color: inherit;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
         font-size: 1.5em;
         color: #ff5c5c;
         border: none;
         cursor: pointer;
+        padding: 0;
       }
 
       span {
@@ -586,8 +611,14 @@ body {
 
 }
 
+<<<<<<< HEAD
+.repeat-div{
+  // border: 1px solid rgb(238, 236, 236);
+  background-color: rgba($backgroundColor, 1) ;
+=======
 .repeat-div {
   background-color: rgba($backgroundColor, 1);
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   box-shadow: 1px 1px 10px rgb(14, 13, 13);
   color: black;
   position: absolute;
@@ -645,12 +676,51 @@ body {
 
 }
 
+<<<<<<< HEAD
+
+
+.alarmFullscreen{
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+ display: grid;
+ place-content:center ;
+ .time{
+  font-size: 200px;
+ }
+
+}
+
+
+
+.fullscreenDesign{
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+.fullscreenDesign .country-name{
+color: red;
+}
+
+
+
+
+
+
+
+@media (max-width: 769px) {
+=======
 @media (max-width: 769px) {
   .digit {
     font-size: 4rem;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   .timer {
     .time {
       font-size: 4rem !important;

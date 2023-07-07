@@ -14,13 +14,18 @@ const reset = document.getElementById("reset");
 const inputs = document.getElementById("inputs");
 const newtimer=document.getElementById("newtimer");
  const errMsg = document.getElementById("blur");
- const message = document.getElementById("message");
 
-function toggleBlur(){
+// function toggleBlur(){
     
+<<<<<<< HEAD
+//     errMsg.classList.add("d-none")
+//     // count.classList.remove("d-none");
+// }
+=======
     errMsg.classList.add("d-none")
     countStart.classList.remove("d-none");
 }
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
 
 function set(){
    
@@ -28,7 +33,11 @@ function set(){
      
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
       errMsg.classList.remove("d-none");
+<<<<<<< HEAD
+    // count.classList.add("d-none");
+=======
     countStart.classList.add("d-none");
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       document.getElementById("time").value = "";
      
        return;
@@ -40,7 +49,11 @@ function set(){
        } else {
         message.textContent="invalid minute(1-59)";
          errMsg.classList.remove("d-none");
+<<<<<<< HEAD
+        //  count.classList.add("d-none");
+=======
          countStart.classList.add("d-none");
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
          return;
        }
       
@@ -51,7 +64,11 @@ function set(){
         if(TIME_LIMIT>59){
             message.textContent = "invalid seconds(1-59)";
             errMsg.classList.remove("d-none");
+<<<<<<< HEAD
+            // count.classList.add("d-none");
+=======
             countStart.classList.add("d-none");
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
             return;
         }
      }
@@ -61,9 +78,14 @@ function set(){
     pause.classList.remove("d-none");
     reset.classList.remove("d-none");
    
-    
+    interval=document.getElementById("interval").value;
    
-    
+    if(interval=="minutes"){
+        TIME_LIMIT=TIME_LIMIT*60;
+    }
+    else if(interval=="hours"){
+        TIME_LIMIT=TIME_LIMIT*60*60;
+    }
     
 
     timeLeft = TIME_LIMIT;
