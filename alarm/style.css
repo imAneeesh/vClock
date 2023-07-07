@@ -95,7 +95,7 @@
 }
 
 .deleteButton {
-    background-color: transparent;
+    background-color: inherit;
     font-size: 1.5em;
     color: #377dff;
     border: none;
