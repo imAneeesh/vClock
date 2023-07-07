@@ -242,151 +242,9 @@ body {
 
           li {
             width: 100%;
-<<<<<<< HEAD
-    
-        }
-
-    .flip {
-        transition: all .5s ease-in-out;
-
-        &:hover {
-            transform: rotateX(180deg) !important;
-        }
-    }
-
-    .icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    .menu {
-        transition: all .3s ease-in-out;
-        cursor: pointer;
-
-        &:hover {
-            color: $primaryColor;
-            transform: scale(1.01);
-        }
-    }
-
-    .active {
-        background-color: $backgroundColor !important;
-        color: $secondaryColor;
-        border: $backgroundColor !important;
-    }
-
-    #menu {
-        overflow: hidden;
-        margin: 0;
-        background-color: $primaryColor;
-        background-color: $secondaryColor;
-        color: white;
-        // height: 100vh;
-        width: calc(100vw - 50vw);
-        min-height: calc(100vh - 6vh);
-        height: auto !important;
-        min-width: 150px;
-
-        .navbar-container {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-
-
-            .nav-links {
-                width: 100%;
-
-                ul {
-                    width: 100%;
-                    padding: 0;
-
-                    li {
-                        width: 100%;
-                        padding: 0 1rem;
-                        font-size: 12px;
-                        height: 50px;
-                        text-align: center;
-                        align-items: center;
-                        display: flex;
-                        justify-content: start;
-                        list-style-type: none;
-                        border-bottom: 1px solid rgb(82, 82, 82);
-                        border-top: 1px solid rgb(82, 82, 82);
-
-                        a {
-                            text-decoration: none;
-                            color: white;
-                        }
-
-                        img {
-                            width: 20px;
-                            height: 20px;
-                        }
-
-                        i {
-                            font-size: 12px;
-                        }
-
-                    }
-                }
-            }
-        }
-
-        @media screen and (min-width:768px) {
-            width: 20%;
-        }
-
-    }
-
-    .body-container {
-        background: $primaryColor;
-        position: relative;
-
-        .top-bar {
-            height: 6vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .menu-icon {
-                img {
-                    width: 20px;
-                    margin: .5rem;
-                }
-            }
-
-            .logo {
-                img {
-                    width: 80px;
-                }
-            }
-
-            .setting {
-                img {
-                    width: 20px;
-                    margin: .5rem;
-                }
-            }
-        }
-    }
-
-    .my-container {
-        display: flex;
-        flex-direction: column;
-
-        h1 {
-=======
             padding: 0 1rem;
             font-size: 12px;
             height: 50px;
->>>>>>> e74549ab57d44f98f0a20b0731a77dd464a94823
             text-align: center;
             align-items: center;
             display: flex;
@@ -552,7 +410,6 @@ body {
       font-weight: 600;
       &::placeholder{
         color:$placeholderColor;
-        padding-left: .4rem;
       }
     }
   }
@@ -585,9 +442,9 @@ body {
     width: 100%;
 
     input {
-      width: 10vw;
+      width: 18vw;
       height: 5vh;
-      padding-left: .5rem;
+      padding-left: .1rem;
       outline: none;
       border: none;
       background-color: rgba($secondaryColor, .2);
@@ -595,7 +452,7 @@ body {
       border-radius: .3rem;
       &::placeholder{
         color:$placeholderColor;
-        padding-left: .4rem;
+        padding-left: .1rem;
       }
     }
 
