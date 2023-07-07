@@ -5,6 +5,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 const main = document.getElementById("main");
+let count =0;
 let alarmsArray = [];
 let alarmSound = new Audio('./js/audio.wav');
 let initialHour = 0,
@@ -65,18 +66,37 @@ function displayTimer() {
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
-      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
-        alarmSound.play();
-        while (notificationCount < 1) {
-          const notification = new Notification("Alarm", {
-            body: "Alarm is ringing",
-            icon: "./images/logo.png",
-          });
-          notificationCount++;
-          notification.onclick = (e) => {
-            window.location.href = "https://www.127.0.0.1:5500/vClock";
-          };
-        }
+      if(count==0){
+        
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute ) {
+          alarmSound.play();
+          while (notificationCount < 1) {
+            const notification = new Notification("Alarm", {
+              body: "Alarm is ringing",
+              icon: "./images/logo.png",
+            });
+            notificationCount++;
+            notification.onclick = (e) => {
+              window.location.href = "https://www.127.0.0.1:5500/vClock";
+            };
+          }
+        } 
+      }
+      else if(count ==1){
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
+          alarmSound.play();
+          while (notificationCount < 1) {
+            const notification = new Notification("Alarm", {
+              body: "Alarm is ringing",
+              icon: "./images/logo.png",
+            });
+            notificationCount++;
+            notification.onclick = (e) => {
+              window.location.href = "https://www.127.0.0.1:5500/vClock";
+            };
+          }
+        } 
+      // console.log(count);
       }
     }
   });
@@ -228,7 +248,7 @@ if ("Notification" in window) {
 const setBtn = document.getElementById("setBtn");
 
 setBtn.addEventListener("click", () => {
-
+  count = 1;
   var monday = document.getElementById("monday");
   if (monday.checked) {
     daysOfWeek.push("Monday");
