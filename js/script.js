@@ -11,6 +11,7 @@ let initialHour = 0,
   alarmIndex = 0;
 
 let daysOfWeek = [];
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // Append zeroes for single digit
 const appendZero = (value) => (value < 10 ? "0" + value : value);
@@ -36,6 +37,8 @@ let notificationCount = 0;
 // Display Time
 function displayTimer() {
   let date = new Date();
+
+  console.log()
   let [hours, minutes, seconds] = [
     appendZero(date.getHours()),
     appendZero(date.getMinutes()),
@@ -50,13 +53,7 @@ function displayTimer() {
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
-<<<<<<< HEAD
-      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
-        // new Notification("hello thwere");
-        console.log("Alarm");
-=======
-      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(date.getDay())) {
->>>>>>> 1ed320411ce232bfe54519088541e8114b933dc2
+      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
         alarmSound.play();
         while (notificationCount < 1) {
           const notification = new Notification("Alarm", {
