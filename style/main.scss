@@ -139,11 +139,13 @@ body {
     background: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
   }
-
-  // #hero {
-  //   max-height: 100vh;
-  //   overflow-y: auto;
-  // }
+@media (min-width:700px) {
+  #hero {
+    max-height: 93vh;
+    overflow-y: auto;
+  }
+}
+ 
 
   .time-input {
     background-color: rgba($secondaryColor, .4) !important;
@@ -419,7 +421,7 @@ body {
 
     .time {
       color: #252525;
-      font-size: 8rem;
+      font-size: 7rem;
       font-weight: 700;
     }
 
@@ -482,7 +484,7 @@ body {
     width: 100%;
 
     input {
-      width: 18vw;
+      width: 9vw;
       height: 5vh;
       padding-left: .1rem;
       outline: none;
@@ -521,6 +523,7 @@ body {
         grid-template-columns: 8fr 2fr 2fr;
         gap: 1em;
         margin-top: .5em;
+        border: 1px solid rgba(white,.2);
         align-items: center;
         padding: 1rem;
       }
