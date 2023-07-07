@@ -28,6 +28,7 @@ const searchObject = (parameter, value) => {
 };
 
 function displayTimer() {
+  
   let date = new Date();
   let [hours, minutes, seconds] = [
     appendZero(date.getHours()),
@@ -40,6 +41,7 @@ function displayTimer() {
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
       if (`${alarm.alarmHour}:${alarm.alarmMinute}` === `${hours}:${minutes}`) {
+        
         alarmSound.play();
         alarmSound.loop = true;
       }

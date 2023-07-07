@@ -50,7 +50,13 @@ function displayTimer() {
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
+<<<<<<< HEAD
+      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
+        // new Notification("hello thwere");
+        console.log("Alarm");
+=======
       if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(date.getDay())) {
+>>>>>>> 1ed320411ce232bfe54519088541e8114b933dc2
         alarmSound.play();
         while (notificationCount < 1) {
           const notification = new Notification("Alarm", {

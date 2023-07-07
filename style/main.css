@@ -179,7 +179,8 @@ body a:hover {
   background-color: #3a3939;
   color: white;
   width: 50vw;
-  height: 94vh;
+  min-height: 94vh;
+  height: auto !important;
   min-width: 150px;
 }
 .main #menu .navbar-container {
