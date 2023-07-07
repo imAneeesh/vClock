@@ -21,7 +21,8 @@
       <div class="top-bar " id="top-bar">
         <div id="menuIcon" class="menu-icon">
           <span class="menu">
-            <i class="fa-solid ps-3 fa-xl d-lg-none text-white flip fa-bars"></i>
+            <i class="fa-solid ps-3 fa-xl d-lg-none text-white flip fa-bars" id="fa-bars"></i>
+            <i class="fa-solid ps-3 fa-lg d-none d-lg-none text-white flip fa-x" id="fa-x"></i>
           </span>
           <div class="logo d-none d-lg-block">
             <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
@@ -135,7 +136,7 @@
         <div class="d-none" id="blur">
           <div class="err-content">
             <h1 class="heading">Error</h1>
-            <h2>Negative and Empty Value not allowed</h2>
+            <h2 id="message">Invalid Input</h2>
             <a href="" onclick="toggleBlur()">Close</a>
           </div>
         </div>
