@@ -94,7 +94,7 @@ function searchCountry() {
   const inputElement = document.getElementById("search");
   const inputValue = inputElement.value;
 
-  const pattern = /^[A-Z][a-zA-Z]*$/;
+  const pattern = /^[a-zA-Z]*$/;
   const isValid = pattern.test(inputValue);
 
   if (!isValid) {
