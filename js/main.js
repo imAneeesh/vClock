@@ -17,6 +17,7 @@ function toggleDarkMode() {
     activeMenu[0].classList.toggle("lighty-mode");
     activeMenu[1].classList.toggle("lighty-mode");
     element.classList.toggle("dark-mode");
+    repeatDiv.classList.toggle("dark-mode")
 }
 
 menuIcon.addEventListener("click", () => {
