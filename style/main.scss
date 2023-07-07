@@ -5,6 +5,19 @@
   src: url(".././font/digital-7\ \(mono\).ttf");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
@@ -37,6 +50,13 @@ body {
     &:hover {
       color: $primaryColor;
     }
+  }
+
+}
+
+.theme-icon{
+  &:hover{
+    cursor: pointer !important;
   }
 }
 
@@ -119,11 +139,13 @@ body {
     background: rgb(36, 36, 36);
     color: rgb(255, 255, 255);
   }
-
+@media (min-width:700px) {
   #hero {
     max-height: 100vh;
     overflow-y: hidden;
   }
+}
+ 
 
   .time-input {
     background-color: rgba($secondaryColor, .4) !important;
@@ -131,7 +153,7 @@ body {
   }
 
   #search {
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .5rem;
     padding: .5rem;
@@ -163,7 +185,7 @@ body {
   .type-cell {
     background-color: rgba($secondaryColor, .2) !important;
     color: $backgroundColor;
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .3rem;
 
@@ -327,7 +349,7 @@ body {
   .my-container {
     display: flex;
     flex-direction: column;
-
+    
     h1 {
       text-align: center;
     }
@@ -379,8 +401,6 @@ body {
       cursor: pointer;
     }
 
-
-
     .btn:hover {
       background-color: skyblue;
     }
@@ -389,7 +409,6 @@ body {
   .clock {
     max-height: 90vh;
     overflow-y: auto;
-    width: 100vw;
   }
 
   .timer {
@@ -402,7 +421,7 @@ body {
 
     .time {
       color: #252525;
-      font-size: 6.5rem;
+      font-size: 7rem;
       font-weight: 700;
     }
 
@@ -465,11 +484,11 @@ body {
     width: 100%;
 
     input {
-      width: 18vw;
+      width: 9vw;
       height: 5vh;
       padding-left: .1rem;
       outline: none;
-      border: none;
+      border: 1px solid rgba(white,.2);
       background-color: rgba($secondaryColor, .2);
       color: $placeholderColor !important;
       border-radius: .3rem;
@@ -512,6 +531,7 @@ body {
         grid-template-columns: 2fr 2fr 2fr 2fr;
         gap: 1em;
         margin-top: .5em;
+        border: 1px solid rgba(white,.2);
         align-items: center;
         padding: 1rem;
       }
@@ -579,7 +599,6 @@ body {
 }
 
 .repeat-div {
-  // border: 1px solid rgb(238, 236, 236);
   background-color: rgba($backgroundColor, 1);
   box-shadow: 1px 1px 10px rgb(14, 13, 13);
   color: black;
@@ -639,6 +658,11 @@ body {
 }
 
 @media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'digital-clock-font';
+}
   .timer {
     .time {
       font-size: 4rem !important;
