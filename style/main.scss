@@ -382,13 +382,15 @@ body {
     align-items: center;
 
     .time {
-      font-size: 3.2rem;
+      color: #008000;
+      font-size: 6.5rem;
       font-weight: 700;
     }
 
     .date,
     .formateddate {
-      font-size: 1.5rem;
+      color: #008000;
+      font-size: 3rem;
     }
   }
 
@@ -602,10 +604,10 @@ body {
   
 }
 
-@media (max-width: 490px) {
+@media (max-width: 769px) {
   .timer {
     .time {
-      font-size: 2.7rem !important;
+      font-size: 4rem !important;
     }
   }
 }

@@ -312,12 +312,14 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
-  font-size: 3.2rem;
+  color: #008000;
+  font-size: 6.5rem;
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-  font-size: 1.5rem;
+  color: #008000;
+  font-size: 3rem;
 }
 .main .wrapper-container {
   margin: 0;
@@ -508,8 +510,8 @@ body a:hover {
   left: 1.2em;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 769px) {
   .timer .time {
-    font-size: 2.7rem !important;
+    font-size: 4rem !important;
   }
 }/*# sourceMappingURL=main.css.map */
