@@ -21,6 +21,7 @@ function toggleBlur(){
     countStart.classList.remove("d-none");
 }
 
+
 function set(){
    
      TIME_LIMIT = document.getElementById("time").value;
@@ -28,6 +29,7 @@ function set(){
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
       errMsg.classList.remove("d-none");
     countStart.classList.add("d-none");
+
       document.getElementById("time").value = "";
      
        return;
@@ -40,6 +42,7 @@ function set(){
         message.textContent="invalid minute(1-59)";
          errMsg.classList.remove("d-none");
          countStart.classList.add("d-none");
+
          return;
        }
       

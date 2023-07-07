@@ -40,6 +40,14 @@ body a:hover {
   color: #0090dd;
 }
 
+#fullscreenButton {
+  background-color: transparent;
+  border: 0;
+}
+#fullscreenButton i {
+  color: #0090dd;
+}
+
 .theme-icon:hover {
   cursor: pointer !important;
 }
@@ -108,8 +116,8 @@ body a:hover {
 }
 @media (min-width: 700px) {
   .main #hero {
-    max-height: 100vh;
-    overflow-y: hidden;
+    max-height: 93vh;
+    overflow-y: auto;
   }
 }
 .main .time-input {
@@ -326,7 +334,7 @@ body a:hover {
 }
 .main .clock {
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .main .timer {
   width: 100%;
@@ -566,10 +574,23 @@ body a:hover {
 }
 
 .fullscreenDesign .country-name {
-  color: red;
+  color: #0090dd;
+  transform: scale(5);
+  font-size: 5rem;
+}
+
+.fullscreenDesign .current-time {
+  transform: scale(5);
+  margin: 5rem;
+  font-size: 5rem;
 }
 
 @media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "digital-clock-font";
+  }
   .timer .time {
     font-size: 4rem !important;
   }
