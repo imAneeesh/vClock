@@ -19,6 +19,7 @@ const newtimer=document.getElementById("newtimer");
 function toggleBlur(){
     
     errMsg.classList.add("d-none")
+    count.classList.remove("d-none");
 }
 
 function set(){
@@ -26,8 +27,10 @@ function set(){
      TIME_LIMIT = document.getElementById("time").value;
      
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
-      errMsg.classList.remove("d-none")
+      errMsg.classList.remove("d-none");
+    count.classList.add("d-none");
       document.getElementById("time").value = "";
+     
        return;
      }
      interval = document.getElementById("interval").value;
@@ -37,6 +40,7 @@ function set(){
        } else {
         message.textContent="invalid minute(1-59)";
          errMsg.classList.remove("d-none");
+         count.classList.add("d-none");
          return;
        }
       
@@ -47,6 +51,7 @@ function set(){
         if(TIME_LIMIT>59){
             message.textContent = "invalid seconds(1-59)";
             errMsg.classList.remove("d-none");
+            count.classList.add("d-none");
             return;
         }
      }
