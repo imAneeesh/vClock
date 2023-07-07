@@ -125,6 +125,8 @@
         <div id="app" class="timerCircle my-3"></div>
         <div class="inputs my-4 container d-flex gap-2 w-50" id="inputs">
           <input class="p-1 time-cell" oninput="showbtn()" placeholder="Enter time"  type="number" name="time" id="time">
+          
+        
           <select class="p-1 type-cell" id="interval" name="interval" >
             <option class="type-cells" value="seconds">seconds</option>
             <option class="type-cells" value="minutes">minutes</option>
@@ -136,7 +138,7 @@
         <div class="d-none" id="blur">
           <div class="err-content">
             <h1 class="heading">Error</h1>
-            <h2>Negative and Empty Value not allowed</h2>
+            <h2 id="message">Invalid Input</h2>
             <a href="" onclick="toggleBlur()">Close</a>
           </div>
         </div>
