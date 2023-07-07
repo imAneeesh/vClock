@@ -129,13 +129,16 @@ function searchCountry() {
   const searchTerm = document.getElementById("search").value;
   if (searchTerm == "") {
     clockContainer.classList.remove("d-none");
+    
   } else {
     clockContainer.classList.add("d-none");
+   
   }
 
   countries.forEach((country) => {
     if (country.name == searchTerm) {
       getCountryTime(country.name);
+          
     } else {
       console.log("No data");
     }
