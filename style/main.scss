@@ -8,7 +8,8 @@
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
-$placeholderColor:#757575;
+$placeholderColor: #757575;
+
 .background-primary {
   background-color: $primaryColor !important;
 }
@@ -48,10 +49,24 @@ body {
   background: rgb(36, 36, 36) !important;
   color: rgb(255, 255, 255) !important;
 
+  .main {
+    .timer {
+
+      .time {
+        color: #00d300;
+      }
+
+      .date,
+      .formateddate {
+        color: #00d300;
+      }
+    }
+  }
 }
-.lighty-mode{
+
+.lighty-mode {
   background-color: $backgroundColor !important;
-    color: $secondaryColor !important;
+  color: $secondaryColor !important;
 }
 
 .time,
@@ -102,7 +117,7 @@ body {
 
   .active {
     background: rgb(36, 36, 36);
-    color: rgb(255, 255, 255) ;  
+    color: rgb(255, 255, 255);
   }
 
   #hero {
@@ -116,46 +131,48 @@ body {
   }
 
   #search {
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .5rem;
     padding: .5rem;
     background-color: rgba($secondaryColor, .2);
     color: $backgroundColor !important;
   }
+
   .base-timer__path-remaining.green {
-    color: rgba($primaryColor,1);
-}
+    color: rgba($primaryColor, 1);
+  }
 
-.base-timer__path-remaining.orange {
-    color: rgba(#FF9800,.4);
-}
+  .base-timer__path-remaining.orange {
+    color: rgba(#FF9800, .4);
+  }
 
-.base-timer__path-remaining.red {
-    color: rgba(red,.4)
-}
+  .base-timer__path-remaining.red {
+    color: rgba(red, .4)
+  }
 
   select {
     color: $placeholderColor !important;
+
     option {
-      background-color: rgba($secondaryColor, .2) !important;      
+      background-color: rgba($secondaryColor, .2) !important;
     }
   }
-  
-  
 
   .time-cell,
-  .type-cell{
-    background-color: rgba($secondaryColor, .2) !important;      
+  .type-cell {
+    background-color: rgba($secondaryColor, .2) !important;
     color: $backgroundColor;
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .3rem;
-    option{
-      background-color: rgba($secondaryColor, .2) !important;      
+
+    option {
+      background-color: rgba($secondaryColor, .2) !important;
       color: $secondaryColor;
     }
   }
+
   #menu-bar {
     position: fixed;
     z-index: 999;
@@ -176,6 +193,7 @@ body {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+
       .nav-links {
         width: 100%;
 
@@ -204,7 +222,7 @@ body {
               height: 30px;
             }
 
-         
+
           }
         }
       }
@@ -328,6 +346,7 @@ body {
       text-align: center;
       transition: all 0.3s ease-in-out;
       border: 1px solid $primaryColor;
+
       &:hover {
         cursor: pointer;
         box-shadow: 0px 0px 15px $primaryColor;
@@ -360,7 +379,7 @@ body {
       cursor: pointer;
     }
 
-   
+
 
     .btn:hover {
       background-color: skyblue;
@@ -382,14 +401,14 @@ body {
     align-items: center;
 
     .time {
-      color: #00d300;
+      color: #252525;
       font-size: 6.5rem;
       font-weight: 700;
     }
 
     .date,
     .formateddate {
-      color: #00d300;
+      color: #252525;
       font-size: 3rem;
     }
   }
@@ -400,18 +419,20 @@ body {
     align-self: center;
     justify-content: center;
 
-   
+
   }
+
   .inputs {
     display: flex;
     align-items: center;
     justify-content: center;
 
     input {
-      background-color: rgba($secondaryColor, .2) !important;      
+      background-color: rgba($secondaryColor, .2) !important;
       font-weight: 600;
-      &::placeholder{
-        color:$placeholderColor;
+
+      &::placeholder {
+        color: $placeholderColor;
       }
     }
   }
@@ -428,7 +449,7 @@ body {
     align-self: center;
     justify-content: center;
 
-   
+
   }
 
   .btn-add-alarm {
@@ -436,7 +457,7 @@ body {
     color: $backgroundColor;
   }
 
-  #repeatCheckbox{
+  #repeatCheckbox {
     cursor: pointer;
   }
 
@@ -448,12 +469,13 @@ body {
       height: 5vh;
       padding-left: .1rem;
       outline: none;
-      border: none;
+      border: 1px solid rgba(white,.2);
       background-color: rgba($secondaryColor, .2);
-      color:$placeholderColor !important;
+      color: $placeholderColor !important;
       border-radius: .3rem;
-      &::placeholder{
-        color:$placeholderColor;
+
+      &::placeholder {
+        color: $placeholderColor;
         padding-left: .1rem;
       }
     }
@@ -518,7 +540,7 @@ body {
       }
 
       .deleteButton {
-        background-color: inherit ;
+        background-color: inherit;
         font-size: 1.5em;
         color: #ff5c5c;
         border: none;
@@ -544,32 +566,34 @@ body {
       }
     }
   }
- 
+
 }
 
-.repeat-div{
-  // border: 1px solid rgb(238, 236, 236);
-  background-color: rgba($backgroundColor, 1) ;
+.repeat-div {
+  background-color: rgba($backgroundColor, 1);
   box-shadow: 1px 1px 10px rgb(14, 13, 13);
   color: black;
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   width: 60vw;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-radius: 10px;
   padding: 1rem;
 
   transform: translate(-50%, -50%);
-  .days{
+
+  .days {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    label{
+
+    label {
       display: flex;
       justify-content: space-between;
     }
   }
+
   .alarm input[type="checkbox"] {
     appearance: none;
     height: 1.3rem;
@@ -601,7 +625,7 @@ body {
     left: 1.2em;
   }
 
-  
+
 }
 
 @media (max-width: 769px) {

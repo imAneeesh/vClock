@@ -36,6 +36,13 @@ body a:hover {
   background: rgb(36, 36, 36) !important;
   color: rgb(255, 255, 255) !important;
 }
+.dark-mode .main .timer .time {
+  color: #00d300;
+}
+.dark-mode .main .timer .date,
+.dark-mode .main .timer .formateddate {
+  color: #00d300;
+}
 
 .lighty-mode {
   background-color: #f0f0f0 !important;
@@ -91,7 +98,7 @@ body a:hover {
   color: #f0f0f0 !important;
 }
 .main #search {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -117,7 +124,7 @@ body a:hover {
 .main .type-cell {
   background-color: rgba(58, 57, 57, 0.2) !important;
   color: #f0f0f0;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.3rem;
 }
@@ -312,13 +319,13 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
-  color: #00d300;
+  color: #252525;
   font-size: 6.5rem;
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-  color: #00d300;
+  color: #252525;
   font-size: 3rem;
 }
 .main .wrapper-container {
@@ -367,7 +374,7 @@ body a:hover {
   height: 5vh;
   padding-left: 0.1rem;
   outline: none;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(58, 57, 57, 0.2);
   color: #757575 !important;
   border-radius: 0.3rem;
