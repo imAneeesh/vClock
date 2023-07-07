@@ -337,22 +337,13 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
-<<<<<<< HEAD
-  color: #00d300;
-  font-size: 6.5rem;
-=======
   color: #252525;
   font-size: 7rem;
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-<<<<<<< HEAD
-  color: #00d300;
-=======
   color: #252525;
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   font-size: 3rem;
 }
 .main .wrapper-container {
@@ -554,7 +545,6 @@ body a:hover {
   left: 1.2em;
 }
 
-<<<<<<< HEAD
 .alarmFullscreen {
   text-align: center;
   width: 100%;
@@ -580,14 +570,11 @@ body a:hover {
 }
 
 @media (max-width: 769px) {
-=======
-@media (max-width: 769px) {
   .digit {
     font-size: 4rem;
     font-weight: bold;
     font-family: "digital-clock-font";
   }
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   .timer .time {
     font-size: 4rem !important;
   }
