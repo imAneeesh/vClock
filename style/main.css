@@ -36,6 +36,13 @@ body a:hover {
   background: rgb(36, 36, 36) !important;
   color: rgb(255, 255, 255) !important;
 }
+.dark-mode .main .timer .time {
+  color: #00d300;
+}
+.dark-mode .main .timer .date,
+.dark-mode .main .timer .formateddate {
+  color: #00d300;
+}
 
 .lighty-mode {
   background-color: #f0f0f0 !important;
@@ -312,13 +319,13 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
-  color: #00d300;
+  color: #252525;
   font-size: 6.5rem;
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-  color: #00d300;
+  color: #252525;
   font-size: 3rem;
 }
 .main .wrapper-container {
