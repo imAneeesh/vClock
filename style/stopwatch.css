@@ -26,16 +26,21 @@ span {
 }
 
 .digit {
-    font-size:3.4em;
+    font-size: 150px;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
-
+.dark-mode .digit{
+color: green;
+}
 .list-group{
     max-height: 45vh;
     overflow-y: scroll;
-}
 
+}
+.list-group::-webkit-scrollbar{
+    display: none;
+}
 .text {
     font-size: 2rem;
     font-weight: bold;
