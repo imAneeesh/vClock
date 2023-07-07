@@ -44,6 +44,9 @@ body a:hover {
   background-color: transparent;
   border: 0;
 }
+#fullscreenButton i {
+  color: #0090dd;
+}
 
 .theme-icon:hover {
   cursor: pointer !important;
@@ -113,8 +116,8 @@ body a:hover {
 }
 @media (min-width: 700px) {
   .main #hero {
-    max-height: 100vh;
-    overflow-y: hidden;
+    max-height: 93vh;
+    overflow-y: auto;
   }
 }
 .main .time-input {
@@ -331,7 +334,7 @@ body a:hover {
 }
 .main .clock {
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .main .timer {
   width: 100%;

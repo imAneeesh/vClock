@@ -57,6 +57,9 @@ body {
 #fullscreenButton{
   background-color: transparent;
   border: 0;
+  i{
+    color: $primaryColor;
+  }
 }
 
 .theme-icon{
@@ -146,8 +149,8 @@ body {
   }
 @media (min-width:700px) {
   #hero {
-    max-height: 100vh;
-    overflow-y: hidden;
+    max-height: 93vh;
+    overflow-y: auto;
   }
 }
  
@@ -413,7 +416,7 @@ body {
 
   .clock {
     max-height: 90vh;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   .timer {
