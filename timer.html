@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Online Alarm Clock | Home</title>
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -33,12 +34,12 @@
         </div>
         <div class="setting">
           <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
-              class="fa-solid fa-xl pe-3 fa-sun"></i></span>
+              class="fa-solid fa-xl pe-3 fa-sun theme-icon"></i></span>
         </div>
       </div>
     </div>
     <div class="d-flex">
-      <div id="menu" class="navbar  d-none d-lg-block">
+      <div id="menu" class="navbar animate__fadeInLeft animate__animated  d-none d-lg-block">
         <div class="navbar-container">
           <div class="nav-links">
             <ul>
@@ -120,13 +121,11 @@
         </div>
       </div>
       
-      <div class="container p-3" id="hero">
+      <div class="container p-3  animate__fadeInUp animate__animated" id="hero">
         <div class="custom-card p-3">
         <div id="app" class="timerCircle my-3"></div>
         <div class="inputs my-4 container d-flex gap-2 w-50" id="inputs">
-          <input class="p-1 time-cell" oninput="showbtn()" placeholder="Enter time"  type="number" name="time" id="time">
-          
-        
+          <input class="p-1 time-cell" oninput="showbtn()" placeholder="Enter time"  type="number" name="time" id="time" >
           <select class="p-1 type-cell" id="interval" name="interval" >
             <option class="type-cells" value="seconds">seconds</option>
             <option class="type-cells" value="minutes">minutes</option>
@@ -156,7 +155,7 @@
         <div class="h2">How to use the online timer</div>
         <hr />
         <div class="display-7 ">Set the hour, minute, and second for the online countdown timer, and start it.
-          Click the "Reset" button to start the timer from the initial value. Click the "Pause" button to pause, "Resume" button to resume and "Set new timer" button to strat fresh timer.
+          Click the "Reset" button to start the timer from the initial value. Click the "Pause" button to pause, "Resume" button to resume and "Set new timer" button to start fresh timer.
                     
       </div>
       </div>

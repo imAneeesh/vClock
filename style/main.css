@@ -3,6 +3,19 @@
   font-family: "digital-clock-font";
   src: url(".././font/digital-7 (mono).ttf");
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
 .background-primary {
   background-color: #0090dd !important;
 }
@@ -27,6 +40,10 @@ body a:hover {
   color: #0090dd;
 }
 
+.theme-icon:hover {
+  cursor: pointer !important;
+}
+
 .laps {
   background-color: rgba(58, 57, 57, 0.2) !important;
   color: #757575 !important;
@@ -35,6 +52,13 @@ body a:hover {
 .dark-mode {
   background: rgb(36, 36, 36) !important;
   color: rgb(255, 255, 255) !important;
+}
+.dark-mode .main .timer .time {
+  color: #00d300;
+}
+.dark-mode .main .timer .date,
+.dark-mode .main .timer .formateddate {
+  color: #00d300;
 }
 
 .lighty-mode {
@@ -82,16 +106,18 @@ body a:hover {
   background: rgb(36, 36, 36);
   color: rgb(255, 255, 255);
 }
-.main #hero {
-  max-height: 100vh;
-  overflow-y: auto;
+@media (min-width: 700px) {
+  .main #hero {
+    max-height: 100vh;
+    overflow-y: hidden;
+  }
 }
 .main .time-input {
   background-color: rgba(58, 57, 57, 0.4) !important;
   color: #f0f0f0 !important;
 }
 .main #search {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -117,7 +143,7 @@ body a:hover {
 .main .type-cell {
   background-color: rgba(58, 57, 57, 0.2) !important;
   color: #f0f0f0;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
   border-radius: 0.3rem;
 }
@@ -301,7 +327,6 @@ body a:hover {
 .main .clock {
   max-height: 90vh;
   overflow-y: auto;
-  width: 100vw;
 }
 .main .timer {
   width: 100%;
@@ -312,13 +337,22 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
+<<<<<<< HEAD
   color: #00d300;
   font-size: 6.5rem;
+=======
+  color: #252525;
+  font-size: 7rem;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
+<<<<<<< HEAD
   color: #00d300;
+=======
+  color: #252525;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   font-size: 3rem;
 }
 .main .wrapper-container {
@@ -363,11 +397,11 @@ body a:hover {
   width: 100%;
 }
 .main #set-alarm input {
-  width: 18vw;
+  width: 9vw;
   height: 5vh;
   padding-left: 0.1rem;
   outline: none;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(58, 57, 57, 0.2);
   color: #757575 !important;
   border-radius: 0.3rem;
@@ -381,15 +415,16 @@ body a:hover {
   padding-left: 0.1rem;
 }
 .main #set-alarm .activeAlarms {
-  max-height: 28vh;
-  overflow-y: auto;
+  max-height: 40vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .main #set-alarm .activeAlarms .alarm {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,11 +433,19 @@ body a:hover {
   margin: 0.5rem 0;
   padding: 1rem;
 }
+.main #set-alarm .activeAlarms .days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  color: #757575;
+}
 .main #set-alarm .activeAlarms .alarm {
   display: grid;
-  grid-template-columns: 8fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
   gap: 1em;
   margin-top: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   align-items: center;
   padding: 1rem;
 }
@@ -441,6 +484,7 @@ body a:hover {
   color: #ff5c5c;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 .main #set-alarm .activeAlarms span {
   color: inherit;
@@ -510,6 +554,7 @@ body a:hover {
   left: 1.2em;
 }
 
+<<<<<<< HEAD
 .alarmFullscreen {
   text-align: center;
   width: 100%;
@@ -535,6 +580,14 @@ body a:hover {
 }
 
 @media (max-width: 769px) {
+=======
+@media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "digital-clock-font";
+  }
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   .timer .time {
     font-size: 4rem !important;
   }

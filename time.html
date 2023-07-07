@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Online Alarm Clock | Time</title>
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -32,12 +33,12 @@
         </div>
         <div class="setting">
           <span onclick="toggleDarkMode()"><i id="modeIcon" style="color: aliceblue;"
-              class="fa-solid fa-xl pe-3 fa-sun"></i></span>
+              class="fa-solid fa-xl pe-3 fa-sun theme-icon"></i></span>
         </div>
       </div>
     </div>
     <div class="d-flex">
-      <div id="menu" class="navbar  d-none d-lg-block">
+      <div id="menu" class="navbar animate__fadeInLeft animate__animated  d-none d-lg-block">
         <div class="navbar-container">
           <div class="nav-links">
             <ul>
@@ -118,11 +119,13 @@
           </div>
         </div>
       </div>
-      <div class="my-container p-3 clock" id="hero">
+      <div class="container p-3 clock  animate__fadeInUp animate__animated" id="hero">
+        <div class="my-container p-3 custom-card">
         <h1>World Clock</h1>
         <input pattern="[A-Z][a-zA-Z]*" type="search" oninput="searchCountry()" name="search" id="search" placeholder="Quick Search">
         <div class="clock-searchcontainer"></div>
         <div class="clock-container"></div>
+      </div>
       </div>
     </div>
   </div>

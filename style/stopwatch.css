@@ -26,12 +26,20 @@ span {
 }
 
 .digit {
-    font-size: 150px;
+    font-size: 7rem;
     font-weight: bold;
     font-family: 'digital-clock-font';
 }
+@media (max-width: 769px) {
+    .digit {
+      font-size: 4rem;
+      font-weight: bold;
+      font-family: 'digital-clock-font';
+  }
+}
 .dark-mode .digit{
-color: green;
+color: #00d300;
+
 }
 .list-group{
     max-height: 45vh;

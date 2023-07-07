@@ -5,10 +5,24 @@
   src: url(".././font/digital-7\ \(mono\).ttf");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
-$placeholderColor:#757575;
+$placeholderColor: #757575;
+
 .background-primary {
   background-color: $primaryColor !important;
 }
@@ -37,6 +51,13 @@ body {
       color: $primaryColor;
     }
   }
+
+}
+
+.theme-icon{
+  &:hover{
+    cursor: pointer !important;
+  }
 }
 
 .laps {
@@ -48,10 +69,24 @@ body {
   background: rgb(36, 36, 36) !important;
   color: rgb(255, 255, 255) !important;
 
+  .main {
+    .timer {
+
+      .time {
+        color: #00d300;
+      }
+
+      .date,
+      .formateddate {
+        color: #00d300;
+      }
+    }
+  }
 }
-.lighty-mode{
+
+.lighty-mode {
   background-color: $backgroundColor !important;
-    color: $secondaryColor !important;
+  color: $secondaryColor !important;
 }
 
 .time,
@@ -102,13 +137,15 @@ body {
 
   .active {
     background: rgb(36, 36, 36);
-    color: rgb(255, 255, 255) ;  
+    color: rgb(255, 255, 255);
   }
-
+@media (min-width:700px) {
   #hero {
     max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
+}
+ 
 
   .time-input {
     background-color: rgba($secondaryColor, .4) !important;
@@ -116,46 +153,48 @@ body {
   }
 
   #search {
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .5rem;
     padding: .5rem;
     background-color: rgba($secondaryColor, .2);
     color: $backgroundColor !important;
   }
+
   .base-timer__path-remaining.green {
-    color: rgba($primaryColor,1);
-}
+    color: rgba($primaryColor, 1);
+  }
 
-.base-timer__path-remaining.orange {
-    color: rgba(#FF9800,.4);
-}
+  .base-timer__path-remaining.orange {
+    color: rgba(#FF9800, .4);
+  }
 
-.base-timer__path-remaining.red {
-    color: rgba(red,.4)
-}
+  .base-timer__path-remaining.red {
+    color: rgba(red, .4)
+  }
 
   select {
     color: $placeholderColor !important;
+
     option {
-      background-color: rgba($secondaryColor, .2) !important;      
+      background-color: rgba($secondaryColor, .2) !important;
     }
   }
-  
-  
 
   .time-cell,
-  .type-cell{
-    background-color: rgba($secondaryColor, .2) !important;      
+  .type-cell {
+    background-color: rgba($secondaryColor, .2) !important;
     color: $backgroundColor;
-    border: none;
+    border: 1px solid rgba(white,.2);
     outline: none;
     border-radius: .3rem;
-    option{
-      background-color: rgba($secondaryColor, .2) !important;      
+
+    option {
+      background-color: rgba($secondaryColor, .2) !important;
       color: $secondaryColor;
     }
   }
+
   #menu-bar {
     position: fixed;
     z-index: 999;
@@ -176,6 +215,7 @@ body {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+
       .nav-links {
         width: 100%;
 
@@ -204,7 +244,7 @@ body {
               height: 30px;
             }
 
-         
+
           }
         }
       }
@@ -309,7 +349,7 @@ body {
   .my-container {
     display: flex;
     flex-direction: column;
-
+    
     h1 {
       text-align: center;
     }
@@ -328,6 +368,7 @@ body {
       text-align: center;
       transition: all 0.3s ease-in-out;
       border: 1px solid $primaryColor;
+
       &:hover {
         cursor: pointer;
         box-shadow: 0px 0px 15px $primaryColor;
@@ -360,8 +401,6 @@ body {
       cursor: pointer;
     }
 
-   
-
     .btn:hover {
       background-color: skyblue;
     }
@@ -370,7 +409,6 @@ body {
   .clock {
     max-height: 90vh;
     overflow-y: auto;
-    width: 100vw;
   }
 
   .timer {
@@ -382,14 +420,23 @@ body {
     align-items: center;
 
     .time {
+<<<<<<< HEAD
       color: #00d300;
       font-size: 6.5rem;
+=======
+      color: #252525;
+      font-size: 7rem;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-weight: 700;
     }
 
     .date,
     .formateddate {
+<<<<<<< HEAD
       color: #00d300;
+=======
+      color: #252525;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-size: 3rem;
     }
   }
@@ -400,18 +447,20 @@ body {
     align-self: center;
     justify-content: center;
 
-   
+
   }
+
   .inputs {
     display: flex;
     align-items: center;
     justify-content: center;
 
     input {
-      background-color: rgba($secondaryColor, .2) !important;      
+      background-color: rgba($secondaryColor, .2) !important;
       font-weight: 600;
-      &::placeholder{
-        color:$placeholderColor;
+
+      &::placeholder {
+        color: $placeholderColor;
       }
     }
   }
@@ -428,7 +477,7 @@ body {
     align-self: center;
     justify-content: center;
 
-   
+
   }
 
   .btn-add-alarm {
@@ -436,7 +485,7 @@ body {
     color: $backgroundColor;
   }
 
-  #repeatCheckbox{
+  #repeatCheckbox {
     cursor: pointer;
   }
 
@@ -444,30 +493,32 @@ body {
     width: 100%;
 
     input {
-      width: 18vw;
+      width: 9vw;
       height: 5vh;
       padding-left: .1rem;
       outline: none;
-      border: none;
+      border: 1px solid rgba(white,.2);
       background-color: rgba($secondaryColor, .2);
-      color:$placeholderColor !important;
+      color: $placeholderColor !important;
       border-radius: .3rem;
-      &::placeholder{
-        color:$placeholderColor;
+
+      &::placeholder {
+        color: $placeholderColor;
         padding-left: .1rem;
       }
     }
 
     .activeAlarms {
-      max-height: 28vh;
-      overflow-y: auto;
+      max-height: 40vh;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
 
       .alarm {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -476,12 +527,20 @@ body {
         margin: .5rem 0;
         padding: 1rem;
       }
+      .days{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        color: #757575;
+      }
 
       .alarm {
         display: grid;
-        grid-template-columns: 8fr 2fr 2fr;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
         gap: 1em;
         margin-top: .5em;
+        border: 1px solid rgba(white,.2);
         align-items: center;
         padding: 1rem;
       }
@@ -518,11 +577,16 @@ body {
       }
 
       .deleteButton {
+<<<<<<< HEAD
         background-color: inherit ;
+=======
+        background-color: inherit;
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
         font-size: 1.5em;
         color: #ff5c5c;
         border: none;
         cursor: pointer;
+        padding: 0;
       }
 
       span {
@@ -544,32 +608,40 @@ body {
       }
     }
   }
- 
+
 }
 
+<<<<<<< HEAD
 .repeat-div{
   // border: 1px solid rgb(238, 236, 236);
   background-color: rgba($backgroundColor, 1) ;
+=======
+.repeat-div {
+  background-color: rgba($backgroundColor, 1);
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   box-shadow: 1px 1px 10px rgb(14, 13, 13);
   color: black;
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   width: 60vw;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-radius: 10px;
   padding: 1rem;
 
   transform: translate(-50%, -50%);
-  .days{
+
+  .days {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    label{
+
+    label {
       display: flex;
       justify-content: space-between;
     }
   }
+
   .alarm input[type="checkbox"] {
     appearance: none;
     height: 1.3rem;
@@ -601,9 +673,10 @@ body {
     left: 1.2em;
   }
 
-  
+
 }
 
+<<<<<<< HEAD
 
 
 .alarmFullscreen{
@@ -640,6 +713,14 @@ color: red;
 
 
 @media (max-width: 769px) {
+=======
+@media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'digital-clock-font';
+}
+>>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   .timer {
     .time {
       font-size: 4rem !important;
