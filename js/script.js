@@ -299,12 +299,11 @@ setBtn.addEventListener("click", () => {
 
 
 const fullscreenButton = document.getElementById("fullscreenButton");
-const fullscreenDiv = document.getElementById("fullscreenDiv");
+const fullscreenDiv = document.getElementById("timer");
 
 fullscreenButton.addEventListener("click", () => {
+  fullscreenDiv.classList.add("alarmFullscreen");
  
-  fullscreenDiv.style.textAlign = "center";
-  fullscreenDiv.style.alignItems="center";
   if (fullscreenDiv.requestFullscreen) {
     fullscreenDiv.requestFullscreen();
   } else if (fullscreenDiv.mozRequestFullScreen) {
@@ -317,4 +316,20 @@ fullscreenButton.addEventListener("click", () => {
     // IE/Edge
     fullscreenDiv.msRequestFullscreen();
   }
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
+
+    function handleFullscreenChange() {
+      if (
+        !document.fullscreenElement &&
+        !document.webkitFullscreenElement &&
+        !document.mozFullScreenElement &&
+        !document.msFullscreenElement
+      ) {
+        // Fullscreen mode has been exited
+        fullscreenDiv.classList.remove("alarmFullscreen");
+      }
+    }
 });
