@@ -312,13 +312,13 @@ body a:hover {
   align-items: center;
 }
 .main .timer .time {
-  color: #008000;
+  color: #00d300;
   font-size: 6.5rem;
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-  color: #008000;
+  color: #00d300;
   font-size: 3rem;
 }
 .main .wrapper-container {
