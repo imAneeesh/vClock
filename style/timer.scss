@@ -11,8 +11,38 @@
     justify-content: center;
 }
 
-
-
+body #blur{
+    position: fixed;
+    height: 200px;
+    min-width:400px;
+   top: 30%;
+    left: 30%;
+    border-radius: 10px;
+    color: black;
+    background-color: #3a3939;
+    box-shadow: 1px 1px 10px rgb(14, 13, 13);
+    text-align: center;
+    
+}
+body #blur .heading{
+    color: red;
+}
+body #blur #message{
+    color: white;
+    margin-bottom: 30px;
+}
+body #blur .close{
+    
+   padding: 7px 10px;
+   background-color: #757575;
+   border-radius: 8px;
+}
+.dark-mode #blur{
+    background-color: #f0f0f0;
+    #message{
+        color: black;
+    }
+}
 
 .base-timer {
     position: relative;
@@ -70,4 +100,9 @@ color: #FFFFFF !important;
     background-color: #F44336 !important;
     color: #FFFFFF !important;
 
+}
+@media screen and (320px<=width<=425px){
+    body #blur{
+        width: 100px;
+    }
 }

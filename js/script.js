@@ -5,6 +5,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 const main = document.getElementById("main");
+let isRepeat = false;
 let count = 0;
 let alarmsArray = [];
 let alarmSound = new Audio('./js/audio.wav');
@@ -23,7 +24,7 @@ const searchObject = (parameter, value) => {
     exists = false;
   alarmsArray.forEach((alarm, index) => {
     if (alarm[parameter] == value) {
-      exists = true; appendZero
+      exists = true;appendZero
       alarmObject = alarm;
       objIndex = index;
       return false;
@@ -36,14 +37,14 @@ let notificationCount = 0;
 
 
 repeatCheckbox.addEventListener("click", () => {
-  main.style.opacity = 0.3;
-  main.style.pointerEvents = "none";
+  main.style.opacity=0.3;
+  main.style.pointerEvents="none";
 
 });
 
 cancel.addEventListener("click", () => {
-  main.style.opacity = 1;
-  main.style.pointerEvents = "auto";
+  main.style.opacity=1;
+  main.style.pointerEvents="auto";
 });
 
 
@@ -66,9 +67,9 @@ function displayTimer() {
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
-      if (count == 0) {
-
-        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
+      if(count==0){
+        
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute ) {
           alarmSound.play();
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
@@ -80,9 +81,9 @@ function displayTimer() {
               window.location.href = "https://www.127.0.0.1:5500/vClock";
             };
           }
-        }
+        } 
       }
-      else if (count == 1) {
+      else if(count ==1){
         if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
           alarmSound.play();
           while (notificationCount < 1) {
@@ -95,8 +96,8 @@ function displayTimer() {
               window.location.href = "https://www.127.0.0.1:5500/vClock";
             };
           }
-        }
-        // console.log(count);
+        } 
+      // console.log(count);
       }
     }
   });
@@ -129,37 +130,52 @@ const createAlarm = (alarmObj) => {
   alarmDiv.innerHTML = `<span>${alarmHour}: ${alarmMinute}</span>`;
 
 
-  // =============================================
-  // Display Actiavted days
-  const span = document.createElement("span");
-  span.classList.add("days");
-  const All_Days_Array = ["S", "M", "T", "W", "T", "F", "S"];
-  const firstTwoLettersArray = [];
-  alarmObj.daysOfWeek.forEach(function (element) {
-    const firstTwoLetters = element.substring(0, 1);
-    firstTwoLettersArray.push(firstTwoLetters);
-  });
-  const myspan = document.createElement("span");
-  myspan.classList.add("mydays");
+  // span If Once
 
-  All_Days_Array.forEach(function (letter) {
-    const spanElement = document.createElement("span");
-    spanElement.classList.add("days");
-    if (firstTwoLettersArray.includes(letter)) {
-      console.log(letter)
-      spanElement.style.color = "#00d300";
-      spanElement.style.fontWeight = "bold";
-    }
-    else {
-      console.log(letter)
-      spanElement.style.color = "lightgray";
-      spanElement.style.fontWeight = "bold";
-    }
-    spanElement.innerHTML = letter;
-    span.appendChild(spanElement);
-  });
+  if (alarmObj.isRepeat == false){
+    const Repeatspan = document.createElement("span");
+    Repeatspan.classList.add("repeat");
+    Repeatspan.innerHTML = "Today";
+    Repeatspan.style.color = "#00d300";
+    Repeatspan.style.fontWeight = "bold";
+    Repeatspan.style.width= "150px";
+    Repeatspan.style.textAlign= "center";
+    alarmDiv.appendChild(Repeatspan);
+  }else{
+    // =============================================
+    // Display Actiavted days
+    const span = document.createElement("span");
+    span.classList.add("days");
+    const All_Days_Array = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+    const firstTwoLettersArray = [];
+    alarmObj.daysOfWeek.forEach(function (element) {
+      const firstTwoLetters = element.substring(0, 2);
+      firstTwoLettersArray.push(firstTwoLetters);
+    });
+    const myspan = document.createElement("span");
+    myspan.classList.add("mydays");
 
-  alarmDiv.appendChild(span);
+    All_Days_Array.forEach(function (letter) {
+      const spanElement = document.createElement("span");
+      spanElement.classList.add("days");
+      if (firstTwoLettersArray.includes(letter)) {
+        console.log(letter)
+        spanElement.style.color = "#00d300";
+        spanElement.style.fontWeight = "bold";
+      }
+      else {
+        console.log(letter)
+        spanElement.style.color = "lightgray";
+        spanElement.style.fontWeight = "bold";
+      }
+      spanElement.innerHTML = letter.charAt(0);
+      span.appendChild(spanElement);
+    });
+
+    alarmDiv.appendChild(span);
+  }
+
+
   // ========================================
 
 
@@ -167,9 +183,9 @@ const createAlarm = (alarmObj) => {
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
 
-  if (alarmObj.isActive == true) {
+  if(alarmObj.isActive==true){
     checkbox.setAttribute("checked", "checked");
-  } else {
+  }else{
     checkbox.removeAttribute("checked");
   }
 
@@ -195,6 +211,14 @@ const createAlarm = (alarmObj) => {
 
 // Set Alarm
 setAlarm.addEventListener("click", () => {
+
+  console.log(daysOfWeek);
+  if(daysOfWeek.length == 0){
+    isRepeat = false;
+  }else{
+    isRepeat = true;
+  }
+
   alarmIndex += 1;
   // Alarm Object
   let alarmObj = {};
@@ -203,14 +227,16 @@ setAlarm.addEventListener("click", () => {
   alarmObj.alarmMinute = minuteInput.value;
   alarmObj.isActive = false;
   alarmObj.daysOfWeek = daysOfWeek;
+  alarmObj.isRepeat = isRepeat;
   alarmsArray.push(alarmObj);
   createAlarm(alarmObj);
   console.log(alarmsArray);
   hourInput.value = appendZero(initialHour);
   minuteInput.value = appendZero(initialMinute);
-  daysOfWeek = [];
-  // Save to local storage
   localStorage.setItem("alarms", JSON.stringify(alarmsArray));
+  daysOfWeek = [];
+
+  // Save to local storage
 
 });
 
@@ -286,6 +312,7 @@ const setBtn = document.getElementById("setBtn");
 
 setBtn.addEventListener("click", () => {
   daysOfWeek.length = 0;
+  isRepeat=true;
   count = 1;
   var monday = document.getElementById("monday");
   if (monday.checked) {
@@ -327,8 +354,8 @@ setBtn.addEventListener("click", () => {
     return;
   }
 
+  // Display selected days in the console
   console.log("Selected Days: " + daysOfWeek.join(", "));
-
   repeatDiv.classList.add("d-none");
   main.style.opacity = "1";
   main.style.pointerEvents = "all";
