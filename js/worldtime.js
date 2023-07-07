@@ -63,7 +63,13 @@ function getCurrentTime(country) {
         minute: "numeric",
         second: "numeric",
     };
-    return new Date().toLocaleTimeString([], options);
+    let currentTime = new Date().toLocaleTimeString([], options);
+
+    if (currentTime.startsWith("24")) {
+      currentTime = currentTime.replace("24", "00");
+    }
+
+    return currentTime;
 }
 
 const clockContainer = document.querySelector(".clock-container");
