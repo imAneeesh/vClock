@@ -54,6 +54,11 @@ body {
 
 }
 
+#fullscreenButton{
+  background-color: transparent;
+  border: 0;
+}
+
 .theme-icon{
   &:hover{
     cursor: pointer !important;
