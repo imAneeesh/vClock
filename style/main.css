@@ -40,6 +40,11 @@ body a:hover {
   color: #0090dd;
 }
 
+#fullscreenButton {
+  background-color: transparent;
+  border: 0;
+}
+
 .theme-icon:hover {
   cursor: pointer !important;
 }
@@ -566,7 +571,15 @@ body a:hover {
 }
 
 .fullscreenDesign .country-name {
-  color: red;
+  color: #0090dd;
+  transform: scale(5);
+  font-size: 5rem;
+}
+
+.fullscreenDesign .current-time {
+  transform: scale(5);
+  margin: 5rem;
+  font-size: 5rem;
 }
 
 @media (max-width: 769px) {
