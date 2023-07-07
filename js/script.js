@@ -5,6 +5,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 const main = document.getElementById("main");
+let isRepeat = false;
 let count = 0;
 let alarmsArray = [];
 let alarmSound = new Audio('./js/audio.wav');
@@ -129,37 +130,50 @@ const createAlarm = (alarmObj) => {
   alarmDiv.innerHTML = `<span>${alarmHour}: ${alarmMinute}</span>`;
 
 
-  // =============================================
-  // Display Actiavted days
-  const span = document.createElement("span");
-  span.classList.add("days");
-  const All_Days_Array = ["S", "M", "T", "W", "T", "F", "S"];
-  const firstTwoLettersArray = [];
-  alarmObj.daysOfWeek.forEach(function (element) {
-    const firstTwoLetters = element.substring(0, 1);
-    firstTwoLettersArray.push(firstTwoLetters);
-  });
-  const myspan = document.createElement("span");
-  myspan.classList.add("mydays");
+  // span If Once
 
-  All_Days_Array.forEach(function (letter) {
-    const spanElement = document.createElement("span");
-    spanElement.classList.add("days");
-    if (firstTwoLettersArray.includes(letter)) {
-      console.log(letter)
-      spanElement.style.color = "#00d300";
-      spanElement.style.fontWeight = "bold";
-    }
-    else {
-      console.log(letter)
-      spanElement.style.color = "lightgray";
-      spanElement.style.fontWeight = "bold";
-    }
-    spanElement.innerHTML = letter;
-    span.appendChild(spanElement);
-  });
+  if (alarmObj.isRepeat == false){
+    const Repeatspan = document.createElement("span");
+    Repeatspan.classList.add("repeat");
+    Repeatspan.innerHTML = "Today";
+    Repeatspan.style.color = "#00d300";
+    Repeatspan.style.fontWeight = "bold";
+    alarmDiv.appendChild(Repeatspan);
+  }else{
+    // =============================================
+    // Display Actiavted days
+    const span = document.createElement("span");
+    span.classList.add("days");
+    const All_Days_Array = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+    const firstTwoLettersArray = [];
+    alarmObj.daysOfWeek.forEach(function (element) {
+      const firstTwoLetters = element.substring(0, 2);
+      firstTwoLettersArray.push(firstTwoLetters);
+    });
+    const myspan = document.createElement("span");
+    myspan.classList.add("mydays");
 
-  alarmDiv.appendChild(span);
+    All_Days_Array.forEach(function (letter) {
+      const spanElement = document.createElement("span");
+      spanElement.classList.add("days");
+      if (firstTwoLettersArray.includes(letter)) {
+        console.log(letter)
+        spanElement.style.color = "#00d300";
+        spanElement.style.fontWeight = "bold";
+      }
+      else {
+        console.log(letter)
+        spanElement.style.color = "lightgray";
+        spanElement.style.fontWeight = "bold";
+      }
+      spanElement.innerHTML = letter.charAt(0);
+      span.appendChild(spanElement);
+    });
+
+    alarmDiv.appendChild(span);
+  }
+
+
   // ========================================
 
 
@@ -195,6 +209,14 @@ const createAlarm = (alarmObj) => {
 
 // Set Alarm
 setAlarm.addEventListener("click", () => {
+
+  console.log(daysOfWeek);
+  if(daysOfWeek.length == 0){
+    isRepeat = false;
+  }else{
+    isRepeat = true;
+  }
+
   alarmIndex += 1;
   // Alarm Object
   let alarmObj = {};
@@ -203,14 +225,16 @@ setAlarm.addEventListener("click", () => {
   alarmObj.alarmMinute = minuteInput.value;
   alarmObj.isActive = false;
   alarmObj.daysOfWeek = daysOfWeek;
+  alarmObj.isRepeat = isRepeat;
   alarmsArray.push(alarmObj);
   createAlarm(alarmObj);
   console.log(alarmsArray);
   hourInput.value = appendZero(initialHour);
   minuteInput.value = appendZero(initialMinute);
-  daysOfWeek = [];
-  // Save to local storage
   localStorage.setItem("alarms", JSON.stringify(alarmsArray));
+  daysOfWeek = [];
+
+  // Save to local storage
 
 });
 
@@ -286,6 +310,7 @@ const setBtn = document.getElementById("setBtn");
 
 setBtn.addEventListener("click", () => {
   daysOfWeek.length = 0;
+  isRepeat=true;
   count = 1;
   var monday = document.getElementById("monday");
   if (monday.checked) {
