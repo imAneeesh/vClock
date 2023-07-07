@@ -9,6 +9,7 @@ const repeatCheckbox = document.getElementById("repeatCheckbox");
 const cancel = document.getElementById("cancel");
 const menubar=document.getElementById("menu-bar");
 const activeMenu=document.querySelectorAll(".active"); 
+const fsbtn=document.querySelectorAll(".fa-expand")
 
 function toggleDarkMode() {
     modeIcon.classList.toggle("fa-moon");
@@ -18,9 +19,12 @@ function toggleDarkMode() {
     activeMenu[1].classList.toggle("lighty-mode");
     element.classList.toggle("dark-mode");
     repeatDiv.classList.toggle("dark-mode")
+    fsbtn[0].classList.toggle("dark-mode")
+
 }
 
 menuIcon.addEventListener("click", () => {
+    
     barIcon.classList.toggle("d-none")
     xIcon.classList.toggle("d-none")
     const menu = document.getElementById("menu-bar");

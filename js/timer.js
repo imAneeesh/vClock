@@ -15,11 +15,17 @@ const inputs = document.getElementById("inputs");
 const newtimer=document.getElementById("newtimer");
  const errMsg = document.getElementById("blur");
 
-// function toggleBlur(){
+function toggleBlur(){
     
+<<<<<<< HEAD
 //     errMsg.classList.add("d-none")
 //     // count.classList.remove("d-none");
 // }
+=======
+    errMsg.classList.add("d-none")
+    countStart.classList.remove("d-none");
+}
+>>>>>>> b163b801def173552ef5afceb3519965c9e4dbfa
 
 function set(){
    
@@ -27,7 +33,11 @@ function set(){
      
      if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
       errMsg.classList.remove("d-none");
+<<<<<<< HEAD
     // count.classList.add("d-none");
+=======
+    countStart.classList.add("d-none");
+>>>>>>> b163b801def173552ef5afceb3519965c9e4dbfa
       document.getElementById("time").value = "";
      
        return;
@@ -39,7 +49,11 @@ function set(){
        } else {
         message.textContent="invalid minute(1-59)";
          errMsg.classList.remove("d-none");
+<<<<<<< HEAD
         //  count.classList.add("d-none");
+=======
+         countStart.classList.add("d-none");
+>>>>>>> b163b801def173552ef5afceb3519965c9e4dbfa
          return;
        }
       
@@ -50,7 +64,11 @@ function set(){
         if(TIME_LIMIT>59){
             message.textContent = "invalid seconds(1-59)";
             errMsg.classList.remove("d-none");
+<<<<<<< HEAD
             // count.classList.add("d-none");
+=======
+            countStart.classList.add("d-none");
+>>>>>>> b163b801def173552ef5afceb3519965c9e4dbfa
             return;
         }
      }

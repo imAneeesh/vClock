@@ -54,6 +54,14 @@ body {
 
 }
 
+#fullscreenButton{
+  background-color: transparent;
+  border: 0;
+  i{
+    color: $primaryColor;
+  }
+}
+
 .theme-icon{
   &:hover{
     cursor: pointer !important;
@@ -141,8 +149,8 @@ body {
   }
 @media (min-width:700px) {
   #hero {
-    max-height: 100vh;
-    overflow-y: hidden;
+    max-height: 93vh;
+    overflow-y: auto;
   }
 }
  
@@ -408,7 +416,7 @@ body {
 
   .clock {
     max-height: 90vh;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   .timer {
@@ -682,8 +690,15 @@ justify-content: center;
 
 }
 .fullscreenDesign .country-name{
-color: red;
+color: $primaryColor;
+transform: scale(5);
+font-size: 5rem;
 }
+.fullscreenDesign .current-time{
+  transform: scale(5);
+margin: 5rem;
+  font-size: 5rem;
+  }
 
 
 
