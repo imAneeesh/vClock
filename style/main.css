@@ -179,8 +179,7 @@ body a:hover {
   background-color: #3a3939;
   color: white;
   width: 50vw;
-  min-height: 94vh;
-  height: auto !important;
+  height: 94vh;
   min-width: 150px;
 }
 .main #menu .navbar-container {
@@ -337,11 +336,9 @@ body a:hover {
 }
 .main .inputs input::-moz-placeholder {
   color: #757575;
-  padding-left: 0.4rem;
 }
 .main .inputs input::placeholder {
   color: #757575;
-  padding-left: 0.4rem;
 }
 .main .btn-add-alarm {
   background-color: #0090dd;
@@ -364,9 +361,9 @@ body a:hover {
   width: 100%;
 }
 .main #set-alarm input {
-  width: 10vw;
+  width: 18vw;
   height: 5vh;
-  padding-left: 0.5rem;
+  padding-left: 0.1rem;
   outline: none;
   border: none;
   background-color: rgba(58, 57, 57, 0.2);
@@ -375,11 +372,11 @@ body a:hover {
 }
 .main #set-alarm input::-moz-placeholder {
   color: #757575;
-  padding-left: 0.4rem;
+  padding-left: 0.1rem;
 }
 .main #set-alarm input::placeholder {
   color: #757575;
-  padding-left: 0.4rem;
+  padding-left: 0.1rem;
 }
 .main #set-alarm .activeAlarms {
   max-height: 28vh;
