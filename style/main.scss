@@ -141,8 +141,8 @@ body {
   }
 @media (min-width:700px) {
   #hero {
-    max-height: 93vh;
-    overflow-y: auto;
+    max-height: 100vh;
+    overflow-y: hidden;
   }
 }
  
@@ -500,15 +500,16 @@ body {
     }
 
     .activeAlarms {
-      max-height: 28vh;
-      overflow-y: auto;
+      max-height: 40vh;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
 
       .alarm {
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -517,10 +518,17 @@ body {
         margin: .5rem 0;
         padding: 1rem;
       }
+      .days{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        color: #757575;
+      }
 
       .alarm {
         display: grid;
-        grid-template-columns: 8fr 2fr 2fr;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
         gap: 1em;
         margin-top: .5em;
         border: 1px solid rgba(white,.2);
@@ -565,6 +573,7 @@ body {
         color: #ff5c5c;
         border: none;
         cursor: pointer;
+        padding: 0;
       }
 
       span {
