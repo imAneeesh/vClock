@@ -118,6 +118,7 @@
           </div>
         </div>
       </div>
+      
       <div class="container p-3" id="hero">
         <div class="custom-card p-3">
         <div id="app" class="timerCircle my-3"></div>
@@ -128,8 +129,18 @@
             <option class="type-cells" value="minutes">minutes</option>
             <option class="type-cells" value="hours">hours</option>
           </select>
+          
+        </div>
+        <!-- <span id="error-msg" class="d-none">Negative or Empty value not allowed</span> -->
+        <div class="d-none" id="blur">
+          <div class="err-content">
+            <h1 class="heading">Error</h1>
+            <h2>Negative and Empty Value not allowed</h2>
+            <a href="" onclick="toggleBlur()">Close</a>
+          </div>
         </div>
         <div class="btns d-flex gap-2">
+          
           <input id="count"  type="button" class="btn background-primary text-white" onclick="set()" value="Start" />
           <input id="pause" type="button" class="pause-btn btn d-none" onclick="pauseTimer()" value="Pause" />
           <input id="resume" type="button" class="resume-btn btn d-none" onclick="resumeTimer()" value="Resume" />

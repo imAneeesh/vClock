@@ -179,7 +179,8 @@ body a:hover {
   background-color: #3a3939;
   color: white;
   width: 50vw;
-  height: 94vh;
+  min-height: 94vh;
+  height: auto !important;
   min-width: 150px;
 }
 .main #menu .navbar-container {
@@ -356,6 +357,9 @@ body a:hover {
   background-color: #0090dd;
   color: #f0f0f0;
 }
+.main #repeatCheckbox {
+  cursor: pointer;
+}
 .main #set-alarm {
   width: 100%;
 }
@@ -453,6 +457,15 @@ body a:hover {
   width: 20px;
   height: 20px;
   margin-left: 1.2rem;
+}
+
+.repeat-div {
+  border: 1px solid rgb(238, 236, 236);
+  background-color: red;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 490px) {

@@ -13,21 +13,37 @@ const resume = document.getElementById("resume");
 const reset = document.getElementById("reset");
 const inputs = document.getElementById("inputs");
 const newtimer=document.getElementById("newtimer");
+ const errMsg = document.getElementById("blur");
+
+function toggleBlur(){
+    
+    errMsg.classList.add("d-none")
+}
 
 function set(){
+   
+     TIME_LIMIT = document.getElementById("time").value;
+     
+     if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
+      errMsg.classList.remove("d-none")
+      document.getElementById("time").value = "";
+       return;
+     }
+    //  errMsg.classList.add("d-none")
     inputs.classList.add("d-none");
     count.classList.add("d-none");
     pause.classList.remove("d-none");
     reset.classList.remove("d-none");
-    TIME_LIMIT = document.getElementById("time").value;
+   
     interval=document.getElementById("interval").value;
-
+   
     if(interval=="minutes"){
         TIME_LIMIT=TIME_LIMIT*60;
     }
     else if(interval=="hours"){
         TIME_LIMIT=TIME_LIMIT*60*60;
     }
+    
 
     timeLeft = TIME_LIMIT;
     document.getElementById("time").value = "";
