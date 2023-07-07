@@ -49,20 +49,6 @@ function reset() {
     startBtn.classList.remove("d-none");
     resetBtn.classList.add("d-none");
     // display.innerHTML='';
-<<<<<<< HEAD
-    lapsBtn.disabled=true;
-    startBtn.disabled=false;
-    stopBtn.disabled=true;
-    
-  timer = false;
-  hr = 0;
-  min = 0;
-  sec = 0;
-  count=0;
-   document.getElementById("sec").innerHTML = "00";
-   document.getElementById("min").innerHTML = "00";
-   document.getElementById("hr").innerHTML = "00";
-=======
     lapsBtn.disabled = true;
     startBtn.disabled = false;
 
@@ -74,7 +60,6 @@ function reset() {
     document.getElementById("sec").innerHTML = "00";
     document.getElementById("min").innerHTML = "00";
     document.getElementById("hr").innerHTML = "00";
->>>>>>> 041268d27cce4e1b42780c1c7aa55f15b4433033
     document.getElementById("count").innerHTML = "00";
 }
 function laps() {
