@@ -24,7 +24,7 @@ const searchObject = (parameter, value) => {
     exists = false;
   alarmsArray.forEach((alarm, index) => {
     if (alarm[parameter] == value) {
-      exists = true; appendZero
+      exists = true;appendZero
       alarmObject = alarm;
       objIndex = index;
       return false;
@@ -37,14 +37,14 @@ let notificationCount = 0;
 
 
 repeatCheckbox.addEventListener("click", () => {
-  main.style.opacity = 0.3;
-  main.style.pointerEvents = "none";
+  main.style.opacity=0.3;
+  main.style.pointerEvents="none";
 
 });
 
 cancel.addEventListener("click", () => {
-  main.style.opacity = 1;
-  main.style.pointerEvents = "auto";
+  main.style.opacity=1;
+  main.style.pointerEvents="auto";
 });
 
 
@@ -67,9 +67,9 @@ function displayTimer() {
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
-      if (count == 0) {
-
-        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute) {
+      if(count==0){
+        
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute ) {
           alarmSound.play();
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
@@ -81,9 +81,9 @@ function displayTimer() {
               window.location.href = "https://www.127.0.0.1:5500/vClock";
             };
           }
-        }
+        } 
       }
-      else if (count == 1) {
+      else if(count ==1){
         if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
           alarmSound.play();
           while (notificationCount < 1) {
@@ -96,8 +96,8 @@ function displayTimer() {
               window.location.href = "https://www.127.0.0.1:5500/vClock";
             };
           }
-        }
-        // console.log(count);
+        } 
+      // console.log(count);
       }
     }
   });
@@ -183,9 +183,9 @@ const createAlarm = (alarmObj) => {
   let checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
 
-  if (alarmObj.isActive == true) {
+  if(alarmObj.isActive==true){
     checkbox.setAttribute("checked", "checked");
-  } else {
+  }else{
     checkbox.removeAttribute("checked");
   }
 
@@ -354,8 +354,8 @@ setBtn.addEventListener("click", () => {
     return;
   }
 
+  // Display selected days in the console
   console.log("Selected Days: " + daysOfWeek.join(", "));
-
   repeatDiv.classList.add("d-none");
   main.style.opacity = "1";
   main.style.pointerEvents = "all";
