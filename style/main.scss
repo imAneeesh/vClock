@@ -5,6 +5,19 @@
   src: url(".././font/digital-7\ \(mono\).ttf");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
 $secondaryColor: #3a3939;
 $primaryColor: #0090dd;
 $backgroundColor: #f0f0f0;
@@ -127,10 +140,10 @@ body {
     color: rgb(255, 255, 255);
   }
 
-  #hero {
-    max-height: 100vh;
-    overflow-y: auto;
-  }
+  // #hero {
+  //   max-height: 100vh;
+  //   overflow-y: auto;
+  // }
 
   .time-input {
     background-color: rgba($secondaryColor, .4) !important;
@@ -334,7 +347,7 @@ body {
   .my-container {
     display: flex;
     flex-direction: column;
-
+    
     h1 {
       text-align: center;
     }
@@ -386,8 +399,6 @@ body {
       cursor: pointer;
     }
 
-
-
     .btn:hover {
       background-color: skyblue;
     }
@@ -396,7 +407,6 @@ body {
   .clock {
     max-height: 90vh;
     overflow-y: auto;
-    width: 100vw;
   }
 
   .timer {
