@@ -15,11 +15,11 @@ body #blur{
     position: fixed;
     height: 200px;
     min-width:400px;
-   top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
-    color: black;
-    background-color: #3a3939;
+    background-color: #f0f0f0;
     box-shadow: 1px 1px 10px rgb(14, 13, 13);
     text-align: center;
     
@@ -28,19 +28,22 @@ body #blur .heading{
     color: red;
 }
 body #blur #message{
-    color: white;
+    color: black;
     margin-bottom: 30px;
 }
 body #blur .close{
-    
    padding: 7px 10px;
-   background-color: #757575;
+   background-color: #0090dd;
    border-radius: 8px;
+   color: white;
+   &:hover{
+       color: white;
+   }
 }
 .dark-mode #blur{
-    background-color: #f0f0f0;
+    background-color: #3a3939;
     #message{
-        color: black;
+        color: white;
     }
 }
 
