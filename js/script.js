@@ -138,6 +138,8 @@ const createAlarm = (alarmObj) => {
     Repeatspan.innerHTML = "Today";
     Repeatspan.style.color = "#00d300";
     Repeatspan.style.fontWeight = "bold";
+    Repeatspan.style.width= "150px";
+    Repeatspan.style.textAlign= "center";
     alarmDiv.appendChild(Repeatspan);
   }else{
     // =============================================
