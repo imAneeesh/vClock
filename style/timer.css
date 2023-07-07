@@ -4,66 +4,6 @@
   justify-content: center;
 }
 
-/* #error-msg
-{
- display: flex;
- align-items: center;
- justify-content: center;
- margin-bottom: 10px;
- color: red;
- 
-} */
-body #blur{
-  position: fixed;
-  /* width: 400px; */
-  width: min(90%, 400px);
-  height: 200px;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%,-50%);
-
-  text-align: center;
-  background-color: rgb(177, 205, 230);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px ;
-  z-index: 999;
-  box-shadow: 2px 2px 8px rgb(180, 174, 174);
-  
-}
-.dark-mode #blur{
-background-color: white;
-
-}
-.heading{
-  text-align: center;
-  color: red;
-}
-
-#blur .err-content{
-  position: relative;
-  max-width: 800px;
-}
-body #blur .err-content h2{
-  margin-bottom: 10px;
-  color:white;
-  font-size: 20px;
-}
-.dark-mode #blur .err-content h2{
-  color:black;
-  
-}
-.err-content a{
-  position: relative;
-  padding: 7px 20px;
-  margin-top: 20px;
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
-  background-color: #7e76768d;
-}
 .btns {
   display: flex;
   align-items: center;
@@ -125,10 +65,3 @@ body #blur .err-content h2{
   background-color: #F44336 !important;
   color: #FFFFFF !important;
 }/*# sourceMappingURL=timer.css.map */
-
-@media screen and (width<991px) {
- body #blur{
-  left: 50%;
- }
-  
-}

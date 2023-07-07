@@ -125,10 +125,13 @@ function searchCountry()
     })
 }
 
-
+ 
 countries.forEach((country) => {
+   
     const clockCard = document.createElement("div");
     clockCard.classList.add("clock-card");
+    clockCard.setAttribute('id',country.name);
+    clockCard.setAttribute('onclick',"fullscreenMode(this.id)")
 
     const countryName = document.createElement("div");
     countryName.classList.add("country-name");
@@ -141,6 +144,7 @@ countries.forEach((country) => {
     clockCard.appendChild(countryName);
     clockCard.appendChild(currentTime);
     clockContainer.appendChild(clockCard);
+    
 });
 
 setInterval(() => {
@@ -174,3 +178,35 @@ counties.forEach((county) => {
 });
 
 
+function fullscreenMode(id){
+    
+    const divElement = document.getElementById(id);
+    
+    divElement.classList.add("fullscreenDesign");
+    
+     if (divElement.requestFullscreen) {
+
+       divElement.requestFullscreen();
+     } else if (divElement.mozRequestFullScreen) {
+       // Firefox
+       divElement.mozRequestFullScreen();
+     } else if (divElement.webkitRequestFullscreen) {
+       // Chrome, Safari and Opera
+       divElement.webkitRequestFullscreen();
+     } else if (divElement.msRequestFullscreen) {
+       // IE/Edge
+       divElement.msRequestFullscreen();
+     }
+     document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+  document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+  document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+  function handleFullscreenChange() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement && !document.msFullscreenElement) {
+      // Fullscreen mode has been exited
+      divElement.classList.remove("fullscreenDesign");
+      
+    }
+}
+}

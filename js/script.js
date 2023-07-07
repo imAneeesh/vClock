@@ -4,15 +4,15 @@ const hourInput = document.getElementById("hourInput");
 const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
+const main = document.getElementById("main");
+let count =0;
 let alarmsArray = [];
 let alarmSound = new Audio('./js/audio.wav');
 let initialHour = 0,
   initialMinute = 0,
   alarmIndex = 0;
-
 let daysOfWeek = [];
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 // Append zeroes for single digit
 const appendZero = (value) => (value < 10 ? "0" + value : value);
 
@@ -34,6 +34,20 @@ const searchObject = (parameter, value) => {
 
 let notificationCount = 0;
 
+
+repeatCheckbox.addEventListener("click", () => {
+  main.style.opacity=0.3;
+  main.style.pointerEvents="none";
+
+});
+
+cancel.addEventListener("click", () => {
+  main.style.opacity=1;
+  main.style.pointerEvents="auto";
+});
+
+
+
 // Display Time
 function displayTimer() {
   let date = new Date();
@@ -49,22 +63,40 @@ function displayTimer() {
   const minute = minutes < 10 ? '0' + minutes : minutes;
   const second = seconds < 10 ? '0' + seconds : seconds;
 
-
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
     if (alarm.isActive) {
-      if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
-        alarmSound.play();
-        while (notificationCount < 1) {
-          const notification = new Notification("Alarm", {
-            body: "Alarm is ringing",
-            icon: "./images/logo.png",
-          });
-          notificationCount++;
-          notification.onclick = (e) => {
-            window.location.href = "https://www.127.0.0.1:5500/vClock";
-          };
-        }
+      if(count==0){
+        
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute ) {
+          alarmSound.play();
+          while (notificationCount < 1) {
+            const notification = new Notification("Alarm", {
+              body: "Alarm is ringing",
+              icon: "./images/logo.png",
+            });
+            notificationCount++;
+            notification.onclick = (e) => {
+              window.location.href = "https://www.127.0.0.1:5500/vClock";
+            };
+          }
+        } 
+      }
+      else if(count ==1){
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
+          alarmSound.play();
+          while (notificationCount < 1) {
+            const notification = new Notification("Alarm", {
+              body: "Alarm is ringing",
+              icon: "./images/logo.png",
+            });
+            notificationCount++;
+            notification.onclick = (e) => {
+              window.location.href = "https://www.127.0.0.1:5500/vClock";
+            };
+          }
+        } 
+      // console.log(count);
       }
     }
   });
@@ -216,7 +248,8 @@ if ("Notification" in window) {
 const setBtn = document.getElementById("setBtn");
 
 setBtn.addEventListener("click", () => {
-
+  daysOfWeek.length = 0;
+  count = 1;
   var monday = document.getElementById("monday");
   if (monday.checked) {
     daysOfWeek.push("Monday");
@@ -260,4 +293,28 @@ setBtn.addEventListener("click", () => {
   // Display selected days in the console
   console.log("Selected Days: " + daysOfWeek.join(", "));
   repeatDiv.classList.add("d-none");
+  main.style.opacity = "1";
+  main.style.pointerEvents = "all";
+});
+
+
+const fullscreenButton = document.getElementById("fullscreenButton");
+const fullscreenDiv = document.getElementById("fullscreenDiv");
+
+fullscreenButton.addEventListener("click", () => {
+ 
+  fullscreenDiv.style.textAlign = "center";
+  fullscreenDiv.style.alignItems="center";
+  if (fullscreenDiv.requestFullscreen) {
+    fullscreenDiv.requestFullscreen();
+  } else if (fullscreenDiv.mozRequestFullScreen) {
+    // Firefox
+    fullscreenDiv.mozRequestFullScreen();
+  } else if (fullscreenDiv.webkitRequestFullscreen) {
+    // Chrome, Safari and Opera
+    fullscreenDiv.webkitRequestFullscreen();
+  } else if (fullscreenDiv.msRequestFullscreen) {
+    // IE/Edge
+    fullscreenDiv.msRequestFullscreen();
+  }
 });

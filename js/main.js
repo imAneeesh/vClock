@@ -1,4 +1,6 @@
 const menuIcon = document.getElementById("menuIcon");
+const barIcon=document.getElementById("fa-bars")
+const xIcon=document.getElementById("fa-x")
 const element = document.body;
 const modeIcon = document.getElementById("modeIcon");
 const topbar=document.getElementById("top-bar");
@@ -13,10 +15,14 @@ function toggleDarkMode() {
     // topbar.classList.toggle("dark-mode");
     // menubar.classList.toggle("dark-mode");
     activeMenu[0].classList.toggle("lighty-mode");
+    activeMenu[1].classList.toggle("lighty-mode");
     element.classList.toggle("dark-mode");
+    repeatDiv.classList.toggle("dark-mode")
 }
 
 menuIcon.addEventListener("click", () => {
+    barIcon.classList.toggle("d-none")
+    xIcon.classList.toggle("d-none")
     const menu = document.getElementById("menu-bar");
     menu.classList.toggle("d-none");
     const element = document.querySelector(".base-timer__label")

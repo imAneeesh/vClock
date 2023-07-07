@@ -61,7 +61,7 @@ body {
 }
 
 .main {
-  background-color: transparent;
+  background-color: inherit;
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -163,7 +163,7 @@ body {
     color: white;
     width: 70vw;
     height: 100%;
-    background-color: transparent;
+    background-color: inherit;
 
     .navbar-container {
       box-shadow: 3px 0 20px rgba(0, 0, 0, 0.2);
@@ -243,7 +243,7 @@ body {
           li {
             width: 100%;
             padding: 0 1rem;
-            font-size: 12px;
+            font-size: 16px;
             height: 50px;
             text-align: center;
             align-items: center;
@@ -257,8 +257,8 @@ body {
             }
 
             img {
-              width: 20px;
-              height: 20px;
+              width: 25px;
+              height: 25px;
             }
 
             i {
@@ -382,13 +382,15 @@ body {
     align-items: center;
 
     .time {
-      font-size: 3.2rem;
+      color: #00d300;
+      font-size: 6.5rem;
       font-weight: 700;
     }
 
     .date,
     .formateddate {
-      font-size: 1.5rem;
+      color: #00d300;
+      font-size: 3rem;
     }
   }
 
@@ -516,7 +518,7 @@ body {
       }
 
       .deleteButton {
-        background-color: transparent;
+        background-color: inherit ;
         font-size: 1.5em;
         color: #ff5c5c;
         border: none;
@@ -547,7 +549,9 @@ body {
 
 .repeat-div{
   // border: 1px solid rgb(238, 236, 236);
-  box-shadow: 1px 1px 10px rgb(102, 91, 91);
+  background-color: rgba($backgroundColor, 1) ;
+  box-shadow: 1px 1px 10px rgb(14, 13, 13);
+  color: black;
   position: absolute;
   top: 50%;
   left:50%;
@@ -555,7 +559,7 @@ body {
   transform: translate(-50%,-50%);
   border-radius: 10px;
   padding: 1rem;
-  z-index: 1000;
+
   transform: translate(-50%, -50%);
   .days{
     display: flex;
@@ -600,10 +604,35 @@ body {
   
 }
 
-@media (max-width: 490px) {
+
+
+
+
+
+
+.fullscreenDesign{
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+.fullscreenDesign .country-name{
+color: red;
+}
+
+
+
+
+
+
+
+@media (max-width: 769px) {
   .timer {
     .time {
-      font-size: 2.7rem !important;
+      font-size: 4rem !important;
     }
   }
 }
