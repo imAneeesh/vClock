@@ -27,6 +27,10 @@ body a:hover {
   color: #0090dd;
 }
 
+.theme-icon:hover {
+  cursor: pointer !important;
+}
+
 .laps {
   background-color: rgba(58, 57, 57, 0.2) !important;
   color: #757575 !important;
@@ -320,7 +324,7 @@ body a:hover {
 }
 .main .timer .time {
   color: #252525;
-  font-size: 6.5rem;
+  font-size: 8rem;
   font-weight: 700;
 }
 .main .timer .date,
@@ -518,6 +522,11 @@ body a:hover {
 }
 
 @media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "digital-clock-font";
+  }
   .timer .time {
     font-size: 4rem !important;
   }

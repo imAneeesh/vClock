@@ -38,6 +38,13 @@ body {
       color: $primaryColor;
     }
   }
+
+}
+
+.theme-icon{
+  &:hover{
+    cursor: pointer !important;
+  }
 }
 
 .laps {
@@ -402,7 +409,7 @@ body {
 
     .time {
       color: #252525;
-      font-size: 6.5rem;
+      font-size: 8rem;
       font-weight: 700;
     }
 
@@ -629,6 +636,11 @@ body {
 }
 
 @media (max-width: 769px) {
+  .digit {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'digital-clock-font';
+}
   .timer {
     .time {
       font-size: 4rem !important;
