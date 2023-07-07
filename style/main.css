@@ -559,6 +559,7 @@ body a:hover {
   height: 100vh;
   display: grid;
   place-content: center;
+  color: #00d300;
 }
 .alarmFullscreen .time {
   font-size: 200px;
@@ -583,6 +584,7 @@ body a:hover {
   transform: scale(5);
   margin: 5rem;
   font-size: 5rem;
+  color: #00d300;
 }
 
 @media (max-width: 769px) {
