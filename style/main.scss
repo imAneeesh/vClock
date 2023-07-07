@@ -687,8 +687,15 @@ justify-content: center;
 
 }
 .fullscreenDesign .country-name{
-color: red;
+color: $primaryColor;
+transform: scale(5);
+font-size: 5rem;
 }
+.fullscreenDesign .current-time{
+  transform: scale(5);
+margin: 5rem;
+  font-size: 5rem;
+  }
 
 
 
