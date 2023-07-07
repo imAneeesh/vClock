@@ -142,7 +142,6 @@ function searchCountry() {
   });
 }
 
-<<<<<<< HEAD
  
 countries.forEach((country) => {
    
@@ -150,11 +149,6 @@ countries.forEach((country) => {
     clockCard.classList.add("clock-card");
     clockCard.setAttribute('id',country.name);
     clockCard.setAttribute('onclick',"fullscreenMode(this.id)")
-=======
-countries.forEach((country) => {
-  const clockCard = document.createElement("div");
-  clockCard.classList.add("clock-card");
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
 
   const countryName = document.createElement("div");
   countryName.classList.add("country-name");
@@ -164,16 +158,9 @@ countries.forEach((country) => {
   currentTime.classList.add("current-time");
   currentTime.textContent = getCurrentTime(country);
 
-<<<<<<< HEAD
-    clockCard.appendChild(countryName);
-    clockCard.appendChild(currentTime);
-    clockContainer.appendChild(clockCard);
-    
-=======
   clockCard.appendChild(countryName);
   clockCard.appendChild(currentTime);
   clockContainer.appendChild(clockCard);
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
 });
 
 setInterval(() => {
@@ -211,7 +198,6 @@ counties.forEach((county) => {
 });
 
 
-<<<<<<< HEAD
 function fullscreenMode(id){
     
     const divElement = document.getElementById(id);
@@ -244,7 +230,3 @@ function fullscreenMode(id){
     }
 }
 }
-=======
-
-
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322

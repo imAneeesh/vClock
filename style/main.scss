@@ -420,23 +420,14 @@ body {
     align-items: center;
 
     .time {
-<<<<<<< HEAD
-      color: #00d300;
-      font-size: 6.5rem;
-=======
       color: #252525;
       font-size: 7rem;
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-weight: 700;
     }
 
     .date,
     .formateddate {
-<<<<<<< HEAD
-      color: #00d300;
-=======
       color: #252525;
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
       font-size: 3rem;
     }
   }
@@ -577,11 +568,7 @@ body {
       }
 
       .deleteButton {
-<<<<<<< HEAD
-        background-color: inherit ;
-=======
         background-color: inherit;
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
         font-size: 1.5em;
         color: #ff5c5c;
         border: none;
@@ -611,14 +598,8 @@ body {
 
 }
 
-<<<<<<< HEAD
-.repeat-div{
-  // border: 1px solid rgb(238, 236, 236);
-  background-color: rgba($backgroundColor, 1) ;
-=======
 .repeat-div {
   background-color: rgba($backgroundColor, 1);
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   box-shadow: 1px 1px 10px rgb(14, 13, 13);
   color: black;
   position: absolute;
@@ -676,7 +657,6 @@ body {
 
 }
 
-<<<<<<< HEAD
 
 
 .alarmFullscreen{
@@ -713,14 +693,6 @@ color: red;
 
 
 @media (max-width: 769px) {
-=======
-@media (max-width: 769px) {
-  .digit {
-    font-size: 4rem;
-    font-weight: bold;
-    font-family: 'digital-clock-font';
-}
->>>>>>> 20ce1d9d9f40263b533c6d8d9c978a5d137b1322
   .timer {
     .time {
       font-size: 4rem !important;
