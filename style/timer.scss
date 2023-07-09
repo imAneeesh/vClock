@@ -77,7 +77,20 @@ body #blur .close{
     stroke: currentColor;
 }
 
-
+.inputs{
+    input{
+        width: 50px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin: 5px;
+        color: grey;
+        &:focus{
+            outline: none;
+        }
+    }
+}
 
 .base-timer__label {
     position: absolute;

@@ -52,8 +52,7 @@ cancel.addEventListener("click", () => {
 // Display Time
 function displayTimer() {
   let date = new Date();
-
-  console.log()
+  console.log(date)
   let [hours, minutes, seconds] = [
     appendZero(date.getHours()),
     appendZero(date.getMinutes()),
@@ -64,12 +63,20 @@ function displayTimer() {
   const minute = minutes < 10 ? '0' + minutes : minutes;
   const second = seconds < 10 ? '0' + seconds : seconds;
 
+  if (hours >= 12) {
+    AMPM = 'PM';
+  }
+  else {
+    AMPM = 'AM';
+  }
+console.log(AMPM)
   // Check for alarms
   alarmsArray.forEach((alarm, index) => {
+    console.log(alarm);
     if (alarm.isActive) {
       if(count==0){
         
-        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute ) {
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.amPM == AMPM ) {
           alarmSound.play();
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
@@ -84,7 +91,7 @@ function displayTimer() {
         } 
       }
       else if(count ==1){
-        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.daysOfWeek.includes(days[date.getDay()])) {
+        if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.amPM == AMPM && alarm.daysOfWeek.includes(days[date.getDay()])) {
           alarmSound.play();
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
@@ -165,7 +172,7 @@ const createAlarm = (alarmObj) => {
       }
       else {
         console.log(letter)
-        spanElement.style.color = "lightgray";
+        spanElement.style.color = "gray";
         spanElement.style.fontWeight = "bold";
       }
       spanElement.innerHTML = letter.charAt(0);
@@ -218,13 +225,14 @@ setAlarm.addEventListener("click", () => {
   }else{
     isRepeat = true;
   }
-
+  const amPM = document.getElementById('amPM').value;
   alarmIndex += 1;
   // Alarm Object
   let alarmObj = {};
   alarmObj.id = `${alarmIndex}_${hourInput.value}_${minuteInput.value}`;
   alarmObj.alarmHour = hourInput.value;
   alarmObj.alarmMinute = minuteInput.value;
+  alarmObj.amPM = amPM; 
   alarmObj.isActive = false;
   alarmObj.daysOfWeek = daysOfWeek;
   alarmObj.isRepeat = isRepeat;
@@ -283,7 +291,7 @@ window.onload = () => {
     alarmsArray.forEach((alarmObj) => createAlarm(alarmObj));
   }
 
-  setInterval(displayTimer);
+  setInterval(displayTimer, 1000);
   initialHour = 0;
   initialMinute = 0;
   alarmIndex = alarmsArray.length;

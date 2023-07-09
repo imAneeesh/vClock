@@ -3,7 +3,7 @@
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
-let TIME_LIMIT = 60;
+let TIME_LIMIT = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 const countStart = document.getElementById("count");
@@ -12,70 +12,94 @@ const pause = document.getElementById("pause");
 const resume = document.getElementById("resume");
 const reset = document.getElementById("reset");
 const inputs = document.getElementById("inputs");
-const newtimer=document.getElementById("newtimer");
- const errMsg = document.getElementById("blur");
+const newtimer = document.getElementById("newtimer");
+const errMsg = document.getElementById("blur");
 
-function toggleBlur(){
-    
+function toggleBlur() {
     errMsg.classList.add("d-none")
     countStart.classList.remove("d-none");
 }
 
 
-function set(){
-   
-     TIME_LIMIT = document.getElementById("time").value;
-     
-     if (TIME_LIMIT <= 0 || TIME_LIMIT=="") {
-      errMsg.classList.remove("d-none");
-    countStart.classList.add("d-none");
+function set() {
 
-      document.getElementById("time").value = "";
-     
-       return;
-     }
-     interval = document.getElementById("interval").value;
-     if (interval == "minutes") {
-       if (TIME_LIMIT < 59) {
-         TIME_LIMIT = TIME_LIMIT * 60;
-       } else {
-        message.textContent="invalid minute(1-59)";
-         errMsg.classList.remove("d-none");
-         countStart.classList.add("d-none");
+    const hourInput = document.getElementById("hourInput");
+    const minuteInput = document.getElementById("minuteInput");
+    const secondInput = document.getElementById("secondInput");
 
-         return;
-       }
-      
-     } else if (interval == "hours") {
-        
-       TIME_LIMIT = TIME_LIMIT * 60 * 60;
-     }else if (interval == "seconds"){
-        if(TIME_LIMIT>59){
-            message.textContent = "invalid seconds(1-59)";
-            errMsg.classList.remove("d-none");
-            countStart.classList.add("d-none");
-            return;
-        }
-     }
-       //  errMsg.classList.add("d-none")
-       inputs.classList.add("d-none");
+    if (hourInput.value > 0) {
+        hours = hourInput.value;
+    } else {
+        hours = 0;
+    }
+    if (minuteInput.value > 0) {
+        minutes = minuteInput.value;
+    } else {
+        minutes = 0;
+    }
+    if (secondInput.value > 0) {
+        seconds = secondInput.value;
+    } else {
+        seconds = 0;
+    }
+    hours = hours * 60 * 60
+    minutes = minutes * 60
+    seconds = seconds * 1;
+    TIME_LIMIT = hours + minutes + seconds;
+    console.log(TIME_LIMIT);
+    if (TIME_LIMIT <= 0 || TIME_LIMIT == "") {
+        errMsg.classList.remove("d-none");
+        countStart.classList.add("d-none");
+        hourInput.value = "";
+        minuteInput.value = "";
+        secondInput.value = "";
+        return;
+    }
+    // interval = document.getElementById("interval").value;
+    // if (interval == "minutes") {
+    //     if (TIME_LIMIT < 59) {
+    //         TIME_LIMIT = TIME_LIMIT;
+    //     } else {
+    //         message.textContent = "invalid minute(1-59)";
+    //         errMsg.classList.remove("d-none");
+    //         countStart.classList.add("d-none");
+
+    //         return;
+    //     }
+
+    // } else if (interval == "hours") {
+
+    //     TIME_LIMIT = TIME_LIMIT;
+    // } else if (interval == "seconds") {
+    //     if (TIME_LIMIT > 59) {
+    //         message.textContent = "invalid seconds(1-59)";
+    //         errMsg.classList.remove("d-none");
+    //         countStart.classList.add("d-none");
+    //         return;
+    //     }
+    // }
+    //  errMsg.classList.add("d-none")
+    inputs.classList.add("d-none");
     countStart.classList.add("d-none");
     pause.classList.remove("d-none");
     reset.classList.remove("d-none");
-   
-    interval=document.getElementById("interval").value;
-   
-    if(interval=="minutes"){
-        TIME_LIMIT=TIME_LIMIT*60;
-    }
-    else if(interval=="hours"){
-        TIME_LIMIT=TIME_LIMIT*60*60;
-    }
-    
+
+    // interval = document.getElementById("interval").value;
+
+    // if (interval == "minutes") {
+    //     TIME_LIMIT = TIME_LIMIT * 60;
+    // }
+    // else if (interval == "hours") {
+    //     TIME_LIMIT = TIME_LIMIT * 60 * 60;
+    // }
+
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+        TIME_LIMIT
+    );
 
     timeLeft = TIME_LIMIT;
-    document.getElementById("time").value = "";
     timerInterval = null;
+    console.log("time left", timeLeft);
     starTimer();
 }
 
@@ -136,7 +160,7 @@ function startTimer() {
     countStart.classList.add("d-none");
     timerInterval = setInterval(() => {
 
-        if(TIME_LIMIT==0){
+        if (TIME_LIMIT == 0) {
             onTimesUp();
             alert("Time Up");
         }
@@ -156,14 +180,26 @@ function startTimer() {
 }
 
 function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    let hours = Math.floor(time / 3600);
+    let remainingSeconds = time % 3600;
+    let minutes = Math.floor(remainingSeconds / 60);
+    let seconds = remainingSeconds % 60;
+
+
+    console.log(hours, minutes/2, seconds)
+
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
+    if (minutes < 10 ) {
+        minutes = `0${minutes}`;
+    }
 
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
 
-    return `${minutes}:${seconds}`;
+    return `${hours}:${minutes}:${seconds}`;
 }
 
 function setRemainingPathColor(timeLeft) {
@@ -218,7 +254,7 @@ function resumeTimer() {
         startTimer();
 }
 
-function startNewTimer(){
+function startNewTimer() {
     window.location.reload();
 }
 function resetTimer() {

@@ -404,7 +404,7 @@ body a:hover {
   width: 100%;
 }
 .main #set-alarm input {
-  width: 9vw;
+  width: 100px;
   height: 5vh;
   padding-left: 0.1rem;
   outline: none;
@@ -486,7 +486,7 @@ body a:hover {
   left: 2em;
 }
 .main #set-alarm .activeAlarms .deleteButton {
-  background-color: inherit;
+  background-color: transparent;
   font-size: 1.5em;
   color: #ff5c5c;
   border: none;
