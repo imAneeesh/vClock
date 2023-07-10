@@ -372,10 +372,20 @@ setBtn.addEventListener("click", () => {
 
 const fullscreenButton = document.getElementById("fullscreenButton");
 const fullscreenDiv = document.getElementById("timer");
+const mode = localStorage.getItem("Mode");
 
 fullscreenButton.addEventListener("click", () => {
   fullscreenDiv.classList.add("alarmFullscreen");
  
+  // if(mode == "light"){
+  //   console.log("light");
+  //   timer.style.backgroundColor = "white";
+  // }else{
+  //   console.log("dark");
+  //   timer.style.backgroundColor = "black";
+  // }
+
+
   if (fullscreenDiv.requestFullscreen) {
     fullscreenDiv.requestFullscreen();
   } else if (fullscreenDiv.mozRequestFullScreen) {

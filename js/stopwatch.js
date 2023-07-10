@@ -61,6 +61,7 @@ function reset() {
     document.getElementById("min").innerHTML = "00";
     document.getElementById("hr").innerHTML = "00";
     document.getElementById("count").innerHTML = "00";
+    clearLap()
 }
 function laps() {
     var localArray;
