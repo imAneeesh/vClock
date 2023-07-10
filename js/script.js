@@ -74,9 +74,9 @@ console.log(AMPM)
   alarmsArray.forEach((alarm, index) => {
     console.log(alarm);
     if (alarm.isActive) {
-      if(count==0){
-        
+      if(alarm.isRepeat==false){
         if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.amPM == AMPM ) {
+          console.log("alarm is ringing");
           alarmSound.play();
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
@@ -90,7 +90,7 @@ console.log(AMPM)
           }
         } 
       }
-      else if(count ==1){
+      else if(alarm.isRepeat == true){
         if (alarm.alarmHour == hour12 && alarm.alarmMinute == minute && alarm.amPM == AMPM && alarm.daysOfWeek.includes(days[date.getDay()])) {
           alarmSound.play();
           while (notificationCount < 1) {

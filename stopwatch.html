@@ -7,7 +7,9 @@
   <title>Online Alarm Clock | Stopwatch</title>
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="./style/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,14 +22,14 @@
   <div class="main">
     <div class="body-container">
       <div class="top-bar " id="top-bar">
-          <span class="menu d-lg-none menu-icon" id="menuIcon">
-            <i class="fa-solid ps-2 fa-xl d-lg-none text-white flip fa-bars" id="fa-bars"></i>
-            <i class="fa-solid ps-3 fa-lg d-none d-lg-none text-white flip fa-x" id="fa-x"></i>
+        <span class="menu d-lg-none menu-icon" id="menuIcon">
+          <i class="fa-solid ps-2 fa-xl d-lg-none text-white flip fa-bars " id="fa-bars"></i>
+          <i class="fa-solid ps-3 fa-lg d-none d-lg-none text-white flip fa-x " id="fa-x"></i>
 
-          </span>
-          <span class="logo d-none d-lg-block">
-            <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
-          </span>
+        </span>
+        <span class="logo d-none ps-2 d-lg-block">
+          <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
+        </span>
         <div class="logo d-lg-none">
           <a href="index.html"><img src="./assets/logo.png" alt="logo" /></a>
         </div>
@@ -77,42 +79,26 @@
             <ul>
               <a href="index.html">
                 <li class="menu">
-                  <img
-                    src="./assets/stopwatch.png"
-                    class="icon"
-                    alt="logo"
-                  />Alarm Clock<i
-                    class="fa-solid ms-auto  fa-arrow-right"
-                  ></i>
+                  <img src="./assets/stopwatch.png" class="icon" alt="logo" />Alarm Clock<i
+                    class="fa-solid ms-auto  fa-arrow-right"></i>
                 </li>
               </a>
               <a href="stopwatch.html">
                 <li class="menu active">
-                  <img
-                    src="./assets/time-tracking.png"
-                    class="icon"
-                    alt="logo"
-                  />Stopwatch<i
-                    class="fa-solid ms-auto  fa-arrow-right"
-                  ></i>
+                  <img src="./assets/time-tracking.png" class="icon" alt="logo" />Stopwatch<i
+                    class="fa-solid ms-auto  fa-arrow-right"></i>
                 </li>
               </a>
               <a href="timer.html">
                 <li class="menu">
-                  <img
-                    src="./assets/chronometer.png"
-                    class="icon"
-                    alt="logo"
-                  />Timer<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                  <img src="./assets/chronometer.png" class="icon" alt="logo" />Timer<i
+                    class="fa-solid ms-auto  fa-arrow-right"></i>
                 </li>
               </a>
               <a href="time.html">
                 <li class="menu">
-                  <img
-                    src="./assets/clock.png"
-                    class="icon"
-                    alt="logo"
-                  />Time<i class="fa-solid ms-auto  fa-arrow-right"></i>
+                  <img src="./assets/clock.png" class="icon" alt="logo" />Time<i
+                    class="fa-solid ms-auto  fa-arrow-right"></i>
                 </li>
               </a>
             </ul>
@@ -120,56 +106,62 @@
         </div>
       </div>
       <div class="container  animate__fadeInUp animate__animated" id="hero">
-       <div class="custom-card my-3 d-flex flex-column align-items-center gap-3 p-1">
-        <div id="timeElement">
-          <span class="digit" id="hr">00</span>
-          <span class="text">:</span>
-          <span class="digit" id="min">00</span>
-          <span class="text">:</span>
-          <span class="digit" id="sec">00</span>
-          <span class="text">:</span>
-          <span class="digit" id="count">00</span>
+        <div class="custom-card my-3 d-flex flex-column align-items-center gap-3 p-1">
+          <div id="timeElement">
+            <span class="digit" id="hr">00</span>
+            <span class="text">:</span>
+            <span class="digit" id="min">00</span>
+            <span class="text">:</span>
+            <span class="digit" id="sec">00</span>
+            <span class="text">:</span>
+            <span class="digit" id="count">00</span>
+          </div>
+
+          <div class="">
+
+            <button class="btn btn-add-alarm  mx-2" id="start" onclick="start()">
+              Start
+            </button>
+
+            <button class="btn  btn-danger mx-2 d-none" id="stop" onclick="stop()">
+              Stop
+            </button>
+
+
+
+            <button class="btn  btn-secondary mx-2 d-none" id="reset" onclick="reset()">
+              Reset
+            </button>
+
+            <button class="btn  btn-success mx-2 d-none" id="laps" disabled="true" onclick="laps()">
+              Laps
+            </button>
+          </div>
+          <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
+          <button id="clearall" class="btn btn-danger my-2 text-white" onclick="clearLap()">Clear All</button>
+
         </div>
-        
-        <div class="">
-
-          <button class="btn btn-add-alarm  mx-2" id="start" onclick="start()">
-            Start
-          </button>
-
-          <button class="btn  btn-danger mx-2 d-none" id="stop" onclick="stop()">
-            Stop
-          </button>
-
-
-
-          <button class="btn  btn-secondary mx-2 d-none" id="reset" onclick="reset()">
-            Reset
-          </button>
-
-          <button class="btn  btn-success mx-2 d-none" id="laps" disabled="true" onclick="laps()">
-            Laps
-          </button>
+        <div class="custom-card  my-2 p-3">
+          <div class="h2">How to use the online stopwatch</div>
+          <hr />
+          <div class="display-7 ">Set the hour and minute for the online alarm clock. The alarm message will appear, and
+            the preselected sound will be played at the set time.
+            The online stopwatch counts the time to the millisecond that passes after you click the "Start" button. It
+            allows you to add laps. If you close the stopwatch, the value and laps will be automatically saved. If the
+            period is sufficiently large, the number of days passed will be displayed, too.
+            Click the "Start" or "Stop" buttons to start or stop the stopwatch. Click the "Lap" button to add one lap
+            and the current stopwatch value to the lap list. To reset laps and the stopwatch value, click the "Reset"
+            button (the button appears when the stopwatch is stopped).
+          </div>
         </div>
-        <div class="displayLap d-flex flex-column justify-center align-items-center" id="display"></div>
-        <button id="clearall" class="btn btn-danger my-2 text-white" onclick="clearLap()">Clear All</button>
-
-      </div>
-      <div class="custom-card  my-2 p-3">
-        <div class="h2">How to use the online stopwatch</div>
-        <hr />
-        <div class="display-7 ">Set the hour and minute for the online alarm clock. The alarm message will appear, and the preselected sound will be played at the set time.
-          The online stopwatch counts the time to the millisecond that passes after you click the "Start" button. It allows you to add laps. If you close the stopwatch, the value and laps will be automatically saved. If the period is sufficiently large, the number of days passed will be displayed, too.          
-          Click the "Start" or "Stop" buttons to start or stop the stopwatch. Click the "Lap" button to add one lap and the current stopwatch value to the lap list. To reset laps and the stopwatch value, click the "Reset" button (the button appears when the stopwatch is stopped).          
-      </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="./js/stopwatch.js"></script>
-  <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script src="./js/stopwatch.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
