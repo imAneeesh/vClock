@@ -81,11 +81,11 @@ console.log(AMPM)
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
               body: "Alarm is ringing",
-              icon: "./images/logo.png",
+              icon: "../assets/logo.png",
             });
             notificationCount++;
             notification.onclick = (e) => {
-              window.location.href = "https://www.127.0.0.1:5500/vClock";
+              window.location.href = "https://imaneeesh.github.io/vClock";
             };
           }
         } 
@@ -96,11 +96,11 @@ console.log(AMPM)
           while (notificationCount < 1) {
             const notification = new Notification("Alarm", {
               body: "Alarm is ringing",
-              icon: "./images/logo.png",
+              icon: "../assets/logo.png",
             });
             notificationCount++;
             notification.onclick = (e) => {
-              window.location.href = "https://www.127.0.0.1:5500/vClock";
+              window.location.href = "https://imaneeesh.github.io/vClock";
             };
           }
         } 
