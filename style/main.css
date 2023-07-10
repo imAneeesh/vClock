@@ -354,13 +354,13 @@ body a:hover {
   background-color: transparent;
 }
 .main .timer .time {
-  color: #242424;
+  color: #464646;
   font-size: 7rem;
   font-weight: 700;
 }
 .main .timer .date,
 .main .timer .formateddate {
-  color: #252525;
+  color: #464646;
   font-size: 3rem;
 }
 .main .wrapper-container {
