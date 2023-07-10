@@ -351,9 +351,10 @@ body a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fcfcfc;
 }
 .main .timer .time {
-  color: #252525;
+  color: #242424;
   font-size: 7rem;
   font-weight: 700;
 }
@@ -382,6 +383,12 @@ body a:hover {
 }
 .main .inputs input::placeholder {
   color: #757575;
+}
+.main .inputs .AMPM {
+  background-color: rgba(58, 57, 57, 0.2) !important;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 .main .btn-add-alarm {
   background-color: #0090dd;

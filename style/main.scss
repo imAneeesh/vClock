@@ -436,9 +436,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #fcfcfc;
 
     .time {
-      color: #252525;
+      color: #242424;
       font-size: 7rem;
       font-weight: 700;
     }
@@ -471,6 +472,12 @@ body {
       &::placeholder {
         color: $placeholderColor;
       }
+    }
+    .AMPM{
+      background-color: rgba($secondaryColor, .2) !important;
+      border-radius: 5px;
+      border: none;
+      outline: none;
     }
   }
 
